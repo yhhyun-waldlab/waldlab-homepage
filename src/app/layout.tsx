@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Wald Lab | 건강한 생태계를 만드는 기술",
   description:
     "발트랩은 SafeWay 데이터 플랫폼을 기반으로 원격의료, 산업 안전, 만성질환 관리, 반려동물 케어까지 — 모든 생명을 위한 스마트 헬스케어 솔루션을 제공합니다.",
-  keywords: ["발트랩", "Wald Lab", "SafeWay", "헬스케어", "원격의료", "산업안전", "건강관리"],
+  keywords: ["발트랩", "Wald Lab", "SafeWay", "헬스케어", "원격의료", "산업안전", "건강관리", "원격진료", "만성질환", "동물케어"],
   authors: [{ name: "Wald Lab Inc." }],
   icons: {
     icon: "/favicon.svg",
