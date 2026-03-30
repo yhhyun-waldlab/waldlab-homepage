@@ -454,7 +454,7 @@
         "title": "4 Key Public Sector Systems Built",
         "desc": "Experience designing and operating telemedicine systems for Korea's most demanding public sectors — each requiring the highest trust, security, and reliability standards.",
         "sectors": {
-          "defense": { "name": "Defense", "desc": "Military telemedicine system build & operations" },
+          "defense": { "name": "Defense", "desc": "Military & Police telemedicine system build & operations" },
           "corrections": { "name": "Corrections", "desc": "Correctional facility remote medical infrastructure" },
           "public": { "name": "Public Health", "desc": "Community health center telemedicine platforms" },
           "emergency": { "name": "Emergency & Special", "desc": "Remote emergency medical systems for remote areas" }
