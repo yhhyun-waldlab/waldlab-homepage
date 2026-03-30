@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "xe2WUOM4X_T66IUXcKd5YBDpRVwLhXHCzY9_qwesXVU",
+    other: {
+      "naver-site-verification": "33b53ec6757734b8bd6e5673a480237199e3a658",
+    },
   },
   openGraph: {
     title: "Wald Lab | 건강한 생태계를 만드는 기술",
