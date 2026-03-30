@@ -1,0 +1,866 @@
+{
+  "nav": {
+    "platform": "플랫폼",
+    "services": "서비스",
+    "about": "회사소개",
+    "news": "공지 · 소식",
+    "getStarted": "문의하기"
+  },
+  "hero": {
+    "badge": "건강 데이터 인프라 기업",
+    "title": "기술, 건강한 숲이 되다",
+    "titleLine1": "기술, 건강한 숲이 되다",
+    "titleLine2": "",
+    "titlePart1": "기술, 건강한 ",
+    "titleHighlight": "숲",
+    "titlePart2": "이 되다",
+    "tagline": "Bridging Care Through the Digital Forest",
+    "subtitle": "25년의 신뢰로 구축한 가장 안전한 헬스케어 인프라, SafeWay",
+    "cta": "서비스 알아보기",
+    "ctaSecondary": "회사 소개",
+    "stat1Value": "6+",
+    "stat1Label": "헬스케어 솔루션",
+    "stat2Value": "1",
+    "stat2Label": "통합 데이터 플랫폼",
+    "stat3Value": "∞",
+    "stat3Label": "확장 가능성",
+    "safewayLabel": "모든 서비스의 근간"
+  },
+  "platform": {
+    "badge": "근간 인프라",
+    "title": "SafeWay",
+    "subtitle": "모든 발트랩 서비스의 기반",
+    "description": "SafeWay는 다양한 헬스케어 서비스를 하나로 연결하는 통합 데이터 인프라 플랫폼입니다. 안전하고 신뢰할 수 있는 의료 데이터 수집·분석·공유 체계를 통해, 개인과 산업 현장 모두에서 더 나은 건강 결과를 만들어냅니다.",
+    "feature1Title": "통합 데이터 파이프라인",
+    "feature1Desc": "다양한 디바이스와 플랫폼에서 수집된 건강 데이터를 표준화하여 안전하게 통합 관리",
+    "feature2Title": "실시간 분석 엔진",
+    "feature2Desc": "수집된 데이터를 실시간으로 분석하여 즉각적인 인사이트와 알림을 제공",
+    "feature3Title": "보안·컴플라이언스",
+    "feature3Desc": "의료 데이터 국제 표준(HL7 FHIR)과 개인정보보호법을 준수한 최고 수준의 데이터 보안",
+    "feature4Title": "확장형 API",
+    "feature4Desc": "표준화된 Open API로 다양한 서드파티 서비스 및 의료기관과의 연동 지원"
+  },
+  "services": {
+    "badge": "서비스 라인업",
+    "title": "SafeWay 위에서 작동하는\n6가지 헬스케어 솔루션",
+    "subtitle": "각 서비스는 SafeWay 플랫폼 위에서 유기적으로 연결되어, 개인·산업·반려동물 모든 영역의 건강을 지킵니다.",
+    "viewMore": "자세히 보기",
+    "comingSoon": "준비 중",
+    "safeway": {
+      "name": "SafeWay",
+      "category": "헬스케어 플랫폼",
+      "desc": "발트랩 모든 솔루션의 기반이 되는 통합 헬스케어 데이터 플랫폼. 산업 현장부터 개인 건강, 반려동물 케어까지 모든 서비스가 SafeWay 위에서 연결됩니다."
+    },
+    "safelync": {
+      "name": "SafeLync",
+      "category": "원격의료",
+      "desc": "언제 어디서나 의료진과 환자를 안전하게 연결하는 비대면 의료 솔루션. 화상 진료, 처방 관리, 건강 기록 공유를 하나의 플랫폼에서."
+    },
+    "safeentry": {
+      "name": "SafeEntry",
+      "category": "산업 안전",
+      "desc": "산업 현장 진입 전 근로자의 건강 상태를 빠르고 정확하게 평가. 위험 요소를 사전에 차단하여 안전한 작업 환경을 구축."
+    },
+    "safesync": {
+      "name": "SafeSync",
+      "category": "근로자 건강관리",
+      "desc": "산업 현장 근로자의 생체 신호를 모니터링. 이상 징후를 감지 하여 재해를 예방. 근로자의 건강과 현장의 안전을 동기화합니다."
+    },
+    "safesteppro": {
+      "name": "SafeStep Pro",
+      "category": "만성질환 관리",
+      "desc": "당뇨, 고혈압 등 만성질환 환자를 위한 전문 상시 건강관리 서비스. 개인 맞춤형 건강 계획과 의료진 연계 지원."
+    },
+    "safesteplit": {
+      "name": "SafeStep Lite",
+      "category": "일반 건강관리",
+      "desc": "일반인을 위한 가벼운 상시 건강관리 솔루션. 걸음 수, 수면, 스트레스 등 일상 건강 데이터를 쉽고 직관적으로 관리."
+    },
+    "safestep": {
+      "name": "SafeStep",
+      "category": "건강관리",
+      "desc": "만성질환 환자부터 일반인까지 커버하는 상시 건강관리 솔루션. Pro(만성질환 전문 관리)와 Lite(일상 건강관리) 두 플랜으로 모든 수준의 건강을 지원합니다."
+    },
+    "safepaws": {
+      "name": "SafePaws",
+      "category": "동물 케어",
+      "desc": "반려동물과 축산 동물의 건강을 전문적으로 관리. IoT 디바이스 연동과 AI 분석으로 동물 건강 이상을 조기에 발견."
+    }
+  },
+  "ecosystem": {
+    "badge": "생태계 구조",
+    "title": "하나의 플랫폼,\n무한한 연결",
+    "subtitle": "SafeWay는 발트랩 모든 서비스의 뿌리입니다. 숲의 균류 네트워크처럼, 보이지 않는 곳에서 모든 생명을 연결하고 지탱합니다.",
+    "platformLabel": "SafeWay 플랫폼 기반 서비스",
+    "panelHint": "다이어그램의 각 서비스 노드를 클릭하면 상세 정보를 확인할 수 있습니다. 모든 서비스는 SafeWay 플랫폼을 중심으로 유기적으로 연결되어 있습니다."
+  },
+  "about": {
+    "badge": "발트랩 소개",
+    "title": "Wald(숲)처럼\n건강한 세상을 만듭니다",
+    "description1": "발트랩(Wald Lab)은 '숲(Wald)'에서 이름을 따왔습니다. 숲은 수천 종의 생명체가 서로 의존하며 건강한 생태계를 이루듯, 저희는 사람·동물·환경이 함께 건강한 세상을 만드는 기술을 개발합니다.",
+    "description2": "발트랩(Wald Lab)은 디지털 헬스케어의 가능성을 깊이 있게 탐구하는 **연구소**입니다.\n\n우리는 단순한 앱을 넘어 신뢰할 수 있는 의료 데이터 인프라로 건강 격차를 줄이고 모두가 더 나은 삶을 누리는 세상을 지향합니다.",
+    "value1Title": "신뢰",
+    "value1Desc": "의료 데이터는 가장 민감한 개인 정보입니다. 우리는 최고 수준의 보안과 투명성을 약속합니다.",
+    "value2Title": "연결",
+    "value2Desc": "의료진, 환자, 산업 현장, 반려동물까지 — 모든 건강 데이터를 하나의 생태계로 연결합니다.",
+    "value3Title": "혁신",
+    "value3Desc": "AI와 IoT 기술을 통해 예방 중심의 미래 의료 패러다임을 선도합니다.",
+    "waldMeaning": "Wald = 숲",
+    "forestQuote": "\"숲처럼 건강한 세상,",
+    "forestQuote2": "모든 생명이 연결되는 생태계\"",
+    "statCard1Line1": "헬스케어",
+    "statCard1Line2": "솔루션",
+    "statCard2Line1": "통합 데이터",
+    "statCard2Line2": "플랫폼"
+  },
+  "cta": {
+    "title": "발트랩과 함께\n헬스케어의 미래를 만드세요",
+    "subtitle": "SafeWay 플랫폼과 다양한 서비스에 대해 더 알고 싶으신가요? 지금 바로 문의하세요.",
+    "primary": "도입 문의하기",
+    "secondary": "제품 데모 보기",
+    "emailHintPrefix": "또는 ",
+    "emailHintSuffix": "로 직접 문의하세요"
+  },
+  "heritage": {
+    "badge": "Certified Expertise",
+    "titleLine1": "25년이 쌓아올린 ",
+    "titleHighlight": "헬스케어의 신뢰",
+    "desc": "2003년 국내 원격의료의 태동기부터 직접 솔루션을 설계·개발해온 대표 현영호의 검증된 전문성이 발트랩의 기술적 토대입니다.",
+    "chipPrefix": "이 섹션의 모든 이력·수치는 법인 실적이 아닌\u00a0",
+    "chipBold": "대표자 및 핵심 인력의 개인 전문성(Expertise)",
+    "chipSuffix": "에 기반합니다.",
+    "stat0Suffix": "년+",
+    "stat0Label": "원격의료 전문 경험",
+    "stat0Sub": "2000년대 초반부터",
+    "stat1Suffix": "개",
+    "stat1Label": "프로젝트 설계·자문",
+    "stat1Sub": "PM·설계·개발·자문",
+    "stat2Suffix": "개소",
+    "stat2Label": "시스템 공급·운영",
+    "stat2Sub": "국내외 누적 실적",
+    "stat3Suffix": "개국+",
+    "stat3Label": "글로벌 프로젝트",
+    "stat3Sub": "국제기구 협력 사업",
+    "timelineTitle": "경력 타임라인",
+    "tl0Title": "SW 개발 시작",
+    "tl0Org": "컴스 개발팀 팀장",
+    "tl0Desc": "시스템 개발 커리어 시작 — 의약품 정보 시스템, CRM 등",
+    "tl1Title": "원격의료 전문가로",
+    "tl1Org": "㈜비트컴퓨터 디지털헬스",
+    "tl1Desc": "비트케어 플러스·드림케어 플러스 설계·개발 시작",
+    "tl2Title": "첫 글로벌 진출",
+    "tl2Org": "KOICA · 우크라이나",
+    "tl2Desc": "우크라이나 원격진료 시스템 구축 — 첫 해외 보건의료 인프라",
+    "tl3Title": "공공 영역 확장",
+    "tl3Org": "법무부·국방부·경찰청",
+    "tl3Desc": "교정기관, 국군의무사령부, 독도경비대 원격진료 시스템 구축",
+    "tl4Title": "국제기구 협력",
+    "tl4Org": "EDCF · 몽골",
+    "tl4Desc": "몽골 EDCF National Diagnostic Center, 브라질 아마존 스마트 의료선 개발",
+    "tl5Title": "자문·전략 역할",
+    "tl5Org": "현영시스템즈 Advisor",
+    "tl5Desc": "태국·UAE·캄보디아 스마트 After-Care 실증, 글로벌 디지털헬스 로드쇼",
+    "tl6Title": "비대면 협진 플랫폼",
+    "tl6Org": "㈜창헬스케어 이사",
+    "tl6Desc": "기관 간 협진 플랫폼 설계·구현 — SafeWay 아키텍처의 원형",
+    "tl7Title": "발트랩 창업",
+    "tl7Org": "주식회사 발트랩 대표",
+    "tl7Desc": "25년 노하우를 집대성한 SafeWay 플랫폼 론칭",
+    "globalTitle": "글로벌 보건의료 인프라 구축 이력",
+    "globalBadge": "국제기구 협력 프로젝트",
+    "gp0Country": "우크라이나",
+    "gp0Project": "원격진료 시스템 구축",
+    "gp1Country": "몽골",
+    "gp1Project": "National Diagnostic & Treatment Center, 사후관리센터 운영",
+    "gp2Country": "캄보디아",
+    "gp2Project": "의과대학 교육시스템, 노인 만성질환 연구, 기술학교",
+    "gp3Country": "태국",
+    "gp3Project": "ICT 기반 의료시스템 해외진출, 스마트 After-Care",
+    "gp4Country": "UAE",
+    "gp4Org": "가톨릭대학교 산학협력단",
+    "gp4Project": "스마트 After-Care 서비스 구축 및 실증",
+    "gp5Country": "브라질",
+    "gp5Org": "산업통상자원부",
+    "gp5Project": "아마존 현지 수출형 스마트 의료선 개발",
+    "evolutionTitle": "경험의 진화: 비트케어에서 SafeWay까지",
+    "ev0Title": "설계·개발의 시대",
+    "ev0Subtitle": "비트케어 플러스 · 드림케어 플러스",
+    "ev0P0": "국내 대표 원격의료 솔루션 직접 설계·개발",
+    "ev0P1": "데스크·이동식카트·병원선·원양선박 등 다양한 폼팩터",
+    "ev0P2": "62개 프로젝트, 673개소 공급·운영",
+    "ev1Title": "공공·글로벌 검증",
+    "ev1Subtitle": "KOICA · EDCF · ODA · UN ESCAP",
+    "ev1P0": "7개국 보건의료 인프라 구축 경험",
+    "ev1P1": "법무부·국방부·경찰청 등 국가기관 협력",
+    "ev1P2": "캄보디아 노인 만성질환 연구 — UN ESCAP 자문",
+    "ev2Title": "SafeWay Platform",
+    "ev2Subtitle": "25년 노하우의 집대성",
+    "ev2P0": "원격의료·건강관리·만성질환을 통합하는 데이터 플랫폼",
+    "ev2P1": "HL7 FHIR · HIPAA 기반 글로벌 표준 아키텍처",
+    "ev2P2": "AI 연계 예방·예측 중심 헬스케어 인프라",
+    "disclosureTitle": "전문성 고지 (Expertise Disclosure)",
+    "disclosureName": "현영호",
+    "disclosureText": "본 섹션에 기재된 프로젝트 수행 이력, 수치 및 경력 사항은 주식회사 발트랩(법인)의 공식 실적이 아닌, 대표이사",
+    "disclosureText2": "및 핵심 인력의 개인 전문성·경험에 기반한 사항입니다. 발트랩은 이 전문성을 토대로 설립되었으며, 법인 실적은 2024년 6월 설립 이후부터 별도 집계됩니다."
+  },
+  "contact": {
+    "pageTitle": "도입 문의",
+    "pageSubtitle": "SafeWay 플랫폼과 서비스에 대해 궁금하신 점을 남겨주세요.\n빠른 시일 내에 담당자가 연락드리겠습니다.",
+    "badge": "Contact Us",
+    "backToHome": "홈으로",
+    "form": {
+      "service": "문의 서비스",
+      "servicePlaceholder": "문의하실 서비스를 선택해주세요",
+      "orgName": "기관명 / 회사명",
+      "orgNamePlaceholder": "기관명 또는 회사명을 입력해주세요",
+      "contactName": "담당자 이름",
+      "contactNamePlaceholder": "이름을 입력해주세요",
+      "phone": "연락처",
+      "phonePlaceholder": "010-0000-0000",
+      "email": "이메일",
+      "emailPlaceholder": "example@company.com",
+      "inquiry": "상세 문의 내용",
+      "inquiryPlaceholder": "문의하실 내용을 자세히 적어주세요. (최소 10자 이상)",
+      "privacy": "개인정보 수집 및 이용에 동의합니다. (필수)",
+      "privacyDesc": "수집된 개인정보는 문의 처리 목적으로만 사용됩니다.",
+      "submit": "문의 접수하기",
+      "submitting": "접수 중..."
+    },
+    "services": {
+      "safelync":    "SafeLync · 원격의료",
+      "safesync":    "SafeSync · 산업 현장 근로자 건강관리",
+      "safeentry":   "SafeEntry · 배치전 건강진단",
+      "safesteppro": "SafeStep Pro · 만성질환 관리",
+      "safesteplit": "SafeStep Lite · 일반 건강관리",
+      "safepaws":    "SafePaws · 동물 케어",
+      "consulting":  "컨설팅 및 기타"
+    },
+    "errors": {
+      "service": "문의 서비스를 선택해주세요",
+      "orgName": "기관명을 입력해주세요",
+      "contactName": "담당자 이름을 입력해주세요",
+      "phone": "연락처를 입력해주세요",
+      "phoneInvalid": "연락처 형식이 올바르지 않습니다 (숫자 10자리 이상)",
+      "email": "올바른 이메일 주소를 입력해주세요",
+      "emailInvalid": "이메일 형식이 올바르지 않습니다",
+      "inquiry": "문의 내용을 10자 이상 입력해주세요",
+      "privacy": "개인정보 수집 및 이용에 동의해주세요"
+    },
+    "success": {
+      "title": "문의가 성공적으로 접수되었습니다",
+      "message": "빠른 시일 내에 담당자가 연락드리겠습니다.\n감사합니다.",
+      "close": "확인",
+      "backToHome": "홈으로 돌아가기"
+    }
+  },
+  "safesyncPage": {
+    "nav": { "services": "서비스", "contact": "문의하기" },
+    "hero": {
+      "badge1": "SafeSync · 근로자 상시 건강관리",
+      "badge2": "공단 '어울림' 7대 보건관리 로직 계승",
+      "title1": "스마트폰으로 들어온",
+      "title2": "우리 회사 의무실",
+      "desc1": "SafeSync는 '근로자의 건강 지수' 와 '현장의 안전 가이드라인' 을 동기화(Sync) 하는 산업현장 보건관리 솔루션입니다.",
+      "desc2": "뇌심혈관·근골격계 위험도 자동 평가부터 법적 사후관리 증빙 자동화까지.",
+      "ctaPrimary": "도입 문의하기",
+      "ctaSecondary": "보건관리 체계 보기",
+      "stats": {
+        "workcare": { "label": "보건 관리 체계", "value": "7대 영역", "sub": "워크케어 로직 계승" },
+        "algo": { "label": "위험도 알고리즘", "value": "뇌심 · 근골", "sub": "자동 평가 및 분류" },
+        "safelync": { "label": "SafeLync 연동", "value": "즉시 협진", "sub": "이상 감지 시 자동 연결" },
+        "legal": { "label": "법적 사후관리", "value": "자동화", "sub": "원클릭 증빙 생성" }
+      }
+    },
+    "workcare7": {
+      "sectionBadge": "공단 '어울림' 계승 보건관리 체계",
+      "title": "현장적용으로 증명한 7대 보건 관리 영역",
+      "subtitle": "검증된 보건 관리 프로세스를 SafeSync가 모바일·웹 환경으로 구현합니다.",
+      "pillars": {
+        "basic": { "num": "01", "name": "기초검사", "desc": "혈압·혈당·체중·체지방 기초 바이탈 측정 및 이력 관리. 연동 기기를 통해 결과 자동 입력." },
+        "cerebro": { "num": "02", "name": "뇌심혈관 예방", "desc": "C-CDCI 위험인자 자동 평가. 위험도 산출 및 고위험자 SafeLync 즉시 연결." },
+        "musculo": { "num": "03", "name": "근골격계 예방", "desc": "VAS 통증 점수 기반 신체 부위별 위험도 매핑. 개선 우선순위 자동 산출." },
+        "mental": { "num": "04", "name": "심리상담", "desc": "HRV 측정 및 스트레스 척도지 자동화. 트라우마 상담 이력 통합 관리." },
+        "lifestyle": { "num": "05", "name": "생활습관 관리", "desc": "금연·절주·영양·운동 4개 상담 통합 관리. 니코틴의존도·음주 간이선별검사 내장." },
+        "workenv": { "num": "06", "name": "작업환경 관리", "desc": "근무 환경 및 유해위험요인 설문 자동화. 부서·직군별 환경 위험도 집계." },
+        "followup": { "num": "07", "name": "사후관리 & 통계", "desc": "검진 결과 판정 및 사후 관리 자동 기록. 기업용 보건 통계·법적 증빙 원클릭 생성." }
+      }
+    },
+    "algorithm": {
+      "sectionBadge": "질환 예방 알고리즘",
+      "title": "위험도 자동 평가 — 뇌심혈관 & 근골격계",
+      "subtitle": "수집된 데이터를 실시간으로 분석하여 질환 위험 신호를 조기에 포착하고 즉시 대응합니다.",
+      "cerebro": {
+        "title": "뇌심혈관 위험도 (C-CDCI)",
+        "inputsLabel": "입력 지표",
+        "inputs": "혈압 · 혈당 · 콜레스테롤 · 흡연 · 음주 · BMI · 가족력 · 스트레스",
+        "processLabel": "자동 평가",
+        "process": "C-CDCI 위험인자 분석 엔진",
+        "low": "저위험", "mid": "중위험", "high": "고위험", "critical": "최고위험",
+        "action": "고위험 이상 → SafeLync 원격 상담 자동 활성화"
+      },
+      "musculo": {
+        "title": "근골격계 위험도 (VAS)",
+        "inputsLabel": "입력 지표",
+        "inputs": "신체 부위별 VAS 통증 점수 · 작업 자세 · 유해위험요인",
+        "processLabel": "자동 평가",
+        "process": "부위별 위험도 산출 및 매핑",
+        "low": "정상", "mid": "경계", "high": "증상", "critical": "위험",
+        "action": "개선 우선순위 자동 산출 → 근골예방 상담 배정"
+      },
+      "bridge": {
+        "title": "SafeLync 즉시 협진 연결",
+        "desc": "뇌심혈관 고위험 또는 근골격계 위험 판정 시, SafeSync는 SafeLync 진료 채널을 이벤트 기반으로 즉시 활성화합니다. 근로자는 앱 내에서 바로 원격 상담을 시작할 수 있습니다."
+      }
+    },
+    "dashboard": {
+      "sectionBadge": "기업용 보건 대시보드",
+      "title": "보건관리자를 위한 통합 관제 화면",
+      "subtitle": "전 사업장 근로자의 보건 현황을 실시간으로 집계하고, 법적 사후관리 증빙을 자동화합니다.",
+      "features": {
+        "realtime": { "title": "실시간 현황 집계", "desc": "전체 이용자·고위험군·상담 완료율을 실시간 집계. 보건관리자가 현황을 즉시 파악합니다." },
+        "stats": { "title": "보건 통계 분석", "desc": "부서별·기간별 상담 현황, 질환 위험도 분포, 생활습관 개선 추이를 차트로 시각화합니다." },
+        "legal": { "title": "법적 증빙 자동화", "desc": "산업안전보건법 상 요구 보건 관리 기록을 시스템이 자동 생성하여 원클릭으로 제출합니다." },
+        "multisite": { "title": "다사업장 통합 관리", "desc": "복수 사업장을 단일 대시보드에서 통합 관리. 본사 단위 보건 보고서 자동 생성." }
+      }
+    },
+    "techbg": {
+      "sectionBadge": "기술적 배경",
+      "title": "현장에 적용한 설계 전문성과 운영 노하우",
+      "subtitle": "SafeSync의 보건 관리 로직은 검증된 시스템 전문성 위에 구축됩니다.",
+      "pillars": {
+        "workcare": {
+          "badge": "전문성 계승",
+          "title": "'어울림','워크케어' 시스템 설계·운영 전문성",
+          "desc": "20년 이상 국내 주요 기업 의무실에서 운영된 워크케어(WorkCare) 시스템의 설계·운영 전문성을 SafeSync가 직접 계승합니다."
+        },
+        "public": {
+          "badge": "국가급 검증",
+          "title": "공공·국가기관 운영 노하우",
+          "desc": "국방·교정·보건·응급 등 고신뢰·고보안을 요구하는 국내 핵심 공공기관의 시스템 구축 경험이 SafeSync 아키텍처에 반영됩니다."
+        },
+        "integration": {
+          "badge": "SafeWay 생태계",
+          "title": "SafeWay 통합 아키텍처",
+          "desc": "SafeLync·SafeEntry 등 SafeWay 생태계와 이벤트 기반으로 실시간 연동이 가능합니다. 이상 감지 즉시 협진 채널이 활성화되는 통합 설계입니다."
+        },
+        "security": {
+          "badge": "글로벌 표준 보안",
+          "title": "근로자 건강정보 최고 수준 보안",
+          "desc": "AES-256 암호화, 역할 기반 접근 제어(RBAC), 개인정보보호법·의료법 완전 준수 구조로 민감 건강 정보를 보호합니다."
+        }
+      }
+    },
+    "cta": {
+      "title1": "우리 회사 의무실을",
+      "title2": "스마트폰으로 시작하세요",
+      "desc1": "검증된 시스템 설계의 보건관리 체계를 현장에 도입합니다.",
+      "desc2": "도입 문의부터 시스템 설정까지 Wald Lab이 함께합니다.",
+      "primaryButton": "도입 문의하기",
+      "secondaryButton": "전체 서비스 보기"
+    }
+  },
+  "safelyncPage": {
+    "nav": { "services": "서비스", "contact": "문의하기" },
+    "hero": {
+      "badge": "SafeLync · 원격의료 플랫폼",
+      "badgeStandard": "국제 표준 기반 아키텍처",
+      "title1": "어디서나, 안전하게",
+      "title2": "의료진과 환자를 잇다",
+      "desc1": "20년의 원격의료 시스템 설계 노하우로 구현한 비대면 진료 플랫폼.",
+      "desc2": "국내외 공공·의료기관의 요구를 충족하는 국제 표준 기반 아키텍처.",
+      "ctaPrimary": "도입 문의하기",
+      "ctaSecondary": "기술 배경 보기",
+      "stats": {
+        "standard": { "label": "의료정보 표준", "value": "HL7 FHIR", "sub": "국제 표준 완전 준수" },
+        "sector": { "label": "공공 전문 분야", "value": "4대 부문", "sub": "국방·교정·보건·응급" },
+        "global": { "label": "글로벌 경험", "value": "3개 대륙", "sub": "유럽·아시아·남미" },
+        "years": { "label": "아키텍처 설계 경력", "value": "20년+", "sub": "원격의료 전문" }
+      }
+    },
+    "arch": {
+      "sectionBadge": "Consultation Architecture",
+      "title": "SafeLync를 중심으로 한 서비스 협진 구조",
+      "subtitle": "SafeWay 플랫폼 위에서, 모든 서비스는 SafeLync를 허브로 실시간 협진한다.",
+      "foundationLabel": "SafeWay Platform — Infrastructure Foundation",
+      "hubLabel": "SafeLync — Central Consultation Hub",
+      "connections": {
+        "peer": {
+          "id": "01",
+          "route": "SafeLync ↔ SafeLync",
+          "channel": "CHANNEL: peer_consultation",
+          "title": "의료진 간 협진",
+          "desc": "동일 플랫폼 내 의료진 간 전문과 협진 및 2차 소견을 요청한다. 케이스 공유와 병행 진료를 표준 API로 처리한다."
+        },
+        "entry": {
+          "id": "02",
+          "route": "SafeLync ← SafeEntry",
+          "channel": "TRIGGER: entry_health_anomaly_detected",
+          "title": "현장 진입 이상 시 SafeSync를 통해 정보 활용",
+          "desc": "SafeEntry의 배치전 측정에서 이상이 감지되면 SafeSync를 통해 SafeLync에 정보를 제공하여 진료 채널이 활성화된다."
+        },
+        "sync": {
+          "id": "03",
+          "route": "SafeLync ← SafeSync",
+          "channel": "CHANNEL: realtime_biometric_stream",
+          "title": "상시 모니터링 데이터 연동",
+          "desc": "SafeSync가 수집한 생체 신호 스트림이 SafeLync 진료 세션에 직접 제공된다. 원격 모니터링 기반 진료를 구현한다."
+        },
+        "step": {
+          "id": "04",
+          "route": "SafeLync ← SafeStep Pro / Lite",
+          "channel": "CHANNEL: care_plan_context_feed",
+          "title": "케어 플랜 및 누적 건강 기록 연동",
+          "desc": "SafeStep의 케어 플랜, 복약 이력, 누적 활동 데이터가 SafeLync 진료 컨텍스트로 자동 제공된다."
+        }
+      }
+    },
+    "value": {
+      "sectionBadge": "핵심 가치",
+      "title": "비대면 진료의 모든 것,",
+      "titleHighlight": "하나의 플랫폼으로",
+      "subtitle": "화상을 통한 원격진료부터 처방 관리, 다기관 협진까지 - 의료진간, 의료진과 환자간을 안전하게 연결하는 통합 원격의료 솔루션입니다.",
+      "cards": {
+        "consult": {
+          "title": "화상 진료",
+          "desc": "저지연 HD 영상 통화 기반 비대면 진료. 진료 녹화, 전자서명 처방, 의료기록 동기화까지 원스톱으로 처리합니다."
+        },
+        "prescription": {
+          "title": "전자처방 관리",
+          "desc": "PKI 전자서명 기반 법적 유효 전자처방전 발행·전달·이력 관리. 약국 및 약사 시스템 자동 연동."
+        },
+        "collab": {
+          "title": "기관 간 협진",
+          "desc": "이종 EMR·HIS 시스템 간 표준 API로 협진 요청·영상 공유·결과 회신을 실시간 연결합니다."
+        }
+      }
+    },
+    "techbg": {
+      "sectionBadge": "Global & Public Standard",
+      "title": "20년이 증명하는 원격의료 전문성",
+      "subtitle": "SafeLync는 단순한 소프트웨어 이상입니다. 지난 20년간 국내외 최전선에서 축적한 대규모 원격 의료 아키텍처 설계 노하우의 결정체입니다.",
+      "credentialBadge": "원격의료 시스템 설계·운영 전문가 그룹",
+      "credentialDesc": "국내외 공공·의료 기관이 요구하는 최고 수준의 신뢰성·보안성·상호운용성을 설계 단계부터 구현합니다.",
+      "global": {
+        "label": "글로벌 프로젝트 경험",
+        "title": "3개 대륙, 다양한 의료 환경(고비사막,아마존 병원선 등)",
+        "desc": "유럽·아시아·남미 등 의료 인프라와 규제 체계가 다른 다수 지역에서 원격진료 시스템을 성공적으로 설계·구축한 실적을 보유합니다.",
+        "point1": "지역별 의료 표준 및 법적 규제 요건 적응 설계",
+        "point2": "다국어·다문화 운영 환경 아키텍처 경험",
+        "point3": "국제 공공보건 기구 협력 기반 인프라 구축",
+        "point4": "현지 의료기관·정부기관 시스템 통합 경험"
+      },
+      "public": {
+        "label": "국내 공공기관 전문성",
+        "title": "4대 공공 분야 시스템 구축",
+        "desc": "고신뢰·고보안을 요구하는 국내 핵심 공공 분야의 원격진료 시스템을 설계·운영한 경험이 SafeLync 아키텍처에 직접 반영됩니다.",
+        "sectors": {
+          "defense": { "name": "국방", "desc": "군 원격의료 시스템 구축·운영" },
+          "corrections": { "name": "교정", "desc": "교정시설 원격진료 인프라 설계" },
+          "public": { "name": "공중보건(공공의료,보건선)", "desc": "공공 보건·의료원 비대면 진료" },
+          "emergency": { "name": "응급·특수(해경,원양선박)", "desc": "도서산간·특수환경 원격 응급의료" }
+        }
+      },
+      "standards": {
+        "title": "국제 의료 정보 표준 준수",
+        "subtitle": "모든 연동 인터페이스는 국제 표준을 기반으로 설계되어, 의료기관간 표준에 기반한 연동이 수월합니다.",
+        "fhir": { "name": "HL7 FHIR R4", "desc": "의료 데이터 교환 국제 표준" },
+        "dicom": { "name": "DICOM 3.0", "desc": "의료 영상 정보 표준" },
+        "icd": { "name": "ICD-10/11", "desc": "국제 질병 분류 코드" },
+        "openapi": { "name": "OpenAPI 3.0", "desc": "표준 REST API 인터페이스" },
+        "pki": { "name": "PKI 전자서명", "desc": "전자처방전 법적 유효성" }
+      },
+      "interop": {
+        "title": "이종 시스템 간 표준에 기반한 협진(Consultation) 구현",
+        "desc": "SafeLync의 핵심 기술력은 서로 다른 EMR·HIS·PACS 시스템 사이에 표준 기반 API 브릿지를 구성하여 진료 요청, 영상 공유, 결과 회신을 실시간으로 연결하는 데 있습니다. 병원 교체 없이, 기존 인프라 위에서 협진이 시작됩니다."
+      },
+      "stats": {
+        "years": { "value": "20년+", "label": "원격의료 아키텍처 설계 경력" },
+        "sectors": { "value": "4개 부문", "label": "국내 핵심 공공 분야 구축" },
+        "continents": { "value": "3개 대륙", "label": "글로벌 프로젝트 수행 지역" },
+        "standards": { "value": "5종+", "label": "국제 의료정보 표준 준수" }
+      }
+    },
+    "features": {
+      "sectionBadge": "핵심 기능",
+      "title": "SafeLync가 다른 이유",
+      "subtitle": "원격의료의 모든 과제를 검증된 국가급 아키텍처로 해결합니다.",
+      "cards": {
+        "video": { "title": "HD 화상 진료", "desc": "WebRTC 기반 저지연 HD 화상 진료 엔진. 네트워크 불안정 환경에서도 적응형 코덱으로 안정적 연결을 유지합니다." },
+        "emr": { "title": "EMR/HIS 즉시 연동", "desc": "기존 병원 시스템 교체 없이 HL7 FHIR API로 즉시 연동. 환자 데이터 이중화·재입력 불필요." },
+        "prescription": { "title": "법적 전자처방전", "desc": "PKI 전자서명 기반 법적 유효 전자처방전 발행 및 약국 시스템 자동 전달." },
+        "security": { "title": "의료 데이터 보안", "desc": "전송 구간 E2E 암호화, 저장 데이터 AES-256 암호화. 개인정보보호법·의료법 완전 준수 구조." },
+        "multisite": { "title": "다기관 협진 허브", "desc": "병원·의원·보건소·공공기관 간 협진 요청·영상 공유·결과 전달을 단일 플랫폼에서 통합 관리." },
+        "audit": { "title": "진료 감사 추적", "desc": "모든 진료·처방·협진 행위에 불변 감사 로그 생성. 법적·행정적 책임 추적을 완벽히 보장합니다." }
+      }
+    },
+    "cta": {
+      "title1": "검증된 원격의료 전문성을",
+      "title2": "지금 바로 도입하세요",
+      "desc1": "20년의 설계 노하우와 국제 표준 기반 아키텍처로 귀 기관에 최적화된 원격진료 시스템을 구축합니다.",
+      "desc2": "도입 문의부터 맞춤 설계까지 Wald Lab이 함께합니다.",
+      "primaryButton": "도입 문의하기",
+      "secondaryButton": "전체 서비스 보기"
+    }
+  },
+  "safeentryPage": {
+    "nav": {
+      "services": "서비스",
+      "contact": "문의하기"
+    },
+    "hero": {
+      "badgeArticle": "산업안전보건법 제130조",
+      "titleLine1": "배치전 건강진단,",
+      "titleHighlight": "현장에서",
+      "titleTime": "2분 이내",
+      "desc1": "법적 의무인 배치전 건강진단을 SafeEntry로 해결하세요.",
+      "desc2": "혈압·체온·알코올 측정부터 자동 기록·보고까지,",
+      "desc3": " SafeEntry가 사업주의 법적 책임을 완전히 커버합니다.",
+      "ctaPrimary": "도입 문의하기",
+      "ctaSecondary": "실제 화면 보기"
+    },
+    "stats": {
+      "legal": {
+        "label": "법적 근거",
+        "value": "산업안전보건법",
+        "sub": "제130조제2항"
+      },
+      "deadline": {
+        "label": "결과보고 기한",
+        "value": "30일 이내",
+        "sub": "고용노동부 자동 보고"
+      },
+      "exemption": {
+        "label": "면제 인정기간",
+        "value": "6~12개월",
+        "sub": "유해인자별 차등 적용"
+      },
+      "items": {
+        "label": "측정 항목",
+        "valueMain": "4가지",
+        "note": "(*유연한 항목 변경)",
+        "sub": "BP·체온·SpO2·BAC"
+      }
+    },
+    "legal": {
+      "sectionBadge": "법적 의무 & 면제 기준",
+      "titleLine1": "사업주가 반드시 알아야 할",
+      "titleLine2": "배치전 건강진단 제도",
+      "intro1": "2024년 6월 개정된 산업안전보건법 시행규칙에 따라 배치전 건강진단 제도가 강화됐습니다.",
+      "intro2": "미이행 시 사업주에게 법적 책임이 부과됩니다.",
+      "cards": {
+        "employer": {
+          "badge": "산업안전보건법 제130조",
+          "title": "사업주 의무",
+          "items": {
+            "1": "특수건강진단 대상 업무 종사 근로자",
+            "2": "배치 예정 업무 적합성 평가 필수",
+            "3": "배치 전 반드시 건강진단 실시",
+            "4": "위반 시 과태료 등 행정처분 대상"
+          }
+        },
+        "exemption": {
+          "badge": "시행규칙 제203조",
+          "title": "면제 인정 기준",
+          "items": {
+            "1": "7종 특별 유해인자: 6개월 이내 결과",
+            "2": "그 외 174종 유해인자: 12개월 이내",
+            "3": "동일·다른 사업장 모두 인정",
+            "4": "배치일 기준 2024.12.29 이후 적용"
+          }
+        },
+        "report": {
+          "badge": "시행규칙 제209조 (신설)",
+          "title": "결과 보고 의무",
+          "items": {
+            "1": "진단 실시일로부터 30일 이내 보고",
+            "2": "근로자 및 사업주에게 결과 통보",
+            "3": "고용노동부장관(지방관서)에 제출",
+            "4": "2025.1.1부터 배치전진단도 포함"
+          }
+        }
+      },
+      "exemptionSummary": {
+        "title": "유해인자별 면제 인정기간 요약",
+        "leftHeading": "7종 특별 유해인자 — 6개월",
+        "leftHazards": "N,N-디메틸아세트아미드 · 디메틸포름아미드 · 벤젠 · 1,1,2,2-테트라클로로에탄 · 사염화탄소 · 아크릴로니트릴 · 염화비닐",
+        "rightHeading": "그 외 174종 유해인자 — 12개월",
+        "rightDesc1": "배치일 기준으로 산정하며, 건강진단결과 사본 제출 시 인정.",
+        "rightDesc2": "배치전·특수·수시·임시건강진단 모두 포함."
+      }
+    },
+    "mockup": {
+      "sectionBadge": "실제 구동 화면",
+      "title": "PMIS 진단키트 — SafeEntry 탑재",
+      "captionLine1": "간소한 터치로 생체 지표를 측정, 즉시 업무 적합 여부를 판정",
+      "captionLine2": "즉시 업무 적합 여부를 판정합니다.",
+      "tabs": {
+        "measurement": "측정 결과 화면",
+        "dashboard": "관리자 대시보드"
+      },
+      "items": {
+        "bp": {
+          "label": "혈압 (BP)",
+          "desc": "수축기/이완기·맥박\n이상 시 자동 배제 판정"
+        },
+        "temp": {
+          "label": "체온 (Temp)",
+          "desc": "발열 여부 감지\n37.5°C 초과 시 고열 판정"
+        },
+        "spo2": {
+          "label": "산소포화도 (SpO2)",
+          "desc": "혈중 산소 포화도\n95% 미만 시 이상 판정"
+        },
+        "bac": {
+          "label": "알코올 (BAC)",
+          "desc": "음주 여부 측정\n0.03% 이상 시 업무 배제"
+        }
+      }
+    },
+    "features": {
+      "sectionBadge": "핵심 기능",
+      "title": "SafeEntry 가 다른 이유",
+      "subtitle": "단순 측정 기기가 아닙니다. 법적 의무 이행부터 데이터 관리까지 올인원.",
+      "cards": {
+        "instant": {
+          "title": "2분 즉시 판정",
+          "desc": "혈압·체온·산소포화도·알코올을 동시에 측정하고, AI 기준값으로 즉시 업무 적합 여부를 판정합니다."
+        },
+        "legal": {
+          "title": "법령 기준 자동 적용",
+          "desc": "산업안전보건법 시행규칙의 판정 기준을 내장해, 관리자의 적합/배제 판단을 돕습니다."
+        },
+        "site": {
+          "title": "현장시스템과 연계",
+          "desc": "사업장 현장관리시스템과 연계하여 판정 결과 및 조치 이력의 동기화가 가능합니다."
+        },
+        "storage": {
+          "title": "측정 기록 자동 저장",
+          "desc": "모든 측정 데이터를 클라우드에 자동 저장. 30일 이내 보고 의무도 원클릭으로 처리합니다."
+        },
+        "dashboard": {
+          "title": "관리자 대시보드",
+          "desc": "기간별 측정 기록 조회, 배제 사유 통계, 팀별 현황 등을 한눈에 파악하는 웹 대시보드를 제공합니다."
+        },
+        "multiSite": {
+          "title": "다중 사업장 관리",
+          "desc": "여러 현장·사업장의 측정 기록을 통합 관리. 본사 단위 안전 현황 보고 기능을 제공합니다."
+        }
+      }
+    },
+    "comparison": {
+      "title": "도입 전 vs 도입 후",
+      "subtitle": "SafeEntry 도입으로 달라지는 현장 안전 관리",
+      "beforeLabel": "SafeEntry 없이",
+      "before": {
+        "items": {
+          "1": "건강진단 기록 수기 관리 → 분실·오기 위험",
+          "2": "면제 인정기간 수동 계산 → 누락 위험",
+          "3": "30일 보고 기한 개별 추적 → 행정처분 위험",
+          "4": "배제 기준 담당자마다 상이 → 일관성 결여",
+          "5": "출근 시 혈압·체온 측정 누락 → 법적 공백"
+        }
+      },
+      "afterLabel": "SafeEntry 도입 후",
+      "after": {
+        "items": {
+          "1": "모든 측정 기록 클라우드 자동 저장",
+          "2": "면제 인정기간 시스템이 자동 계산",
+          "3": "30일 보고 기한 알림 및 원클릭 제출",
+          "4": "법령 기준 내장으로 일관된 판정",
+          "5": "30초 키오스크 측정으로 100% 이행률"
+        }
+      }
+    },
+    "cta": {
+      "titleLine1": "지금 바로 SafeEntry를",
+      "titleLine2": "현장에 도입하세요",
+      "desc1": "도입 문의부터 현장 설치까지 Wald Lab이 함께합니다.",
+      "desc2": "법적 의무를 걱정 없이, 현장 안전은 확실하게.",
+      "primaryButton": "도입 문의하기",
+      "secondaryButton": "전체 서비스 보기"
+    },
+    "process": {
+      "sectionBadge": "4단계 핵심 로직",
+      "title": "인증부터 관제까지, 끊김 없는 안전 프로세스",
+      "subtitle": "현장 진입부터 고용노동부 보고까지 단 2분 — 4단계로 완결됩니다.",
+      "timeLabel": "전체 프로세스 소요 시간",
+      "timeValue": "약 2분 이내",
+      "steps": {
+        "auth": {
+          "label": "인증",
+          "title": "근로자 신원 확인",
+          "desc": "QR코드 또는 사번 입력으로 근로자를 빠르게 식별합니다."
+        },
+        "measure": {
+          "label": "측정",
+          "title": "4대 생체 지표 측정",
+          "desc": "BP·체온·SpO2·BAC를 단일 키오스크에서 30초 내 동시 측정합니다."
+        },
+        "judge": {
+          "label": "판정",
+          "title": "자동 업무 적합 판정",
+          "desc": "산업안전보건법 기준값으로 즉시 적합/배제를 판정하고 근거 데이터를 생성합니다."
+        },
+        "control": {
+          "label": "관제",
+          "title": "실시간 대시보드 관제",
+          "desc": "전 현장 현황을 대시보드로 통합 관리, 자동 보고서를 30일 내 제출합니다."
+        }
+      }
+    },
+    "vitals": {
+      "sectionBadge": "중대재해 예방 법적 근거",
+      "title": "단순 기록을 넘어, 법적 근거가 됩니다",
+      "subtitle": "4대 생체 지표 측정은 중대재해처벌법이 요구하는 '안전보건 확보 의무' 이행의 객관적 증거를 만듭니다.",
+      "cards": {
+        "bp": {
+          "name": "혈압 (BP)",
+          "value": "수축기 ≥ 140 mmHg",
+          "risk": "뇌졸중·심근경색 고위험",
+          "action": "즉시 업무 배제",
+          "legal": "중대재해처벌법 제4조 — 건강 확보 의무"
+        },
+        "temp": {
+          "name": "체온 (Temp)",
+          "value": "≥ 37.5°C",
+          "risk": "감염병·열사병 전조 상태",
+          "action": "현장 진입 즉시 차단",
+          "legal": "산업안전보건법 제38조 연계"
+        },
+        "spo2": {
+          "name": "산소포화도 (SpO2)",
+          "value": "< 95%",
+          "risk": "저산소증·호흡기 위험",
+          "action": "고위험 작업 절대 배제",
+          "legal": "밀폐공간작업 프로그램 법적 요건"
+        },
+        "bac": {
+          "name": "알코올 (BAC)",
+          "value": "≥ 0.03%",
+          "risk": "판단력 저하·중장비 사고 위험",
+          "action": "고소·중장비 작업 절대 배제",
+          "legal": "산업안전보건법 음주 금지 근거 확보"
+        }
+      },
+      "legalCallout": "모든 측정 데이터는 타임스탬프·전자서명과 함께 클라우드에 자동 저장되어, 중대재해 발생 시 사업주의 의무 이행 증거로 활용됩니다. 기록 삭제·위조 불가 구조로 법적 안전망을 보장합니다."
+    },
+    "trust": {
+      "sectionBadge": "Powered by 20 Years of Expertise",
+      "title": "20년 연구가 증명한 전문성",
+      "subtitle": "SafeEntry는 단순한 측정 솔루션이 아닙니다. 20년간 축적된 산업 보건 연구 성과와 국제 학술 검증을 기반으로 설계된, 근거 중심 현장 안전 시스템입니다.",
+      "springer": {
+        "badge": "국제 학술지 게재",
+        "journal": "Springer International",
+        "title": "국제 학술지 Springer 게재",
+        "desc": "워크케어 시스템 연구 성과가 Springer 국제 학술지에 게재되어 글로벌 학술 기관의 검증을 받았습니다. SafeEntry는 이 연구의 실용적 구현체입니다."
+      },
+      "workcare": {
+        "badge": "전문성 계승",
+        "title": "WorkCare 시스템",
+        "subtitle": "근로자 건강관리 플랫폼 전문성",
+        "desc": "20년간 한전을 포함한 주요 산업 현장에서 운영된 워크케어(WorkCare) 근로자 건강관리 시스템의 설계·운영 전문성이 SafeEntry에 직접 계승됩니다."
+      },
+      "validation": {
+        "badge": "현장 실증",
+        "title": "한전 外 대기업 현장",
+        "subtitle": "Field Test 진행 중",
+        "desc": "한국전력공사 등 대형 산업 현장에서 현재 Field Test를 진행 중입니다. 실제 운영 환경에서 시스템 안정성과 법적 적합성을 검증하고 있습니다."
+      },
+      "stats": {
+        "years": { "value": "20년+", "label": "산업보건 연구 및 시스템 운영" },
+        "papers": { "value": "Springer", "label": "국제 학술지 게재 논문" },
+        "fieldtest": { "value": "한전 外", "label": "실제 산업 현장 Field Test" }
+      },
+      "disclaimer": "본 전문성은 주식회사 발트랩 핵심 인력의 개인 전문성·경험 및 전략적 기술 제휴 파트너의 검증된 이력에 기반합니다."
+    }
+  },
+  "news": {
+    "badge": "News",
+    "title": "공지 · 소식",
+    "subtitle": "Wald Lab의 주요 소식과 업데이트를 한눈에 확인하세요.",
+    "readMore": "자세히 보기",
+    "close": "닫기",
+    "card1": {
+      "tag": "지적재산권",
+      "title": "SafeEntry 상표 출원 완료",
+      "excerpt": "산업 안전 솔루션 SafeEntry의 상표 출원 절차를 완료하였습니다.",
+      "date": "2025.03",
+      "detailTitle": "SafeEntry 상표 출원 완료",
+      "detailP1": "주식회사 Wald Lab(이하 \"회사\")은 산업 현장 배치전 건강진단 솔루션 「SafeEntry」에 대해 상표 출원을 완료하였습니다.",
+      "detailP2": "이번 조치는 서비스 브랜드의 법적 보호를 강화하고, 고객사와 파트너에게 일관된 품질과 신뢰를 제공하기 위한 기반을 마련합니다.",
+      "detailP3": "회사는 앞으로도 지적재산권 관리를 통해 혁신적인 헬스케어·산업안전 서비스를 안정적으로 확대해 나가겠습니다."
+    },
+    "card2": {
+      "tag": "안내",
+      "title": "새 소식을 준비 중입니다",
+      "excerpt": "다음 업데이트에서 만나요. 중요한 공지는 이곳에 안내드립니다.",
+      "date": "—"
+    },
+    "card3": {
+      "tag": "안내",
+      "title": "더 많은 이야기가 곧 공개됩니다",
+      "excerpt": "제품·연구·파트너십 소식을 순차적으로 공유할 예정입니다.",
+      "date": "—"
+    },
+    "sheetLoading": "공지를 불러오는 중…",
+    "sheetEmpty": "시트에서 가져올 공지가 없습니다. 시트 첫 행 헤더와 데이터를 확인해 주세요.",
+    "viewSamplePage": "시트 연동 샘플 페이지",
+    "sheetPoweredBy": "Google Sheets 상위 3행"
+  },
+  "sheetSample": {
+    "title": "Google Sheets 연동 샘플",
+    "subtitle": "메인 공지는 이 시트의 위에서부터 최대 3개 행을 사용합니다.",
+    "backHome": "홈으로",
+    "statusOn": "연결: 환경변수에 시트가 설정되어 있습니다.",
+    "statusOff": "미설정: .env.local에 GOOGLE_SHEET_ID 또는 GOOGLE_SHEET_CSV_URL을 넣어 주세요.",
+    "columnsTitle": "시트 첫 행(헤더) 예시",
+    "columnsHint": "영문 소문자 헤더 한 줄을 권장합니다. 본문은 셀 안에서 Alt+Enter로 줄바꿈 가능합니다.",
+    "tableCaption": "시트에서 불러온 행 (최대 100개)",
+    "colDate": "date",
+    "colTag": "tag",
+    "colTitle": "title",
+    "colExcerpt": "excerpt",
+    "colBody": "body",
+    "noRows": "데이터 행이 없거나 헤더의 title 열을 찾지 못했습니다.",
+    "errorFetch": "CSV를 가져오지 못했습니다. 시트 공개 범위와 환경변수를 확인하세요.",
+    "apiHint": "API",
+    "apiPath": "/api/sheet-news?limit=3",
+    "stepsTitle": "설정 순서",
+    "step1": "스프레드시트를 열고 공유 → 일반 액세스에서 «링크가 있는 모든 사용자»를 뷰어 이상으로 설정합니다.",
+    "step2": "URL에서 스프레드시트 ID를 복사합니다. ( /d/ 이후 /edit 앞 문자열 )",
+    "step3": ".env.local에 GOOGLE_SHEET_ID=복사한ID 를 저장하고 개발 서버를 다시 시작합니다.",
+    "step4": "다른 탭을 쓰는 경우 GOOGLE_SHEET_GID(시트 하단 탭의 gid= 값)를 지정합니다.",
+    "stepAlt": "또는 브라우저에서 열리는 CSV 전체 URL을 GOOGLE_SHEET_CSV_URL 로 넣을 수 있습니다."
+  },
+  "footer": {
+    "company": "주식회사 발트랩",
+    "tagline": "건강한 생태계를 만드는 기술",
+    "address": "경기도 안양시 | info@waldlab.kr",
+    "location": "경기도 안양시, 대한민국",
+    "copyright": "© 2026 Wald Lab Inc. All rights reserved.",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "servicesTitle": "서비스",
+    "legalTitle": "법적 고지",
+    "bizLabelCompany": "상호",
+    "bizLabelCeo": "대표자",
+    "bizLabelRegNum": "사업자등록번호",
+    "bizLabelPrivacy": "개인정보책임관리자",
+    "bizLabelAddress": "주소",
+    "bizLabelEmail": "이메일",
+    "bizCompany": "주식회사 발트랩",
+    "bizCeo": "현영호",
+    "bizRegNum": "222-88-03231",
+    "bizPrivacyOfficer": "현영호",
+    "bizAddress": "경기도 안양시 동안구 시민대로 230, 지니센터 D동 5654호 (관양동, 평촌아크로타워)",
+    "bizEmail": "info@waldlab.kr",
+    "links": {
+      "platform": "SafeWay 플랫폼",
+      "safelync": "SafeLync",
+      "safeentry": "SafeEntry",
+      "safesync": "SafeSync",
+      "safestep": "SafeStep",
+      "safepaws": "SafePaws"
+    }
+  }
+}

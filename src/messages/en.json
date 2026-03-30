@@ -1,0 +1,866 @@
+{
+  "nav": {
+    "platform": "Platform",
+    "services": "Services",
+    "about": "About",
+    "news": "News",
+    "getStarted": "Contact"
+  },
+  "hero": {
+    "badge": "Digital Health Data Infrastructure",
+    "title": "Technology, Rooted in Care.",
+    "titleLine1": "Technology, Rooted in Care.",
+    "titleLine2": "",
+    "titlePart1": "Technology, Rooted in ",
+    "titleHighlight": "Care",
+    "titlePart2": ".",
+    "tagline": "Bridging Care Through the Digital Forest",
+    "subtitle": "The most trusted healthcare infrastructure, built on 25 years of expertise — SafeWay.",
+    "cta": "Explore Services",
+    "ctaSecondary": "Our Story",
+    "stat1Value": "6+",
+    "stat1Label": "Healthcare Solutions",
+    "stat2Value": "1",
+    "stat2Label": "Unified Data Platform",
+    "stat3Value": "∞",
+    "stat3Label": "Scalability",
+    "safewayLabel": "Foundation of All Services"
+  },
+  "platform": {
+    "badge": "Core Infrastructure",
+    "title": "SafeWay",
+    "subtitle": "The Foundation of All Wald Lab Services",
+    "description": "SafeWay is the unified data infrastructure platform that connects all Wald Lab services. Through a secure and reliable medical data collection, analysis, and sharing system, it creates better health outcomes for both individuals and industrial environments.",
+    "feature1Title": "Unified Data Pipeline",
+    "feature1Desc": "Standardize and securely integrate health data collected from diverse devices and platforms",
+    "feature2Title": "Real-time Analytics Engine",
+    "feature2Desc": "Analyze collected data in real-time to deliver immediate insights and alerts",
+    "feature3Title": "Security & Compliance",
+    "feature3Desc": "Top-tier data security compliant with HL7 FHIR international standards and personal data protection laws",
+    "feature4Title": "Scalable API",
+    "feature4Desc": "Open API standards supporting integration with third-party services and healthcare providers"
+  },
+  "services": {
+    "badge": "Service Lineup",
+    "title": "6 Healthcare Solutions\nPowered by SafeWay",
+    "subtitle": "Each service operates organically on the SafeWay platform, protecting health across individuals, industries, and animals.",
+    "viewMore": "Learn More",
+    "comingSoon": "Coming Soon",
+    "safeway": {
+      "name": "SafeWay",
+      "category": "Healthcare Platform",
+      "desc": "The unified healthcare data platform powering all Wald Lab solutions. Connecting industrial safety, personal health, and animal care — all in one secure infrastructure."
+    },
+    "safelync": {
+      "name": "SafeLync",
+      "category": "Telemedicine",
+      "desc": "A non-face-to-face medical solution that safely connects healthcare providers and patients anytime, anywhere. Video consultations, prescription management, and health record sharing — all in one platform."
+    },
+    "safeentry": {
+      "name": "SafeEntry",
+      "category": "Industrial Safety",
+      "desc": "Quickly and accurately assess workers' health status before entering industrial sites. Proactively block risk factors to create a safe working environment."
+    },
+    "safesync": {
+      "name": "SafeSync",
+      "category": "Site Monitoring",
+      "desc": "Real-time monitoring of workers' vital signs at industrial sites. Instantly detect anomalies and automatically alert to prevent industrial accidents."
+    },
+    "safesteppro": {
+      "name": "SafeStep Pro",
+      "category": "Chronic Disease Care",
+      "desc": "A specialized continuous health management service for patients with chronic diseases such as diabetes and hypertension. Personalized health plans with healthcare provider support."
+    },
+    "safesteplit": {
+      "name": "SafeStep Lite",
+      "category": "General Wellness",
+      "desc": "A lightweight continuous health management solution for the general public. Easily and intuitively manage daily health data including steps, sleep, and stress."
+    },
+    "safestep": {
+      "name": "SafeStep",
+      "category": "Health Management",
+      "desc": "Continuous health management from chronic disease patients to everyday wellness. Pro plan for clinical-grade care and Lite plan for daily health tracking — covering all levels of health needs."
+    },
+    "safepaws": {
+      "name": "SafePaws",
+      "category": "Animal Care",
+      "desc": "Professionally manage the health of pets and livestock. Early detection of health anomalies through IoT device integration and AI analysis."
+    }
+  },
+  "ecosystem": {
+    "badge": "Ecosystem Structure",
+    "title": "One Platform,\nEndless Connections",
+    "subtitle": "SafeWay is the root of all Wald Lab services. Like a forest's fungal network, it connects and sustains all life from beneath the surface.",
+    "platformLabel": "Powered by SafeWay Platform",
+    "panelHint": "Click any service node in the diagram to view details. All services are organically connected through the SafeWay platform."
+  },
+  "about": {
+    "badge": "About Wald Lab",
+    "title": "Creating a World as\nHealthy as a Forest",
+    "description1": "Wald Lab takes its name from 'Wald' (forest). Just as a forest sustains a healthy ecosystem where thousands of species depend on each other, we develop technology that creates a world where people, animals, and the environment thrive together.",
+    "description2": "We don't just build healthcare apps — through trustworthy medical data infrastructure, we bridge gaps in healthcare access and strive toward a world where more people receive better health management.",
+    "value1Title": "Trust",
+    "value1Desc": "Medical data is the most sensitive personal information. We promise the highest level of security and transparency.",
+    "value2Title": "Connection",
+    "value2Desc": "From healthcare providers and patients, to industrial sites and pets — we connect all health data into one ecosystem.",
+    "value3Title": "Innovation",
+    "value3Desc": "We lead the prevention-focused future medical paradigm through AI and IoT technology.",
+    "waldMeaning": "Wald = Forest",
+    "forestQuote": "\"A world as healthy as a forest,",
+    "forestQuote2": "an ecosystem where all life connects\"",
+    "statCard1Line1": "Healthcare",
+    "statCard1Line2": "Solutions",
+    "statCard2Line1": "Unified Data",
+    "statCard2Line2": "Platform"
+  },
+  "cta": {
+    "title": "Build the Future of\nHealthcare with Wald Lab",
+    "subtitle": "Want to learn more about the SafeWay platform and our services? Contact us now.",
+    "primary": "Request a Demo",
+    "secondary": "View Product Demo",
+    "emailHintPrefix": "Or contact us directly at ",
+    "emailHintSuffix": ""
+  },
+  "heritage": {
+    "badge": "Certified Expertise",
+    "titleLine1": "25 Years of ",
+    "titleHighlight": "Healthcare Trust",
+    "desc": "The proven expertise of CEO Hyun Young-ho, who has personally designed and built remote healthcare solutions since the dawn of telemedicine in Korea in 2003, forms the technological foundation of Wald Lab.",
+    "chipPrefix": "All records and figures in this section are based on\u00a0",
+    "chipBold": "the personal expertise of our founders and key personnel",
+    "chipSuffix": ", not corporate performance.",
+    "stat0Suffix": "yrs+",
+    "stat0Label": "Telemedicine Expertise",
+    "stat0Sub": "Since early 2000s",
+    "stat1Suffix": "",
+    "stat1Label": "Projects Designed",
+    "stat1Sub": "PM · Design · Dev · Advisory",
+    "stat2Suffix": "",
+    "stat2Label": "Systems Deployed",
+    "stat2Sub": "Cumulative domestic & global",
+    "stat3Suffix": "+",
+    "stat3Label": "Global Projects",
+    "stat3Sub": "Int'l organization partnerships",
+    "timelineTitle": "Career Timeline",
+    "tl0Title": "SW Development Start",
+    "tl0Org": "COMS Development Team Lead",
+    "tl0Desc": "Career begins — pharmaceutical info systems, CRM development",
+    "tl1Title": "Telemedicine Specialist",
+    "tl1Org": "BIT Computer Digital Health",
+    "tl1Desc": "Design & development of BITCare Plus · DreamCare Plus",
+    "tl2Title": "First Global Expansion",
+    "tl2Org": "KOICA · Ukraine",
+    "tl2Desc": "Ukraine telemedicine system — first overseas healthcare infrastructure",
+    "tl3Title": "Public Sector Expansion",
+    "tl3Org": "Ministry of Justice · Defense · Police",
+    "tl3Desc": "Telemedicine for correctional facilities, military, and Dokdo Security Force",
+    "tl4Title": "Int'l Organization Partnership",
+    "tl4Org": "EDCF · Mongolia",
+    "tl4Desc": "Mongolia EDCF National Diagnostic Center; Brazil Amazon smart medical vessel",
+    "tl5Title": "Advisory & Strategy Role",
+    "tl5Org": "HyunYoung Systems Advisor",
+    "tl5Desc": "Smart After-Care pilot in Thailand, UAE, Cambodia; global digital health roadshow",
+    "tl6Title": "Non-face-to-face Platform",
+    "tl6Org": "Chang Healthcare Director",
+    "tl6Desc": "Inter-institution collaboration platform — prototype of SafeWay architecture",
+    "tl7Title": "Wald Lab Founded",
+    "tl7Org": "Wald Lab Inc. CEO",
+    "tl7Desc": "SafeWay platform launched, consolidating 25 years of expertise",
+    "globalTitle": "Global Healthcare Infrastructure Projects",
+    "globalBadge": "Int'l Organization Collaborations",
+    "gp0Country": "Ukraine",
+    "gp0Project": "Telemedicine system deployment",
+    "gp1Country": "Mongolia",
+    "gp1Project": "National Diagnostic & Treatment Center, post-care management",
+    "gp2Country": "Cambodia",
+    "gp2Project": "Medical university education system, elderly chronic disease research, vocational school",
+    "gp3Country": "Thailand",
+    "gp3Project": "ICT-based medical system export, Smart After-Care pilot",
+    "gp4Country": "UAE",
+    "gp4Org": "The Catholic University, Academic Foundation (CUK IACF)",
+    "gp4Project": "Smart After-Care service deployment and pilot",
+    "gp5Country": "Brazil",
+    "gp5Org": "Ministry of Trade, Industry and Resources (MOTIE)",
+    "gp5Project": "Amazon export-model smart medical vessel development",
+    "evolutionTitle": "Evolution: From BITCare to SafeWay",
+    "ev0Title": "Design & Development Era",
+    "ev0Subtitle": "BITCare Plus · DreamCare Plus",
+    "ev0P0": "Directly designed Korea's leading telemedicine solutions",
+    "ev0P1": "Multiple form factors: desktop, mobile cart, hospital ship",
+    "ev0P2": "62 projects, 673 sites deployed & operated",
+    "ev1Title": "Public & Global Validation",
+    "ev1Subtitle": "KOICA · EDCF · ODA · UN ESCAP",
+    "ev1P0": "Healthcare infrastructure built across 7 countries",
+    "ev1P1": "Partnerships with Ministry of Justice, Defense, and Police Agency",
+    "ev1P2": "Cambodia elderly chronic disease research — UN ESCAP advisory",
+    "ev2Title": "SafeWay Platform",
+    "ev2Subtitle": "25 Years of Expertise Consolidated",
+    "ev2P0": "Unified data platform integrating telemedicine, wellness & chronic care",
+    "ev2P1": "Global-standard architecture based on HL7 FHIR · HIPAA",
+    "ev2P2": "AI-powered prevention & predictive healthcare infrastructure",
+    "disclosureTitle": "Expertise Disclosure",
+    "disclosureName": "Hyun Young-ho",
+    "disclosureText": "All project records, figures, and career details listed in this section are based on the personal expertise and experience of CEO",
+    "disclosureText2": "and key personnel, not the official performance of Wald Lab Inc. Wald Lab was founded on this expertise, and corporate performance has been tracked separately since establishment in June 2024."
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageSubtitle": "Have a question about SafeWay or our services?\nOur team will get back to you shortly.",
+    "badge": "Contact Us",
+    "backToHome": "Back to Home",
+    "form": {
+      "service": "Service of Interest",
+      "servicePlaceholder": "Select a service",
+      "orgName": "Organization / Company",
+      "orgNamePlaceholder": "Enter your organization or company name",
+      "contactName": "Contact Person",
+      "contactNamePlaceholder": "Enter your name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+82-10-0000-0000",
+      "email": "Email Address",
+      "emailPlaceholder": "example@company.com",
+      "inquiry": "Inquiry Details",
+      "inquiryPlaceholder": "Please describe your inquiry in detail. (minimum 10 characters)",
+      "privacy": "I agree to the collection and use of personal information. (Required)",
+      "privacyDesc": "Collected personal data will only be used for processing your inquiry.",
+      "submit": "Submit Inquiry",
+      "submitting": "Submitting..."
+    },
+    "services": {
+      "safelync":    "SafeLync · Telemedicine",
+      "safesync":    "SafeSync · Workplace Health Monitoring",
+      "safeentry":   "SafeEntry · Pre-assignment Health Check",
+      "safesteppro": "SafeStep Pro · Chronic Disease Management",
+      "safesteplit": "SafeStep Lite · General Health Management",
+      "safepaws":    "SafePaws · Animal Care",
+      "consulting":  "Consulting & Other"
+    },
+    "errors": {
+      "service": "Please select a service",
+      "orgName": "Please enter your organization name",
+      "contactName": "Please enter your name",
+      "phone": "Please enter your phone number",
+      "phoneInvalid": "Invalid phone format (at least 10 digits)",
+      "email": "Please enter a valid email address",
+      "emailInvalid": "Invalid email format",
+      "inquiry": "Please enter at least 10 characters",
+      "privacy": "Please agree to the privacy policy"
+    },
+    "success": {
+      "title": "Inquiry successfully received",
+      "message": "Thank you for reaching out!\nOur team will contact you shortly.",
+      "close": "OK",
+      "backToHome": "Back to Home"
+    }
+  },
+  "safesyncPage": {
+    "nav": { "services": "Services", "contact": "Contact" },
+    "hero": {
+      "badge1": "SafeSync · Continuous Worker Health Management",
+      "badge2": "Inherits WorkCare 7-Domain Health Management Logic",
+      "title1": "Your Company's Medical Office,",
+      "title2": "Now on Your Smartphone",
+      "desc1": "SafeSync brings the 7-domain health management framework proven by the WorkCare system to a mobile platform.",
+      "desc2": "From automated cerebrovascular & musculoskeletal risk assessment to legal follow-up documentation.",
+      "ctaPrimary": "Request a Demo",
+      "ctaSecondary": "See Health Management Framework",
+      "stats": {
+        "workcare": { "label": "Health Management Areas", "value": "7 Domains", "sub": "WorkCare logic inherited" },
+        "algo": { "label": "Risk Algorithms", "value": "CV & MSK", "sub": "Auto assessment & classification" },
+        "safelync": { "label": "SafeLync Integration", "value": "Instant Consult", "sub": "Auto-connect on anomaly" },
+        "legal": { "label": "Legal Follow-up", "value": "Automated", "sub": "One-click documentation" }
+      }
+    },
+    "workcare7": {
+      "sectionBadge": "WorkCare-Inherited Health Management",
+      "title": "7 Health Management Domains — 20 Years Proven",
+      "subtitle": "The health management processes validated in the WorkCare system are brought to mobile and web by SafeSync.",
+      "pillars": {
+        "basic": { "num": "01", "name": "Basic Health Check", "desc": "Measure and track BP, blood glucose, weight, and body fat. Auto-input via connected devices." },
+        "cerebro": { "num": "02", "name": "Cerebrovascular Prevention", "desc": "C-CDCI risk factor auto-assessment. Risk scoring and instant SafeLync connection for high-risk individuals." },
+        "musculo": { "num": "03", "name": "Musculoskeletal Prevention", "desc": "Body-area risk mapping based on VAS pain scores. Auto-prioritized improvement plans." },
+        "mental": { "num": "04", "name": "Psychological Counseling", "desc": "HRV measurement and automated stress scales. Integrated trauma counseling history management." },
+        "lifestyle": { "num": "05", "name": "Lifestyle Management", "desc": "Integrated management of smoking cessation, alcohol reduction, nutrition, and exercise counseling." },
+        "workenv": { "num": "06", "name": "Work Environment", "desc": "Automated workplace environment surveys and hazard risk factor assessments by department." },
+        "followup": { "num": "07", "name": "Follow-up & Statistics", "desc": "Auto-recorded health exam results and follow-up management. One-click legal documentation generation." }
+      }
+    },
+    "algorithm": {
+      "sectionBadge": "Disease Prevention Algorithm",
+      "title": "Automated Risk Assessment — Cerebrovascular & Musculoskeletal",
+      "subtitle": "Collected data is analyzed in real time to detect early risk signals and trigger immediate responses.",
+      "cerebro": {
+        "title": "Cerebrovascular Risk (C-CDCI)",
+        "inputsLabel": "Input Indicators",
+        "inputs": "BP · Blood glucose · Cholesterol · Smoking · Alcohol · BMI · Family history · Stress",
+        "processLabel": "Auto Assessment",
+        "process": "C-CDCI Risk Factor Analysis Engine",
+        "low": "Low Risk", "mid": "Moderate", "high": "High Risk", "critical": "Critical",
+        "action": "High risk or above → SafeLync remote consult auto-activated"
+      },
+      "musculo": {
+        "title": "Musculoskeletal Risk (VAS)",
+        "inputsLabel": "Input Indicators",
+        "inputs": "VAS pain score by body area · Work posture · Hazard factors",
+        "processLabel": "Auto Assessment",
+        "process": "Body-area risk scoring & mapping",
+        "low": "Normal", "mid": "Borderline", "high": "Symptomatic", "critical": "High Risk",
+        "action": "Auto-prioritized improvement plan → MSK prevention counseling assigned"
+      },
+      "bridge": {
+        "title": "Instant SafeLync Consultation Link",
+        "desc": "When a cerebrovascular high-risk or musculoskeletal risk judgment is made, SafeSync activates a SafeLync consultation channel immediately via event-driven trigger. Workers can start remote counseling directly from the app."
+      }
+    },
+    "dashboard": {
+      "sectionBadge": "Enterprise Health Dashboard",
+      "title": "Unified Control Panel for Health Managers",
+      "subtitle": "Real-time aggregation of all worker health data across sites — with automated legal compliance documentation.",
+      "features": {
+        "realtime": { "title": "Real-time Status Aggregation", "desc": "Total users, high-risk individuals, and consultation completion rates aggregated in real time for immediate health manager awareness." },
+        "stats": { "title": "Health Statistics & Analytics", "desc": "Visualized charts of consultation status by department and period, disease risk distribution, and lifestyle improvement trends." },
+        "legal": { "title": "Legal Documentation Automation", "desc": "System auto-generates health management records required under the OSH Act and submits with one click." },
+        "multisite": { "title": "Multi-site Unified Management", "desc": "Manage multiple work sites in a single dashboard. Headquarters-level health reports generated automatically." }
+      }
+    },
+    "techbg": {
+      "sectionBadge": "Technical Background",
+      "title": "WorkCare Expertise & National-Grade Operations Know-how",
+      "subtitle": "SafeSync's health management logic is built on system expertise validated at large-scale industrial sites over many years.",
+      "pillars": {
+        "workcare": {
+          "badge": "Expertise Inherited",
+          "title": "WorkCare System Expertise",
+          "desc": "SafeSync directly inherits the design and operational expertise of the WorkCare system, which has run in major Korean corporate medical offices for over 20 years."
+        },
+        "public": {
+          "badge": "National-Grade Validated",
+          "title": "Public & Government Sector Know-how",
+          "desc": "System-building experience from Korea's critical public sectors — Defense, Corrections, Public Health, Emergency — is embedded in SafeSync's architecture."
+        },
+        "global": {
+          "badge": "Global Experience",
+          "title": "Validated at Large-Scale Domestic & International Sites",
+          "desc": "Global project expertise from diverse healthcare environments in Europe, Asia, and Latin America — combined with major Korean industrial site operations know-how."
+        },
+        "security": {
+          "badge": "Global Security Standards",
+          "title": "Highest Security for Worker Health Data",
+          "desc": "AES-256 encryption, role-based access control (RBAC), and full compliance with Korea's Personal Information Protection Act and Medical Act to protect sensitive health data."
+        }
+      }
+    },
+    "cta": {
+      "title1": "Bring Your Company's Medical Office",
+      "title2": "to Every Worker's Smartphone",
+      "desc1": "Deploy the WorkCare 7-domain health management framework on-site immediately.",
+      "desc2": "From initial consultation to system setup — Wald Lab is with you every step.",
+      "primaryButton": "Request a Demo",
+      "secondaryButton": "View All Services"
+    }
+  },
+  "safelyncPage": {
+    "nav": { "services": "Services", "contact": "Contact" },
+    "hero": {
+      "badge": "SafeLync · Telemedicine Platform",
+      "badgeStandard": "International Standards-Based Architecture",
+      "title1": "Anywhere, Safely",
+      "title2": "Connecting Patients & Providers",
+      "desc1": "A national-grade telemedicine platform built on 20 years of remote healthcare architecture expertise.",
+      "desc2": "An international-standards-based architecture that fully meets the demands of public and medical institutions worldwide.",
+      "ctaPrimary": "Request a Demo",
+      "ctaSecondary": "See Technical Background",
+      "stats": {
+        "standard": { "label": "Medical Info Standard", "value": "HL7 FHIR", "sub": "Full international compliance" },
+        "sector": { "label": "Public Sector Expertise", "value": "4 Sectors", "sub": "Defense · Corrections · Health · Emergency" },
+        "global": { "label": "Global Experience", "value": "3 Continents", "sub": "Europe · Asia · Latin America" },
+        "years": { "label": "Architecture Design Career", "value": "20+ yrs", "sub": "Telemedicine specialist" }
+      }
+    },
+    "arch": {
+      "sectionBadge": "Consultation Architecture",
+      "title": "Service Consultation Structure Centered on SafeLync",
+      "subtitle": "On the SafeWay platform, all services consult in real time — with SafeLync as the hub.",
+      "foundationLabel": "SafeWay Platform — Infrastructure Foundation",
+      "hubLabel": "SafeLync — Central Consultation Hub",
+      "connections": {
+        "peer": {
+          "id": "01",
+          "route": "SafeLync ↔ SafeLync",
+          "channel": "CHANNEL: peer_consultation",
+          "title": "Peer Physician Consultation",
+          "desc": "Requests for specialist second opinions between providers on the same platform. Case sharing and parallel consultations handled via standard API."
+        },
+        "entry": {
+          "id": "02",
+          "route": "SafeLync ← SafeEntry",
+          "channel": "TRIGGER: entry_health_anomaly_detected",
+          "title": "Immediate Link on Entry Anomaly",
+          "desc": "When SafeEntry detects a health anomaly during pre-placement screening, a SafeLync consultation channel is activated event-driven immediately."
+        },
+        "sync": {
+          "id": "03",
+          "route": "SafeLync ← SafeSync",
+          "channel": "CHANNEL: realtime_biometric_stream",
+          "title": "Continuous Monitoring Data Feed",
+          "desc": "Real-time biometric streams collected by SafeSync are fed directly into SafeLync consultation sessions, enabling remote monitoring-based care."
+        },
+        "step": {
+          "id": "04",
+          "route": "SafeLync ← SafeStep Pro / Lite",
+          "channel": "CHANNEL: care_plan_context_feed",
+          "title": "Care Plan & Health History Integration",
+          "desc": "SafeStep's care plans, medication history, and cumulative activity data are automatically provided as consultation context in SafeLync sessions."
+        }
+      }
+    },
+    "value": {
+      "sectionBadge": "Core Value",
+      "title": "Everything in Telemedicine,",
+      "titleHighlight": "One Platform",
+      "subtitle": "From video consultations and prescription management to multi-institution collaboration — a unified telemedicine solution that safely connects physicians and patients.",
+      "cards": {
+        "consult": {
+          "title": "Video Consultation",
+          "desc": "Low-latency HD video consultations. Consultation recording, electronic prescription signing, and medical record sync — all in one place."
+        },
+        "prescription": {
+          "title": "Electronic Prescription",
+          "desc": "PKI-signed legally valid electronic prescriptions — issuance, delivery, and history management with automated pharmacy system integration."
+        },
+        "collab": {
+          "title": "Inter-institutional Collaboration",
+          "desc": "Connect heterogeneous EMR/HIS systems via standard APIs for real-time referral requests, image sharing, and result delivery."
+        }
+      }
+    },
+    "techbg": {
+      "sectionBadge": "Global & Public Standard",
+      "title": "20 Years of Proven Telemedicine Expertise",
+      "subtitle": "SafeLync is not just software. It is the crystallization of large-scale remote healthcare architecture design know-how built at the forefront of domestic and international systems for over 20 years.",
+      "credentialBadge": "Verified National-Grade System Expert Group",
+      "credentialDesc": "Delivering the highest levels of reliability, security, and interoperability demanded by domestic and international public health institutions — engineered from the ground up.",
+      "global": {
+        "label": "Global Project Experience",
+        "title": "3 Continents, Diverse Medical Environments",
+        "desc": "Telemedicine systems have been successfully designed and deployed across multiple regions in Europe, Asia, and Latin America — each with distinct medical infrastructures and regulatory frameworks.",
+        "point1": "Compliance-aware design adapted to local medical standards and regulations",
+        "point2": "Architecture experience for multilingual and multicultural operating environments",
+        "point3": "Public health infrastructure built in collaboration with international organizations",
+        "point4": "Integration experience with local healthcare institutions and government agencies"
+      },
+      "public": {
+        "label": "Domestic Public Sector Expertise",
+        "title": "4 Key Public Sector Systems Built",
+        "desc": "Experience designing and operating telemedicine systems for Korea's most demanding public sectors — each requiring the highest trust, security, and reliability standards.",
+        "sectors": {
+          "defense": { "name": "Defense", "desc": "Military telemedicine system build & operations" },
+          "corrections": { "name": "Corrections", "desc": "Correctional facility remote medical infrastructure" },
+          "public": { "name": "Public Health", "desc": "Community health center telemedicine platforms" },
+          "emergency": { "name": "Emergency & Special", "desc": "Remote emergency medical systems for remote areas" }
+        }
+      },
+      "standards": {
+        "title": "Full Compliance with International Medical Information Standards",
+        "subtitle": "All integration interfaces are built on international standards, enabling immediate connection with existing hospital systems (EMR/HIS) without custom development.",
+        "fhir": { "name": "HL7 FHIR R4", "desc": "International health data exchange standard" },
+        "dicom": { "name": "DICOM 3.0", "desc": "Medical imaging information standard" },
+        "icd": { "name": "ICD-10/11", "desc": "International disease classification codes" },
+        "openapi": { "name": "OpenAPI 3.0", "desc": "Standard REST API interface" },
+        "pki": { "name": "PKI e-Signature", "desc": "Legal validity for electronic prescriptions" }
+      },
+      "interop": {
+        "title": "Perfect Inter-System Consultation (Collaboration) Capability",
+        "desc": "SafeLync's core technical strength lies in building standards-based API bridges between disparate EMR, HIS, and PACS systems — enabling real-time referral requests, image sharing, and result delivery. Collaboration begins on your existing infrastructure without replacing a single system."
+      },
+      "stats": {
+        "years": { "value": "20+ yrs", "label": "Telemedicine architecture design career" },
+        "sectors": { "value": "4 Sectors", "label": "Domestic public sector systems built" },
+        "continents": { "value": "3 Continents", "label": "Global project regions" },
+        "standards": { "value": "5+ Types", "label": "International medical info standards met" }
+      }
+    },
+    "features": {
+      "sectionBadge": "Key Features",
+      "title": "What Makes SafeLync Different",
+      "subtitle": "Every telemedicine challenge — solved with verified national-grade architecture.",
+      "cards": {
+        "video": { "title": "HD Video Consultation", "desc": "Low-latency WebRTC-based HD video engine with adaptive codecs that maintain stable connections even in unstable network environments." },
+        "emr": { "title": "Instant EMR/HIS Integration", "desc": "Instant HL7 FHIR API integration with existing hospital systems — no replacement or re-entry of patient data required." },
+        "prescription": { "title": "Legal E-Prescription", "desc": "PKI-signed legally valid e-prescriptions with automated delivery to pharmacy systems." },
+        "security": { "title": "Medical Data Security", "desc": "E2E encryption in transit, AES-256 encryption at rest. Full compliance with privacy and medical laws." },
+        "multisite": { "title": "Multi-institution Collaboration Hub", "desc": "Unified management of referrals, image sharing, and results between hospitals, clinics, health centers, and public agencies." },
+        "audit": { "title": "Clinical Audit Trail", "desc": "Immutable audit logs for all consultations, prescriptions, and referrals — ensuring full legal and administrative accountability." }
+      }
+    },
+    "cta": {
+      "title1": "Bring National-Grade",
+      "title2": "Telemedicine Expertise to Your Institution",
+      "desc1": "We design optimized telemedicine systems for your institution using 20 years of architecture know-how and international standards.",
+      "desc2": "From initial consultation to custom design — Wald Lab is with you every step.",
+      "primaryButton": "Request a Demo",
+      "secondaryButton": "View All Services"
+    }
+  },
+  "safeentryPage": {
+    "nav": {
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "hero": {
+      "badgeArticle": "OSH Act, Article 130",
+      "titleLine1": "Pre-assignment Health Checks,",
+      "titleHighlight": "On-site in",
+      "titleTime": "within 2 min",
+      "desc1": "Fulfill your legal pre-assignment health check obligation with SafeEntry.",
+      "desc2": "From BP, temperature, and alcohol measurement to auto-reporting—",
+      "desc3": "SafeEntry covers all of the employer's legal responsibilities.",
+      "ctaPrimary": "Request a Demo",
+      "ctaSecondary": "See It in Action"
+    },
+    "stats": {
+      "legal": {
+        "label": "Legal basis",
+        "value": "OSH Act",
+        "sub": "Article 130(2)"
+      },
+      "deadline": {
+        "label": "Reporting deadline",
+        "value": "Within 30 days",
+        "sub": "Auto-reported to the Ministry of Labor"
+      },
+      "exemption": {
+        "label": "Exemption period",
+        "value": "6–12 months",
+        "sub": "Varies by hazard factor"
+      },
+      "items": {
+        "label": "Measured items",
+        "valueMain": "4 vitals",
+        "note": "(*Flexible)",
+        "sub": "BP · Temp · SpO2 · BAC"
+      }
+    },
+    "legal": {
+      "sectionBadge": "Legal Obligations & Exemptions",
+      "titleLine1": "What Employers Must Know",
+      "titleLine2": "Pre-assignment Health Check Program",
+      "intro1": "Under the OSH Act Enforcement Rules revised in June 2024, the pre-assignment health check program has been strengthened.",
+      "intro2": "If requirements are not met, legal responsibility is imposed on the employer.",
+      "cards": {
+        "employer": {
+          "badge": "Article 130 of the OSH Act",
+          "title": "Employer Obligations",
+          "items": {
+            "1": "Workers engaged in duties subject to special health checks",
+            "2": "Mandatory suitability evaluation for the planned assignment work",
+            "3": "Health checks must be conducted before placement",
+            "4": "Violations are subject to administrative penalties such as fines"
+          }
+        },
+        "exemption": {
+          "badge": "Article 203 of the Enforcement Rules",
+          "title": "Exemption Recognition Criteria",
+          "items": {
+            "1": "For 7 special hazardous substances: results within 6 months",
+            "2": "For the other 174 hazardous substances: results within 12 months",
+            "3": "Recognized for the same or different work sites",
+            "4": "Applies for assignment dates on/after 2024.12.29"
+          }
+        },
+        "report": {
+          "badge": "Article 209 of the Enforcement Rules (New)",
+          "title": "Result Reporting Obligations",
+          "items": {
+            "1": "Report within 30 days from the date the health check is conducted",
+            "2": "Notify results to workers and the employer",
+            "3": "Submit to the Minister of Employment and Labor (local offices)",
+            "4": "From 2025.1.1, pre-assignment checks are also included"
+          }
+        }
+      },
+      "exemptionSummary": {
+        "title": "Summary of Exemption Periods by Hazard Factor",
+        "leftHeading": "7 special hazardous substances — 6 months",
+        "leftHazards": "N,N-Dimethylacetamide · Dimethylformamide · Benzene · 1,1,2,2-Tetrachloroethane · Carbon tetrachloride · Acrylonitrile · Vinyl chloride",
+        "rightHeading": "Other 174 hazardous substances — 12 months",
+        "rightDesc1": "Calculated based on the assignment date; recognized when a copy of the health check results is submitted.",
+        "rightDesc2": "Includes pre-assignment, special, periodic, and temporary health checks."
+      }
+    },
+    "mockup": {
+      "sectionBadge": "Live Demo Screen",
+      "title": "PMIS Diagnostic Kit — Powered by SafeEntry",
+      "captionLine1": "Measure vital signs with a simple touch.",
+      "captionLine2": "Work suitability is determined on the spot.",
+      "tabs": {
+        "measurement": "Measurement Results Screen",
+        "dashboard": "Administrator Dashboard"
+      },
+      "items": {
+        "bp": {
+          "label": "Blood Pressure (BP)",
+          "desc": "Systolic/diastolic & pulse\nAutomatically exclude if abnormal"
+        },
+        "temp": {
+          "label": "Body Temperature (Temp)",
+          "desc": "Detect fever status\nHigh fever if above 37.5°C"
+        },
+        "spo2": {
+          "label": "Oxygen Saturation (SpO2)",
+          "desc": "Blood oxygen saturation\nFlag if below 95%"
+        },
+        "bac": {
+          "label": "Alcohol (BAC)",
+          "desc": "Measure alcohol status\nExclude work if 0.03% or higher"
+        }
+      }
+    },
+    "features": {
+      "sectionBadge": "Key Features",
+      "title": "What Makes SafeEntry Different",
+      "subtitle": "More than a measurement device — all-in-one compliance and data management.",
+      "cards": {
+        "instant": {
+          "title": "2-min Instant Result",
+          "desc": "Measures BP, temperature, SpO2, and alcohol simultaneously and determines work suitability instantly using built-in AI thresholds."
+        },
+        "legal": {
+          "title": "Built-in Legal Standards",
+          "desc": "Criteria from the OSH Act Enforcement Rules are embedded to help managers make fit/exclusion decisions with confidence."
+        },
+        "site": {
+          "title": "Site System Integration",
+          "desc": "Connects with your site facility management system to synchronize judgment results and action logs automatically."
+        },
+        "storage": {
+          "title": "Auto-saved Records",
+          "desc": "All measurement data is stored in the cloud automatically. 30-day reporting obligations handled in one click."
+        },
+        "dashboard": {
+          "title": "Admin Dashboard",
+          "desc": "A web dashboard for reviewing records by period, exclusion statistics, and team-level safety status at a glance."
+        },
+        "multiSite": {
+          "title": "Multi-site Management",
+          "desc": "Unified management of measurement records across all sites. HQ-level safety reporting made simple."
+        }
+      }
+    },
+    "comparison": {
+      "title": "Before vs After",
+      "subtitle": "How site safety management changes with SafeEntry",
+      "beforeLabel": "Without SafeEntry",
+      "before": {
+        "items": {
+          "1": "Manual health check record management → risk of loss or errors",
+          "2": "Manual exemption period calculation → risk of omissions",
+          "3": "Individually tracking the 30-day reporting deadline → risk of administrative penalties",
+          "4": "Exclusion criteria vary by manager → inconsistent decisions",
+          "5": "Missing BP/temperature measurements upon arrival → legal gaps"
+        }
+      },
+      "afterLabel": "After implementing SafeEntry",
+      "after": {
+        "items": {
+          "1": "Automatic cloud storage for all measurement records",
+          "2": "Exemption periods calculated automatically by the system",
+          "3": "Alerts for the 30-day reporting deadline and one-click submission",
+          "4": "Consistent judgments using embedded legal standards",
+          "5": "100% compliance through 30-second kiosk measurements"
+        }
+      }
+    },
+    "cta": {
+      "titleLine1": "Bring SafeEntry",
+      "titleLine2": "to Your Site Today",
+      "desc1": "From initial consultation to on-site setup, Wald Lab is with you every step.",
+      "desc2": "Stay compliant effortlessly — and keep your site truly safe.",
+      "primaryButton": "Request a Demo",
+      "secondaryButton": "View All Services"
+    },
+    "process": {
+      "sectionBadge": "4-Step Core Logic",
+      "title": "A Seamless Safety Process — From Authentication to Control",
+      "subtitle": "From site entry to Ministry of Labor reporting — completed in just 2 minutes, across 4 steps.",
+      "timeLabel": "Total process time",
+      "timeValue": "Under 2 minutes",
+      "steps": {
+        "auth": {
+          "label": "Auth",
+          "title": "Worker Identity Check",
+          "desc": "Quickly identify workers via QR code or employee ID number."
+        },
+        "measure": {
+          "label": "Measure",
+          "title": "4 Vital Signs Measured",
+          "desc": "BP, temperature, SpO2, and BAC measured simultaneously at a single kiosk in under 30 seconds."
+        },
+        "judge": {
+          "label": "Judge",
+          "title": "Automated Work Suitability",
+          "desc": "Instantly determines fit/exclusion based on OSH Act thresholds and generates evidence data."
+        },
+        "control": {
+          "label": "Control",
+          "title": "Real-time Dashboard Control",
+          "desc": "Centrally manages all site status via dashboard and auto-submits reports within 30 days."
+        }
+      }
+    },
+    "vitals": {
+      "sectionBadge": "Serious Accident Prevention Basis",
+      "title": "Beyond Simple Records — It Becomes Legal Evidence",
+      "subtitle": "Measuring 4 vital signs creates objective proof of fulfilling the 'occupational health protection obligation' required by the Serious Accidents Punishment Act.",
+      "cards": {
+        "bp": {
+          "name": "Blood Pressure (BP)",
+          "value": "Systolic ≥ 140 mmHg",
+          "risk": "High risk of stroke & heart attack",
+          "action": "Immediate work exclusion",
+          "legal": "Serious Accidents Act Art. 4 — Health Protection Duty"
+        },
+        "temp": {
+          "name": "Body Temperature (Temp)",
+          "value": "≥ 37.5°C",
+          "risk": "Early signs of infection or heat stroke",
+          "action": "Immediate site entry ban",
+          "legal": "Linked to OSH Act Article 38"
+        },
+        "spo2": {
+          "name": "Oxygen Saturation (SpO2)",
+          "value": "< 95%",
+          "risk": "Hypoxia / respiratory risk",
+          "action": "Excluded from high-risk work",
+          "legal": "Confined Space Work Program Requirement"
+        },
+        "bac": {
+          "name": "Alcohol (BAC)",
+          "value": "≥ 0.03%",
+          "risk": "Impaired judgment / machinery accident risk",
+          "action": "Absolute ban on heavy machinery & heights",
+          "legal": "OSH Act alcohol prohibition basis"
+        }
+      },
+      "legalCallout": "All measurement data is automatically stored in the cloud with timestamps and electronic signatures — serving as legal proof of employer compliance in the event of a serious accident. Tamper-proof architecture guarantees your legal safety net."
+    },
+    "trust": {
+      "sectionBadge": "Powered by 20 Years of Expertise",
+      "title": "20 Years of Research, Proven",
+      "subtitle": "SafeEntry is not just a measurement app. It is an evidence-based occupational safety system built on 20 years of industrial health research and internationally validated academic achievements.",
+      "springer": {
+        "badge": "Peer-reviewed Publication",
+        "journal": "Springer International",
+        "title": "Published in Springer Journal",
+        "desc": "WorkCare system research was published in a Springer international journal and validated by the global academic community. SafeEntry is its practical implementation."
+      },
+      "workcare": {
+        "badge": "Expertise Inherited",
+        "title": "WorkCare System",
+        "subtitle": "Worker Health Management Platform",
+        "desc": "SafeEntry directly inherits the design and operational expertise of the WorkCare worker health management system, deployed across major industrial sites including KEPCO for over 20 years."
+      },
+      "validation": {
+        "badge": "Field Validated",
+        "title": "KEPCO & Major Sites",
+        "subtitle": "Field Test Ongoing",
+        "desc": "Field tests are currently underway at major industrial sites including KEPCO. System stability and legal compliance are being validated in real operating environments."
+      },
+      "stats": {
+        "years": { "value": "20+ yrs", "label": "Industrial health research & system operations" },
+        "papers": { "value": "Springer", "label": "International peer-reviewed journal" },
+        "fieldtest": { "value": "KEPCO+", "label": "Real industrial site field test" }
+      },
+      "disclaimer": "This expertise is based on the personal experience of Wald Lab's core personnel and the verified track record of our strategic technology alliance partner."
+    }
+  },
+  "news": {
+    "badge": "News",
+    "title": "News & Updates",
+    "subtitle": "Stay informed about Wald Lab announcements and milestones.",
+    "readMore": "Read more",
+    "close": "Close",
+    "card1": {
+      "tag": "Intellectual Property",
+      "title": "SafeEntry trademark application completed",
+      "excerpt": "We have completed the trademark application for our industrial safety solution, SafeEntry.",
+      "date": "Mar 2025",
+      "detailTitle": "SafeEntry trademark application completed",
+      "detailP1": "Wald Lab Inc. (the \"Company\") has completed the trademark application for SafeEntry, its pre-placement occupational health screening solution for industrial sites.",
+      "detailP2": "This step strengthens legal protection of our service brand and lays the groundwork for delivering consistent quality and trust to customers and partners.",
+      "detailP3": "We will continue to invest in intellectual property management as we expand innovative healthcare and industrial safety offerings."
+    },
+    "card2": {
+      "tag": "Notice",
+      "title": "More news coming soon",
+      "excerpt": "We are preparing the next update. Important notices will appear here.",
+      "date": "—"
+    },
+    "card3": {
+      "tag": "Notice",
+      "title": "Further stories ahead",
+      "excerpt": "Product, research, and partnership updates will be shared here in due course.",
+      "date": "—"
+    },
+    "sheetLoading": "Loading announcements…",
+    "sheetEmpty": "No rows to show. Check the header row and data in your sheet.",
+    "viewSamplePage": "Sheet integration sample",
+    "sheetPoweredBy": "Top 3 rows from Google Sheets"
+  },
+  "sheetSample": {
+    "title": "Google Sheets integration sample",
+    "subtitle": "The homepage uses up to the first 3 data rows from this sheet (top to bottom).",
+    "backHome": "Back to home",
+    "statusOn": "Connected: sheet URL or ID is set in environment variables.",
+    "statusOff": "Not configured: set GOOGLE_SHEET_ID or GOOGLE_SHEET_CSV_URL in .env.local.",
+    "columnsTitle": "Recommended header row",
+    "columnsHint": "Use lowercase English headers. Use Alt+Enter in a cell for line breaks in body.",
+    "tableCaption": "Rows loaded from the sheet (max 100)",
+    "colDate": "date",
+    "colTag": "tag",
+    "colTitle": "title",
+    "colExcerpt": "excerpt",
+    "colBody": "body",
+    "noRows": "No data rows, or the title column was not found.",
+    "errorFetch": "Could not fetch CSV. Check sharing settings and environment variables.",
+    "apiHint": "API",
+    "apiPath": "/api/sheet-news?limit=3",
+    "stepsTitle": "Setup",
+    "step1": "Share the spreadsheet so anyone with the link can view (or stronger).",
+    "step2": "Copy the spreadsheet ID from the URL (between /d/ and /edit).",
+    "step3": "Add GOOGLE_SHEET_ID=paste_id to .env.local and restart the dev server.",
+    "step4": "For a non-first tab, set GOOGLE_SHEET_GID from the tab’s gid= parameter.",
+    "stepAlt": "Alternatively, set GOOGLE_SHEET_CSV_URL to the full CSV export URL."
+  },
+  "footer": {
+    "company": "Wald Lab Inc.",
+    "tagline": "Technology for a Healthy Ecosystem",
+    "address": "Anyang, Gyeonggi-do, Korea | info@waldlab.kr",
+    "location": "Anyang, Republic of Korea",
+    "copyright": "© 2026 Wald Lab Inc. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "servicesTitle": "Services",
+    "legalTitle": "Legal",
+    "bizLabelCompany": "Company",
+    "bizLabelCeo": "CEO",
+    "bizLabelRegNum": "Business Reg.",
+    "bizLabelPrivacy": "Privacy Officer",
+    "bizLabelAddress": "Address",
+    "bizLabelEmail": "Email",
+    "bizCompany": "Wald Lab Inc.",
+    "bizCeo": "Hyun Young-ho",
+    "bizRegNum": "222-88-03231",
+    "bizPrivacyOfficer": "Hyun Young-ho",
+    "bizAddress": "230 Simin-daero, Dongan-gu, Anyang-si, Gyeonggi-do, Korea",
+    "bizEmail": "info@waldlab.kr",
+    "links": {
+      "platform": "SafeWay Platform",
+      "safelync": "SafeLync",
+      "safeentry": "SafeEntry",
+      "safesync": "SafeSync",
+      "safestep": "SafeStep",
+      "safepaws": "SafePaws"
+    }
+  }
+}

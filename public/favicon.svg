@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 72" width="64" height="64">
+  <!-- Simple Wald Lab leaf mark for browser favicon -->
+  <path
+    d="M 34,64 C 13,58 7,37 22,14 C 27,6 36,5 39,9 C 47,15 52,37 44,55 C 41,62 38,64 34,64 Z"
+    fill="#82C91E"
+  />
+  <path
+    d="M 34,62 C 32,50 33,34 37,12"
+    fill="none"
+    stroke="#1A3828"
+    stroke-width="2.6"
+    stroke-linecap="round"
+  />
+  <path
+    d="M 33,50 L 43,46"
+    fill="none"
+    stroke="#82C91E"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    opacity="0.95"
+  />
+  <path
+    d="M 33,38 L 16,35"
+    fill="none"
+    stroke="#82C91E"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    opacity="0.95"
+  />
+  <path
+    d="M 35,26 L 44,22"
+    fill="none"
+    stroke="#82C91E"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    opacity="0.95"
+  />
+</svg>
