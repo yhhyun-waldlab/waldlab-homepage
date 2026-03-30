@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  verification: {
+    google: "xe2WUOM4X_T66IUXcKd5YBDpRVwLhXHCzY9_qwesXVU",
+  },
   openGraph: {
     title: "Wald Lab | 건강한 생태계를 만드는 기술",
     description: "SafeWay 플랫폼 기반 통합 헬스케어 솔루션",
