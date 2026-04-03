@@ -148,6 +148,7 @@ const LogoComponent = memo(function LogoComponent({
 export interface WaldblattLogoProps {
   height?:        number;
   markOnly?:      boolean;
+  layout?:        "horizontal" | "stacked";
   variant?:       "dark" | "light";
   animated?:      boolean;
   className?:     string;
@@ -157,6 +158,7 @@ export interface WaldblattLogoProps {
 export default function WaldblattLogo({
   height        = 44,
   markOnly      = false,
+  layout        = "horizontal",
   variant       = "dark",
   animated      = true,
   className     = "",
@@ -169,8 +171,10 @@ export default function WaldblattLogo({
   const koreanFill   = isLight ? "rgba(255,255,255,0.50)" : "#52A878";
   const dividerColor = isLight ? "rgba(255,255,255,0.22)" : "#C8E0D0";
 
-  const markWidth = Math.round(height * (68  / 72));
-  const fullWidth = Math.round(height * (310 / 72));
+  const markWidth    = Math.round(height * (68  / 72));
+  const fullWidth    = Math.round(height * (310 / 72));
+  const stackHeight  = height;
+  const stackWidth   = Math.round(height * (150 / 115));
 
   const wmStyle: React.CSSProperties = {
     fontFamily:    "'Manrope','Inter','Helvetica Neue',Arial,sans-serif",
@@ -197,6 +201,25 @@ export default function WaldblattLogo({
     animated,
     onHoverChange,
   };
+
+  if (layout === "stacked") {
+    return (
+      <svg
+        width={stackWidth} height={stackHeight} viewBox="0 0 150 115"
+        fill="none" xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label="Wald Lab"
+        className={className}
+        overflow="visible"
+        style={svgStyle}
+      >
+        <g transform="translate(41, 2)">
+          <LogoComponent {...logoProps} />
+        </g>
+        <text x="75" y="95"  fill={wordmarkFill} style={{ ...wmStyle, fontSize: 26 }} textAnchor="middle">Wald Lab</text>
+        <text x="75" y="111" fill={koreanFill}   style={{ ...krStyle, letterSpacing: "2.5px" }} textAnchor="middle">주식회사 발트 랩</text>
+      </svg>
+    );
+  }
 
   if (markOnly) {
     return (
