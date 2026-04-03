@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Database,
   Zap,
@@ -28,9 +29,14 @@ export default function PlatformSection({ t }: PlatformSectionProps) {
           </span>
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px flex-1 max-w-16 bg-gradient-to-r from-transparent to-wald-300" />
-            <h2 className="text-4xl lg:text-5xl font-bold text-wald-900">
-              {t("platform.title")}
-            </h2>
+            <Image
+              src="/images/SafeWay-logo.png"
+              alt="SafeWay"
+              height={104}
+              width={400}
+              className="object-contain h-20 lg:h-26 w-auto"
+              priority
+            />
             <div className="h-px flex-1 max-w-16 bg-gradient-to-l from-transparent to-wald-300" />
           </div>
           <p className="text-wald-600 text-base font-medium mb-6">
