@@ -38,6 +38,26 @@ export default function LogoTestPage() {
         </p>
       </div>
 
+      {/* ⑤ 스택형 (심볼 + 텍스트 수직 배치) */}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+        <div style={{ background: "#fff", borderRadius: 24, padding: 40, boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}>
+          <WaldblattLogo height={160} layout="stacked" animated={true} />
+        </div>
+        <p style={{ fontFamily: "sans-serif", fontSize: 12, color: "#9ca3af" }}>
+          ⑤ 스택형 height=160 · 심볼 위 + 텍스트 아래
+        </p>
+      </div>
+
+      {/* ⑥ 스택형 · 다크 배경 */}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+        <div style={{ background: "#1a4731", borderRadius: 24, padding: 40 }}>
+          <WaldblattLogo height={160} layout="stacked" variant="light" animated={true} />
+        </div>
+        <p style={{ fontFamily: "sans-serif", fontSize: 12, color: "#9ca3af" }}>
+          ⑥ 스택형 light variant (다크 배경)
+        </p>
+      </div>
+
       {/* ④ 정적 비교 */}
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <div style={{ background: "#fff", borderRadius: 24, padding: 40, boxShadow: "0 4px 24px rgba(0,0,0,0.08)", opacity: 0.5 }}>
