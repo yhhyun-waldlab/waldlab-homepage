@@ -149,13 +149,13 @@ export default function SafeWayPage() {
               </h1>
               <p className="text-xl lg:text-2xl font-medium text-wald-300 leading-snug mb-6">
                 {ko
-                  ? "Wald Lab 서비스 전체를 받치는\n자체 개발 기반 기술"
+                  ? "Wald Lab 서비스 전체의\n근간 플랫폼"
                   : "The Proprietary Foundation\nUnderpinning All Wald Lab Services"}
               </p>
               <p className="text-wald-400 text-base leading-relaxed mb-8 max-w-xl">
                 {ko
-                  ? "SafeWay는 독립 상품이 아닙니다. Wald Lab이 20년 이상의 원격 의료 시스템 개발 경험을 바탕으로 직접 설계한 기반 프레임워크로, SafeLync·SafeEntry·SafeSync 등 모든 서비스가 이 위에서 구동됩니다. 복잡함을 걷어내고, 데이터의 본질과 보안에만 집중했습니다."
-                  : "SafeWay is not a standalone product. It is Wald Lab's proprietary framework — built on 20+ years of telehealth development expertise — on which every service runs. We stripped away complexity to focus solely on data integrity and security."}
+                  ? "SafeWay는 Wald Lab 디지털 헬스케어 시스템의 모든 서비스를 움직이는 핵심 엔진입니다. 모든 솔루션이 SafeWay 위에서 완벽하게 연결되고 작동합니다. 불필요한 복잡함은 과감히 덜어내고, 데이터의 본질과 보안에만 집중한 프레임워크. Wald Lab의 기술이 가장 강력하게 빛나는 기반입니다."
+                  : "SafeWay is the core engine powering every service in Wald Lab's digital healthcare system. From SafeLync and SafeSync to SafeEntry, SafeStep, and SafePaws — every solution is seamlessly connected and operated on SafeWay. A framework that boldly strips away unnecessary complexity to focus solely on data integrity and security. The foundation where Wald Lab's technology shines at its most powerful."}
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
