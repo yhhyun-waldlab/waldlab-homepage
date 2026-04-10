@@ -38,7 +38,8 @@
     "feature3Title": "보안·컴플라이언스",
     "feature3Desc": "의료 데이터 국제 표준(HL7 FHIR)과 개인정보보호법을 준수한 최고 수준의 데이터 보안",
     "feature4Title": "확장형 API",
-    "feature4Desc": "표준화된 Open API로 다양한 서드파티 서비스 및 의료기관과의 연동 지원"
+    "feature4Desc": "표준화된 Open API로 다양한 서드파티 서비스 및 의료기관과의 연동 지원",
+    "learnMore": "자세히 보기"
   },
   "services": {
     "badge": "서비스 라인업",
