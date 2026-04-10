@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Database,
   Zap,
@@ -98,10 +99,13 @@ export default function PlatformSection({ t }: PlatformSectionProps) {
               <p className="text-wald-300 text-base leading-relaxed mb-8 max-w-lg">
                 {t("platform.description")}
               </p>
-              <button className="group inline-flex items-center gap-2 px-6 py-3 bg-wald-400 text-wald-950 font-bold text-sm rounded-xl hover:bg-wald-300 transition-colors">
+              <Link
+                href="/safeway"
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-wald-400 text-wald-950 font-bold text-sm rounded-xl hover:bg-wald-300 transition-colors"
+              >
                 Learn More
                 <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
