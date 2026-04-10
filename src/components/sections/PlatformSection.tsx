@@ -103,7 +103,7 @@ export default function PlatformSection({ t }: PlatformSectionProps) {
                 href="/safeway"
                 className="group inline-flex items-center gap-2 px-6 py-3 bg-wald-400 text-wald-950 font-bold text-sm rounded-xl hover:bg-wald-300 transition-colors"
               >
-                Learn More
+                {t("platform.learnMore")}
                 <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
