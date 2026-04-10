@@ -38,7 +38,8 @@
     "feature3Title": "Security & Compliance",
     "feature3Desc": "Top-tier data security compliant with HL7 FHIR international standards and personal data protection laws",
     "feature4Title": "Scalable API",
-    "feature4Desc": "Open API standards supporting integration with third-party services and healthcare providers"
+    "feature4Desc": "Open API standards supporting integration with third-party services and healthcare providers",
+    "learnMore": "Learn More"
   },
   "services": {
     "badge": "Service Lineup",
