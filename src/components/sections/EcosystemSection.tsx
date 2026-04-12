@@ -45,8 +45,8 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
 
   const cx = 300;
   const cy = 300;
-  const outerR = 206;
-  const nodeSize = 66;
+  const outerR = 200;
+  const nodeSize = 44;
 
   return (
     <section className="py-24 lg:py-32 bg-white overflow-hidden">
@@ -129,7 +129,7 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                     <rect
                       width={nodeSize}
                       height={nodeSize}
-                      rx="18"
+                      rx="12"
                       fill={isActive ? svc.color : "white"}
                       stroke={isActive ? svc.color : "#e5ede8"}
                       strokeWidth={isActive ? 0 : 2}
@@ -147,15 +147,15 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                           transition: "color 0.3s ease",
                         }}
                       >
-                        <Icon size={33} color={iconColor} stemColor={stemColor} />
+                        <Icon size={22} color={iconColor} stemColor={stemColor} />
                       </div>
                     </foreignObject>
                     {/* Label */}
                     <text
                       x={nodeSize / 2}
-                      y={nodeSize + 24}
+                      y={nodeSize + 16}
                       textAnchor="middle"
-                      fontSize="15"
+                      fontSize="10"
                       fontWeight="600"
                       fill={isActive ? svc.color : "#1f5c3e"}
                       style={{ transition: "fill 0.3s ease" }}
@@ -246,12 +246,12 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                         className="flex flex-col items-center gap-2 p-3 rounded-xl border border-wald-100 hover:border-wald-300 transition-colors"
                       >
                         <div
-                          className="w-12 h-12 rounded-lg flex items-center justify-center"
+                          className="w-8 h-8 rounded-lg flex items-center justify-center"
                           style={{ backgroundColor: svc.color + "15" }}
                         >
-                          <Icon size={24} color={svc.color} />
+                          <Icon size={16} color={svc.color} />
                         </div>
-                        <span className="text-[13px] font-semibold text-wald-700 text-center leading-tight">
+                        <span className="text-xs font-semibold text-wald-700 text-center leading-tight">
                           {svc.label}
                         </span>
                       </button>
