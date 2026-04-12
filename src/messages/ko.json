@@ -127,7 +127,7 @@
     "titleLine1": "25년이 쌓아올린 ",
     "titleHighlight": "헬스케어의 신뢰",
     "desc": "2003년 국내 원격의료의 태동기부터 직접 솔루션을 설계·개발해온 대표 현영호의 검증된 전문성이 발트랩의 기술적 토대입니다.",
-    "chipPrefix": "이 섹션의 모든 이력·수치는 법인 실적이 아닌\u00a0",
+    "chipPrefix": "이 섹션의 모든 이력·수치는 법인 실적이 아닌 ",
     "chipBold": "대표자 및 핵심 인력의 개인 전문성(Expertise)",
     "chipSuffix": "에 기반합니다.",
     "stat0Suffix": "년+",
@@ -228,13 +228,13 @@
       "submitting": "접수 중..."
     },
     "services": {
-      "safelync":    "SafeLync · 원격의료",
-      "safesync":    "SafeSync · 산업 현장 근로자 건강관리",
-      "safeentry":   "SafeEntry · 배치전 건강진단",
+      "safelync": "SafeLync · 원격의료",
+      "safesync": "SafeSync · 산업 현장 근로자 건강관리",
+      "safeentry": "SafeEntry · 배치전 건강진단",
       "safesteppro": "SafeStep Pro · 만성질환 관리",
       "safesteplit": "SafeStep Lite · 일반 건강관리",
-      "safepaws":    "SafePaws · 동물 케어",
-      "consulting":  "컨설팅 및 기타"
+      "safepaws": "SafePaws · 동물 케어",
+      "consulting": "컨설팅 및 기타"
     },
     "errors": {
       "service": "문의 서비스를 선택해주세요",
@@ -255,7 +255,10 @@
     }
   },
   "safesyncPage": {
-    "nav": { "services": "서비스", "contact": "문의하기" },
+    "nav": {
+      "services": "서비스",
+      "contact": "문의하기"
+    },
     "hero": {
       "badge1": "SafeSync · 근로자 상시 건강관리",
       "badge2": "공단 '어울림' 7대 보건관리 로직 계승",
@@ -266,10 +269,26 @@
       "ctaPrimary": "도입 문의하기",
       "ctaSecondary": "보건관리 체계 보기",
       "stats": {
-        "workcare": { "label": "보건 관리 체계", "value": "7대 영역", "sub": "워크케어 로직 계승" },
-        "algo": { "label": "위험도 알고리즘", "value": "뇌심 · 근골", "sub": "자동 평가 및 분류" },
-        "safelync": { "label": "SafeLync 연동", "value": "즉시 협진", "sub": "이상 감지 시 자동 연결" },
-        "legal": { "label": "법적 사후관리", "value": "자동화", "sub": "원클릭 증빙 생성" }
+        "workcare": {
+          "label": "보건 관리 체계",
+          "value": "7대 영역",
+          "sub": "워크케어 로직 계승"
+        },
+        "algo": {
+          "label": "위험도 알고리즘",
+          "value": "뇌심 · 근골",
+          "sub": "자동 평가 및 분류"
+        },
+        "safelync": {
+          "label": "SafeLync 연동",
+          "value": "즉시 협진",
+          "sub": "이상 감지 시 자동 연결"
+        },
+        "legal": {
+          "label": "법적 사후관리",
+          "value": "자동화",
+          "sub": "원클릭 증빙 생성"
+        }
       }
     },
     "workcare7": {
@@ -277,13 +296,41 @@
       "title": "현장적용으로 증명한 7대 보건 관리 영역",
       "subtitle": "검증된 보건 관리 프로세스를 SafeSync가 모바일·웹 환경으로 구현합니다.",
       "pillars": {
-        "basic": { "num": "01", "name": "기초검사", "desc": "혈압·혈당·체중·체지방 기초 바이탈 측정 및 이력 관리. 연동 기기를 통해 결과 자동 입력." },
-        "cerebro": { "num": "02", "name": "뇌심혈관 예방", "desc": "C-CDCI 위험인자 자동 평가. 위험도 산출 및 고위험자 SafeLync 즉시 연결." },
-        "musculo": { "num": "03", "name": "근골격계 예방", "desc": "VAS 통증 점수 기반 신체 부위별 위험도 매핑. 개선 우선순위 자동 산출." },
-        "mental": { "num": "04", "name": "심리상담", "desc": "HRV 측정 및 스트레스 척도지 자동화. 트라우마 상담 이력 통합 관리." },
-        "lifestyle": { "num": "05", "name": "생활습관 관리", "desc": "금연·절주·영양·운동 4개 상담 통합 관리. 니코틴의존도·음주 간이선별검사 내장." },
-        "workenv": { "num": "06", "name": "작업환경 관리", "desc": "근무 환경 및 유해위험요인 설문 자동화. 부서·직군별 환경 위험도 집계." },
-        "followup": { "num": "07", "name": "사후관리 & 통계", "desc": "검진 결과 판정 및 사후 관리 자동 기록. 기업용 보건 통계·법적 증빙 원클릭 생성." }
+        "basic": {
+          "num": "01",
+          "name": "기초검사",
+          "desc": "혈압·혈당·체중·체지방 기초 바이탈 측정 및 이력 관리. 연동 기기를 통해 결과 자동 입력."
+        },
+        "cerebro": {
+          "num": "02",
+          "name": "뇌심혈관 예방",
+          "desc": "C-CDCI 위험인자 자동 평가. 위험도 산출 및 고위험자 SafeLync 즉시 연결."
+        },
+        "musculo": {
+          "num": "03",
+          "name": "근골격계 예방",
+          "desc": "VAS 통증 점수 기반 신체 부위별 위험도 매핑. 개선 우선순위 자동 산출."
+        },
+        "mental": {
+          "num": "04",
+          "name": "심리상담",
+          "desc": "HRV 측정 및 스트레스 척도지 자동화. 트라우마 상담 이력 통합 관리."
+        },
+        "lifestyle": {
+          "num": "05",
+          "name": "생활습관 관리",
+          "desc": "금연·절주·영양·운동 4개 상담 통합 관리. 니코틴의존도·음주 간이선별검사 내장."
+        },
+        "workenv": {
+          "num": "06",
+          "name": "작업환경 관리",
+          "desc": "근무 환경 및 유해위험요인 설문 자동화. 부서·직군별 환경 위험도 집계."
+        },
+        "followup": {
+          "num": "07",
+          "name": "사후관리 & 통계",
+          "desc": "검진 결과 판정 및 사후 관리 자동 기록. 기업용 보건 통계·법적 증빙 원클릭 생성."
+        }
       }
     },
     "algorithm": {
@@ -296,7 +343,10 @@
         "inputs": "혈압 · 혈당 · 콜레스테롤 · 흡연 · 음주 · BMI · 가족력 · 스트레스",
         "processLabel": "자동 평가",
         "process": "C-CDCI 위험인자 분석 엔진",
-        "low": "저위험", "mid": "중위험", "high": "고위험", "critical": "최고위험",
+        "low": "저위험",
+        "mid": "중위험",
+        "high": "고위험",
+        "critical": "최고위험",
         "action": "고위험 이상 → SafeLync 원격 상담 자동 활성화"
       },
       "musculo": {
@@ -305,7 +355,10 @@
         "inputs": "신체 부위별 VAS 통증 점수 · 작업 자세 · 유해위험요인",
         "processLabel": "자동 평가",
         "process": "부위별 위험도 산출 및 매핑",
-        "low": "정상", "mid": "경계", "high": "증상", "critical": "위험",
+        "low": "정상",
+        "mid": "경계",
+        "high": "증상",
+        "critical": "위험",
         "action": "개선 우선순위 자동 산출 → 근골예방 상담 배정"
       },
       "bridge": {
@@ -318,10 +371,22 @@
       "title": "보건관리자를 위한 통합 관제 화면",
       "subtitle": "전 사업장 근로자의 보건 현황을 실시간으로 집계하고, 법적 사후관리 증빙을 자동화합니다.",
       "features": {
-        "realtime": { "title": "실시간 현황 집계", "desc": "전체 이용자·고위험군·상담 완료율을 실시간 집계. 보건관리자가 현황을 즉시 파악합니다." },
-        "stats": { "title": "보건 통계 분석", "desc": "부서별·기간별 상담 현황, 질환 위험도 분포, 생활습관 개선 추이를 차트로 시각화합니다." },
-        "legal": { "title": "법적 증빙 자동화", "desc": "산업안전보건법 상 요구 보건 관리 기록을 시스템이 자동 생성하여 원클릭으로 제출합니다." },
-        "multisite": { "title": "다사업장 통합 관리", "desc": "복수 사업장을 단일 대시보드에서 통합 관리. 본사 단위 보건 보고서 자동 생성." }
+        "realtime": {
+          "title": "실시간 현황 집계",
+          "desc": "전체 이용자·고위험군·상담 완료율을 실시간 집계. 보건관리자가 현황을 즉시 파악합니다."
+        },
+        "stats": {
+          "title": "보건 통계 분석",
+          "desc": "부서별·기간별 상담 현황, 질환 위험도 분포, 생활습관 개선 추이를 차트로 시각화합니다."
+        },
+        "legal": {
+          "title": "법적 증빙 자동화",
+          "desc": "산업안전보건법 상 요구 보건 관리 기록을 시스템이 자동 생성하여 원클릭으로 제출합니다."
+        },
+        "multisite": {
+          "title": "다사업장 통합 관리",
+          "desc": "복수 사업장을 단일 대시보드에서 통합 관리. 본사 단위 보건 보고서 자동 생성."
+        }
       }
     },
     "techbg": {
@@ -361,7 +426,10 @@
     }
   },
   "safelyncPage": {
-    "nav": { "services": "서비스", "contact": "문의하기" },
+    "nav": {
+      "services": "서비스",
+      "contact": "문의하기"
+    },
     "hero": {
       "badge": "SafeLync · 원격의료 플랫폼",
       "badgeStandard": "국제 표준 기반 아키텍처",
@@ -372,10 +440,26 @@
       "ctaPrimary": "도입 문의하기",
       "ctaSecondary": "기술 배경 보기",
       "stats": {
-        "standard": { "label": "의료정보 표준", "value": "HL7 FHIR", "sub": "국제 표준 완전 준수" },
-        "sector": { "label": "공공 전문 분야", "value": "4대 부문", "sub": "국방·교정·보건·응급" },
-        "global": { "label": "글로벌 경험", "value": "3개 대륙", "sub": "유럽·아시아·남미" },
-        "years": { "label": "아키텍처 설계 경력", "value": "20년+", "sub": "원격의료 전문" }
+        "standard": {
+          "label": "의료정보 표준",
+          "value": "HL7 FHIR",
+          "sub": "국제 표준 완전 준수"
+        },
+        "sector": {
+          "label": "공공 전문 분야",
+          "value": "4대 부문",
+          "sub": "국방·교정·보건·응급"
+        },
+        "global": {
+          "label": "글로벌 경험",
+          "value": "3개 대륙",
+          "sub": "유럽·아시아·남미"
+        },
+        "years": {
+          "label": "아키텍처 설계 경력",
+          "value": "20년+",
+          "sub": "원격의료 전문"
+        }
       }
     },
     "arch": {
@@ -455,30 +539,69 @@
         "title": "4대 공공 분야 시스템 구축",
         "desc": "고신뢰·고보안을 요구하는 국내 핵심 공공 분야의 원격진료 시스템을 설계·운영한 경험이 SafeLync 아키텍처에 직접 반영됩니다.",
         "sectors": {
-          "defense": { "name": "국방", "desc": "군·경 원격의료 시스템 구축·운영" },
-          "corrections": { "name": "교정", "desc": "교정시설 원격진료 인프라 설계" },
-          "public": { "name": "공중보건(공공의료,보건선)", "desc": "공공 보건·의료원 비대면 진료" },
-          "emergency": { "name": "응급·특수(해경,원양선박)", "desc": "도서산간·특수환경 원격 응급의료" }
+          "defense": {
+            "name": "국방",
+            "desc": "군·경 원격의료 시스템 구축·운영"
+          },
+          "corrections": {
+            "name": "교정",
+            "desc": "교정시설 원격진료 인프라 설계"
+          },
+          "public": {
+            "name": "공중보건(공공의료,보건선)",
+            "desc": "공공 보건·의료원 비대면 진료"
+          },
+          "emergency": {
+            "name": "응급·특수(해경,원양선박)",
+            "desc": "도서산간·특수환경 원격 응급의료"
+          }
         }
       },
       "standards": {
         "title": "국제 의료 정보 표준 준수",
         "subtitle": "모든 연동 인터페이스는 국제 표준을 기반으로 설계되어, 의료기관간 표준에 기반한 연동이 수월합니다.",
-        "fhir": { "name": "HL7 FHIR R4", "desc": "의료 데이터 교환 국제 표준" },
-        "dicom": { "name": "DICOM 3.0", "desc": "의료 영상 정보 표준" },
-        "icd": { "name": "ICD-10/11", "desc": "국제 질병 분류 코드" },
-        "openapi": { "name": "OpenAPI 3.0", "desc": "표준 REST API 인터페이스" },
-        "pki": { "name": "PKI 전자서명", "desc": "전자처방전 법적 유효성" }
+        "fhir": {
+          "name": "HL7 FHIR R4",
+          "desc": "의료 데이터 교환 국제 표준"
+        },
+        "dicom": {
+          "name": "DICOM 3.0",
+          "desc": "의료 영상 정보 표준"
+        },
+        "icd": {
+          "name": "ICD-10/11",
+          "desc": "국제 질병 분류 코드"
+        },
+        "openapi": {
+          "name": "OpenAPI 3.0",
+          "desc": "표준 REST API 인터페이스"
+        },
+        "pki": {
+          "name": "PKI 전자서명",
+          "desc": "전자처방전 법적 유효성"
+        }
       },
       "interop": {
         "title": "이종 시스템 간 표준에 기반한 협진(Consultation) 구현",
         "desc": "SafeLync의 핵심 기술력은 서로 다른 EMR·HIS·PACS 시스템 사이에 표준 기반 API 브릿지를 구성하여 진료 요청, 영상 공유, 결과 회신을 실시간으로 연결하는 데 있습니다. 병원 교체 없이, 기존 인프라 위에서 협진이 시작됩니다."
       },
       "stats": {
-        "years": { "value": "20년+", "label": "원격의료 아키텍처 설계 경력" },
-        "sectors": { "value": "4개 부문", "label": "국내 핵심 공공 분야 구축" },
-        "continents": { "value": "3개 대륙", "label": "글로벌 프로젝트 수행 지역" },
-        "standards": { "value": "5종+", "label": "국제 의료정보 표준 준수" }
+        "years": {
+          "value": "20년+",
+          "label": "원격의료 아키텍처 설계 경력"
+        },
+        "sectors": {
+          "value": "4개 부문",
+          "label": "국내 핵심 공공 분야 구축"
+        },
+        "continents": {
+          "value": "3개 대륙",
+          "label": "글로벌 프로젝트 수행 지역"
+        },
+        "standards": {
+          "value": "5종+",
+          "label": "국제 의료정보 표준 준수"
+        }
       }
     },
     "features": {
@@ -486,12 +609,30 @@
       "title": "SafeLync가 다른 이유",
       "subtitle": "원격의료의 모든 과제를 검증된 국가급 아키텍처로 해결합니다.",
       "cards": {
-        "video": { "title": "HD 화상 진료", "desc": "WebRTC 기반 저지연 HD 화상 진료 엔진. 네트워크 불안정 환경에서도 적응형 코덱으로 안정적 연결을 유지합니다." },
-        "emr": { "title": "EMR/HIS 즉시 연동", "desc": "기존 병원 시스템 교체 없이 HL7 FHIR API로 즉시 연동. 환자 데이터 이중화·재입력 불필요." },
-        "prescription": { "title": "법적 전자처방전", "desc": "PKI 전자서명 기반 법적 유효 전자처방전 발행 및 약국 시스템 자동 전달." },
-        "security": { "title": "의료 데이터 보안", "desc": "전송 구간 E2E 암호화, 저장 데이터 AES-256 암호화. 개인정보보호법·의료법 완전 준수 구조." },
-        "multisite": { "title": "다기관 협진 허브", "desc": "병원·의원·보건소·공공기관 간 협진 요청·영상 공유·결과 전달을 단일 플랫폼에서 통합 관리." },
-        "audit": { "title": "진료 감사 추적", "desc": "모든 진료·처방·협진 행위에 불변 감사 로그 생성. 법적·행정적 책임 추적을 완벽히 보장합니다." }
+        "video": {
+          "title": "HD 화상 진료",
+          "desc": "WebRTC 기반 저지연 HD 화상 진료 엔진. 네트워크 불안정 환경에서도 적응형 코덱으로 안정적 연결을 유지합니다."
+        },
+        "emr": {
+          "title": "EMR/HIS 즉시 연동",
+          "desc": "기존 병원 시스템 교체 없이 HL7 FHIR API로 즉시 연동. 환자 데이터 이중화·재입력 불필요."
+        },
+        "prescription": {
+          "title": "법적 전자처방전",
+          "desc": "PKI 전자서명 기반 법적 유효 전자처방전 발행 및 약국 시스템 자동 전달."
+        },
+        "security": {
+          "title": "의료 데이터 보안",
+          "desc": "전송 구간 E2E 암호화, 저장 데이터 AES-256 암호화. 개인정보보호법·의료법 완전 준수 구조."
+        },
+        "multisite": {
+          "title": "다기관 협진 허브",
+          "desc": "병원·의원·보건소·공공기관 간 협진 요청·영상 공유·결과 전달을 단일 플랫폼에서 통합 관리."
+        },
+        "audit": {
+          "title": "진료 감사 추적",
+          "desc": "모든 진료·처방·협진 행위에 불변 감사 로그 생성. 법적·행정적 책임 추적을 완벽히 보장합니다."
+        }
       }
     },
     "cta": {
@@ -768,9 +909,18 @@
         "desc": "한국전력공사 등 대형 산업 현장에서 현재 Field Test를 진행 중입니다. 실제 운영 환경에서 시스템 안정성과 법적 적합성을 검증하고 있습니다."
       },
       "stats": {
-        "years": { "value": "20년+", "label": "산업보건 연구 및 시스템 운영" },
-        "papers": { "value": "Springer", "label": "국제 학술지 게재 논문" },
-        "fieldtest": { "value": "한전 外", "label": "실제 산업 현장 Field Test" }
+        "years": {
+          "value": "20년+",
+          "label": "산업보건 연구 및 시스템 운영"
+        },
+        "papers": {
+          "value": "Springer",
+          "label": "국제 학술지 게재 논문"
+        },
+        "fieldtest": {
+          "value": "한전 外",
+          "label": "실제 산업 현장 Field Test"
+        }
       },
       "disclaimer": "본 전문성은 주식회사 발트랩 핵심 인력의 개인 전문성·경험 및 전략적 기술 제휴 파트너의 검증된 이력에 기반합니다."
     }
@@ -792,10 +942,14 @@
       "detailP3": "회사는 앞으로도 지적재산권 관리를 통해 혁신적인 헬스케어·산업안전 서비스를 안정적으로 확대해 나가겠습니다."
     },
     "card2": {
-      "tag": "안내",
-      "title": "새 소식을 준비 중입니다",
-      "excerpt": "다음 업데이트에서 만나요. 중요한 공지는 이곳에 안내드립니다.",
-      "date": "—"
+      "tag": "지적재산권",
+      "title": "SafeWay·SafeLync·SafeSync 상표 출원 완료",
+      "excerpt": "통합 데이터 인프라·원격의료·근로자 건강관리 브랜드의 상표 출원을 완료하였습니다.",
+      "date": "2025.04",
+      "detailTitle": "SafeWay·SafeLync·SafeSync 상표 출원 완료",
+      "detailP1": "주식회사 Wald Lab(이하 \"회사\")은 2025년 4월, 통합 데이터 인프라 플랫폼 「SafeWay」, 원격의료 「SafeLync」, 근로자 건강관리 「SafeSync」에 대해 상표 출원을 완료하였습니다.",
+      "detailP2": "이번 조치는 각 서비스 브랜드의 법적 보호를 강화하고, 고객사와 파트너에게 일관된 품질과 신뢰를 제공하기 위한 기반을 마련합니다.",
+      "detailP3": "회사는 앞으로도 지적재산권 관리를 통해 혁신적인 헬스케어·산업안전 서비스를 안정적으로 확대해 나가겠습니다."
     },
     "card3": {
       "tag": "안내",
