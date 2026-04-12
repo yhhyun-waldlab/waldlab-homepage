@@ -43,10 +43,10 @@ function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number) {
 export default function EcosystemSection({ t }: EcosystemSectionProps) {
   const [activeService, setActiveService] = useState<string | null>(null);
 
-  const cx = 300;
-  const cy = 300;
-  const outerR = 200;
-  const nodeSize = 44;
+  const cx = 320;
+  const cy = 320;
+  const outerR = 220;
+  const nodeSize = 88;
 
   return (
     <section className="py-24 lg:py-32 bg-white overflow-hidden">
@@ -71,7 +71,7 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
           {/* SVG Diagram */}
           <div className="flex-shrink-0 w-full max-w-[600px] mx-auto lg:mx-0">
             <svg
-              viewBox="0 0 600 600"
+              viewBox="0 0 640 640"
               className="w-full h-auto"
               style={{ filter: "drop-shadow(0 20px 40px rgba(13,43,30,0.08))" }}
             >
@@ -129,7 +129,7 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                     <rect
                       width={nodeSize}
                       height={nodeSize}
-                      rx="12"
+                      rx="24"
                       fill={isActive ? svc.color : "white"}
                       stroke={isActive ? svc.color : "#e5ede8"}
                       strokeWidth={isActive ? 0 : 2}
@@ -147,15 +147,15 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                           transition: "color 0.3s ease",
                         }}
                       >
-                        <Icon size={22} color={iconColor} stemColor={stemColor} />
+                        <Icon size={44} color={iconColor} stemColor={stemColor} />
                       </div>
                     </foreignObject>
                     {/* Label */}
                     <text
                       x={nodeSize / 2}
-                      y={nodeSize + 16}
+                      y={nodeSize + 28}
                       textAnchor="middle"
-                      fontSize="10"
+                      fontSize="20"
                       fontWeight="600"
                       fill={isActive ? svc.color : "#1f5c3e"}
                       style={{ transition: "fill 0.3s ease" }}
@@ -246,12 +246,12 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                         className="flex flex-col items-center gap-2 p-3 rounded-xl border border-wald-100 hover:border-wald-300 transition-colors"
                       >
                         <div
-                          className="w-8 h-8 rounded-lg flex items-center justify-center"
+                          className="w-16 h-16 rounded-lg flex items-center justify-center"
                           style={{ backgroundColor: svc.color + "15" }}
                         >
-                          <Icon size={16} color={svc.color} />
+                          <Icon size={32} color={svc.color} />
                         </div>
-                        <span className="text-xs font-semibold text-wald-700 text-center leading-tight">
+                        <span className="text-sm font-semibold text-wald-700 text-center leading-tight">
                           {svc.label}
                         </span>
                       </button>
