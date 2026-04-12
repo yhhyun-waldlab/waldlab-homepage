@@ -43,9 +43,23 @@ export default function Footer({ t }: FooterProps) {
               {t("footer.tagline")}
             </p>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-wald-400 text-sm">
-                <Mail size={15} />
-                <span>info@waldlab.kr</span>
+              <div className="flex items-center gap-2 text-wald-400 text-sm flex-wrap">
+                <Mail size={15} className="shrink-0" />
+                <span>
+                  <a
+                    href="mailto:info@waldlab.kr"
+                    className="hover:text-wald-200 transition-colors"
+                  >
+                    info@waldlab.kr
+                  </a>
+                  <span className="text-wald-500">, </span>
+                  <a
+                    href="mailto:yhhyun@waldlab.kr"
+                    className="hover:text-wald-200 transition-colors"
+                  >
+                    yhhyun@waldlab.kr
+                  </a>
+                </span>
               </div>
               <div className="flex items-center gap-2 text-wald-400 text-sm">
                 <MapPin size={15} />
