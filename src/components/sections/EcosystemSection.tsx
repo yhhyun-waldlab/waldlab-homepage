@@ -153,9 +153,9 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                     {/* Label */}
                     <text
                       x={nodeSize / 2}
-                      y={nodeSize + 16}
+                      y={nodeSize + 17}
                       textAnchor="middle"
-                      fontSize="10"
+                      fontSize="11"
                       fontWeight="600"
                       fill={isActive ? svc.color : "#1f5c3e"}
                       style={{ transition: "fill 0.3s ease" }}
@@ -251,7 +251,7 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                         >
                           <Icon size={16} color={svc.color} />
                         </div>
-                        <span className="text-xs font-semibold text-wald-700 text-center leading-tight">
+                        <span className="text-[13px] font-semibold text-wald-700 text-center leading-tight">
                           {svc.label}
                         </span>
                       </button>
