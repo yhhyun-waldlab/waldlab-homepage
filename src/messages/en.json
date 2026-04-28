@@ -511,7 +511,7 @@
     "features": {
       "sectionBadge": "Key Features",
       "title": "What Makes SafeLync Different",
-      "subtitle": "Summary of implemented capabilities.",
+      "subtitle": "Roadmap and capabilities we are expanding — some features roll out in phases.",
       "cards": {
         "video": {
           "eyebrow": "Summary",
@@ -524,11 +524,11 @@
           "point3Label": "WebRTC Standard",
           "point3Desc": "Browser-based sessions without a separate install"
         },
-        "emr": { "title": "EMR/HIS integration", "desc": "HL7 FHIR API links to existing hospital systems. No duplicate patient entry." },
-        "prescription": { "title": "Legal e-prescription", "desc": "PKI-signed e-prescriptions. Delivery to pharmacy systems." },
-        "security": { "title": "Medical data security", "desc": "Encryption in transit and at rest. Design aligned with privacy and medical regulations." },
-        "multisite": { "title": "Cross-facility flows", "desc": "Standard API bridges for requests and results. Facility-level flows on one platform." },
-        "audit": { "title": "Clinical audit trail", "desc": "Audit logs for visits, prescriptions, and integration actions. For legal and administrative traceability." }
+        "emr": { "title": "EMR/HIS integration", "desc": "Expanding hospital connectivity via HL7 FHIR APIs. Designed to reduce duplicate patient entry as coverage grows." },
+        "prescription": { "title": "E-prescription & pharmacy link", "desc": "Phased support for PKI-signed e-prescriptions and pharmacy integration. Scope depends on institution and regulatory context." },
+        "security": { "title": "Medical data security", "desc": "Applying baseline encryption and access controls; privacy and medical regulatory requirements are reflected in ongoing design." },
+        "multisite": { "title": "Cross-facility flows", "desc": "Building standard API bridges for consultation requests and results, and facility-level workflow management on one platform." },
+        "audit": { "title": "Clinical audit trail", "desc": "Progressively strengthening audit logs for visits, prescriptions, and integrations, aligned with legal and administrative traceability needs." }
       }
     },
     "cta": {
