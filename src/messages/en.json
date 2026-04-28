@@ -524,11 +524,61 @@
           "point3Label": "WebRTC Standard",
           "point3Desc": "Browser-based sessions without a separate install"
         },
-        "emr": { "title": "EMR/HIS integration", "desc": "Expanding hospital connectivity via HL7 FHIR APIs. Designed to reduce duplicate patient entry as coverage grows." },
-        "prescription": { "title": "E-prescription & pharmacy link", "desc": "Phased support for PKI-signed e-prescriptions and pharmacy integration. Scope depends on institution and regulatory context." },
-        "security": { "title": "Medical data security", "desc": "Applying baseline encryption and access controls; privacy and medical regulatory requirements are reflected in ongoing design." },
-        "multisite": { "title": "Cross-facility flows", "desc": "Building standard API bridges for consultation requests and results, and facility-level workflow management on one platform." },
-        "audit": { "title": "Clinical audit trail", "desc": "Progressively strengthening audit logs for visits, prescriptions, and integrations, aligned with legal and administrative traceability needs." }
+        "emr": {
+          "eyebrow": "Summary",
+          "title": "EMR/HIS integration",
+          "desc": "Expanding hospital connectivity via HL7 FHIR APIs. Designed to reduce duplicate patient entry as coverage grows.",
+          "point1Label": "FHIR R4 resources",
+          "point1Desc": "Exchange via standard resources such as Patient and Observation",
+          "point2Label": "REST integration",
+          "point2Desc": "HTTP API contracts with per-site EMR/HIS adapters",
+          "point3Label": "Sync & idempotency",
+          "point3Desc": "Identifiers and versioning for retries and deduplication"
+        },
+        "prescription": {
+          "eyebrow": "Summary",
+          "title": "E-prescription & pharmacy link",
+          "desc": "Phased support for PKI-signed e-prescriptions and pharmacy integration. Scope depends on institution and regulatory context.",
+          "point1Label": "PKI e-signature",
+          "point1Desc": "Prescription document integrity and signing chain (expanded per law and site process)",
+          "point2Label": "Delivery & relay",
+          "point2Desc": "Normalized prescription messages to pharmacy and external systems (phased)",
+          "point3Label": "Regulatory profiles",
+          "point3Desc": "Institution- and region-specific e-Rx rules as policy and modules"
+        },
+        "security": {
+          "eyebrow": "Summary",
+          "title": "Medical data security",
+          "desc": "Applying baseline encryption and access controls; privacy and medical regulatory requirements are reflected in ongoing design.",
+          "point1Label": "In transit",
+          "point1Desc": "Transport encryption with TLS-class standards",
+          "point2Label": "At rest",
+          "point2Desc": "Encryption and key-handling design under policy (expanding)",
+          "point3Label": "RBAC",
+          "point3Desc": "Role- and scope-based access with least privilege"
+        },
+        "multisite": {
+          "eyebrow": "Summary",
+          "title": "Cross-facility flows",
+          "desc": "Building standard API bridges for consultation requests and results, and facility-level workflow management on one platform.",
+          "point1Label": "API bridge",
+          "point1Desc": "Payloads and endpoints for requests and result delivery",
+          "point2Label": "Multi-tenancy",
+          "point2Desc": "Clinic-level isolation and inbound routing",
+          "point3Label": "Care workflow",
+          "point3Desc": "Cross-facility stage and state tracking on one platform (expanding)"
+        },
+        "audit": {
+          "eyebrow": "Summary",
+          "title": "Clinical audit trail",
+          "desc": "Progressively strengthening audit logs for visits, prescriptions, and integrations, aligned with legal and administrative traceability needs.",
+          "point1Label": "Audit log",
+          "point1Desc": "Append-oriented event records for care, Rx, and integration actions",
+          "point2Label": "Correlation IDs",
+          "point2Desc": "Request- and session-scoped identifiers for lookup",
+          "point3Label": "Retention & access",
+          "point3Desc": "Legal retention and privileged-access rules (phased)"
+        }
       }
     },
     "cta": {
