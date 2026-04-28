@@ -637,70 +637,28 @@
       "subtitle": "로드맵과 확장 중인 역량을 요약합니다. 일부는 단계적으로 제공됩니다.",
       "cards": {
         "video": {
-          "eyebrow": "요약",
           "title": "화상 진료 최적화 기술 적용",
-          "desc": "WebRTC 표준 기반의 실시간 소통. 네트워크 환경에 최적화된 적응형 코덱 기술로 안정적인 연결을 지원합니다.",
-          "point1Label": "Adaptive Bitrate",
-          "point1Desc": "가용 대역폭에 따른 화질 자동 조절",
-          "point2Label": "Low Latency",
-          "point2Desc": "실시간 원격 진료를 위한 저지연 스트리밍",
-          "point3Label": "WebRTC Standard",
-          "point3Desc": "별도 설치 없는 브라우저 기반 연결"
+          "desc": "WebRTC 표준 기반의 실시간 소통. 네트워크 환경에 최적화된 적응형 코덱 기술로 안정적인 연결을 지원합니다."
         },
         "emr": {
-          "eyebrow": "요약",
           "title": "EMR/HIS 연동",
-          "desc": "HL7 FHIR API를 기준으로 병원 시스템 연동 범위를 넓히는 중입니다. 환자 데이터 재입력을 줄이는 흐름을 목표로 설계합니다.",
-          "point1Label": "FHIR R4 리소스",
-          "point1Desc": "Patient·Observation 등 표준 리소스 기반 데이터 교환",
-          "point2Label": "REST 연동",
-          "point2Desc": "기관별 EMR/HIS 어댑터와의 HTTP API 계약",
-          "point3Label": "동기화·멱등",
-          "point3Desc": "식별자·버전으로 재시도·중복 처리에 대비"
+          "desc": "HL7 FHIR API를 기준으로 병원 시스템 연동 범위를 넓히는 중입니다. 환자 데이터 재입력을 줄이는 흐름을 목표로 설계합니다."
         },
         "prescription": {
-          "eyebrow": "요약",
           "title": "전자처방·약국 연계",
-          "desc": "PKI 전자서명을 포함한 전자처방 및 약국 연계를 단계적으로 지원합니다. 실제 적용 범위는 기관·규제 여건에 따릅니다.",
-          "point1Label": "PKI 전자서명",
-          "point1Desc": "처방 문서 무결성·서명 체인(법·기관 절차에 맞춰 확장)",
-          "point2Label": "전달·중계",
-          "point2Desc": "약국·외부 시스템으로의 표준화된 처방 전달 메시지(단계적)",
-          "point3Label": "규제 프로파일",
-          "point3Desc": "기관·지역별 전자처방 요건을 정책·모듈로 반영"
+          "desc": "PKI 전자서명을 포함한 전자처방 및 약국 연계를 단계적으로 지원합니다. 실제 적용 범위는 기관·규제 여건에 따릅니다."
         },
         "security": {
-          "eyebrow": "요약",
           "title": "의료 데이터 보안",
-          "desc": "전송·저장 구간 암호화 등 기본 통제를 적용하고, 개인정보·의료 관련 규제를 설계에 반영하는 중입니다.",
-          "point1Label": "전송 구간",
-          "point1Desc": "TLS 등 표준 프로토콜로 통신 암호화",
-          "point2Label": "저장 데이터",
-          "point2Desc": "정책에 따른 암호화·키 관리 설계(확장 중)",
-          "point3Label": "RBAC",
-          "point3Desc": "역할·스코프 기반 접근 제한과 최소 권한"
+          "desc": "전송·저장 구간 암호화 등 기본 통제를 적용하고, 개인정보·의료 관련 규제를 설계에 반영하는 중입니다."
         },
         "multisite": {
-          "eyebrow": "요약",
           "title": "기관 간 연동",
-          "desc": "진료 요청·결과 회신용 표준 API 브릿지와 기관 단위 흐름 관리를 구축·확장하는 중입니다.",
-          "point1Label": "표준 API 브릿지",
-          "point1Desc": "진료 요청·결과 회신 페이로드·엔드포인트 규격",
-          "point2Label": "멀티 테넌시",
-          "point2Desc": "기관(Clinic) 단위 격리·인바운드 라우팅",
-          "point3Label": "진료 흐름",
-          "point3Desc": "동일 플랫폼에서 기관 간 단계·상태 관리(확장 중)"
+          "desc": "진료 요청·결과 회신용 표준 API 브릿지와 기관 단위 흐름 관리를 구축·확장하는 중입니다."
         },
         "audit": {
-          "eyebrow": "요약",
           "title": "진료 감사 추적",
-          "desc": "진료·처방·연동 기록에 대한 감사 로그를 단계적으로 보강합니다. 법적·행정 추적 요구를 반영해 확장합니다.",
-          "point1Label": "감사 로그",
-          "point1Desc": "진료·처방·연동 이벤트의 append-only 성격 기록",
-          "point2Label": "추적 식별자",
-          "point2Desc": "요청·세션 단위 상관 ID로 조회 가능",
-          "point3Label": "보존·열람",
-          "point3Desc": "법적 보존·권한 있는 열람 정책 반영(단계적)"
+          "desc": "진료·처방·연동 기록에 대한 감사 로그를 단계적으로 보강합니다. 법적·행정 추적 요구를 반영해 확장합니다."
         }
       }
     },
