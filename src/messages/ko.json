@@ -507,7 +507,7 @@
       "cards": {
         "consult": {
           "title": "화상 진료",
-          "desc": "저지연 HD 화상. 진료 녹화, 전자서명 처방, 의료기록 동기화."
+          "desc": "WebRTC 표준 기반 실시간 소통. 네트워크 환경에 맞춘 적응형 코덱으로 연결 안정성을 지원합니다. 진료 녹화, 전자서명 처방, 의료기록 동기화."
         },
         "prescription": {
           "title": "전자처방 관리",
@@ -637,8 +637,15 @@
       "subtitle": "구현된 기능 요약입니다.",
       "cards": {
         "video": {
-          "title": "HD 화상 진료",
-          "desc": "WebRTC 기반 HD 화상. 저지연·적응형 코덱."
+          "eyebrow": "요약",
+          "title": "화상 진료 최적화 기술 적용",
+          "desc": "WebRTC 표준 기반의 실시간 소통. 네트워크 환경에 최적화된 적응형 코덱 기술로 안정적인 연결을 지원합니다.",
+          "point1Label": "Adaptive Bitrate",
+          "point1Desc": "가용 대역폭에 따른 화질 자동 조절",
+          "point2Label": "Low Latency",
+          "point2Desc": "실시간 원격 진료를 위한 저지연 스트리밍",
+          "point3Label": "WebRTC Standard",
+          "point3Desc": "별도 설치 없는 브라우저 기반 연결"
         },
         "emr": {
           "title": "EMR/HIS 연동",
