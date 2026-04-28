@@ -15,7 +15,7 @@
     "titleHighlight": "Care",
     "titlePart2": ".",
     "tagline": "Bridging Care Through the Digital Forest",
-    "subtitle": "The most trusted healthcare infrastructure, built on 25 years of design & implementation expertise — SafeWay.",
+    "subtitle": "Healthcare data infrastructure drawn from 25 years of design and delivery — SafeWay.",
     "cta": "Explore Services",
     "ctaSecondary": "Our Story",
     "stat1Value": "6+",
@@ -36,7 +36,7 @@
     "feature2Title": "Real-time Analytics Engine",
     "feature2Desc": "Analyze collected data in real-time to deliver immediate insights and alerts",
     "feature3Title": "Security & Compliance",
-    "feature3Desc": "Top-tier data security compliant with HL7 FHIR international standards and personal data protection laws",
+    "feature3Desc": "Security and access control designed with HL7 FHIR and privacy regulations in mind — not a claim of formal certification.",
     "feature4Title": "Scalable API",
     "feature4Desc": "Open API standards supporting integration with third-party services and healthcare providers",
     "learnMore": "Learn More"
@@ -101,7 +101,7 @@
     "description1": "Wald Lab takes its name from 'Wald' (forest). Just as a forest sustains a healthy ecosystem where thousands of species depend on each other, we develop technology that creates a world where people, animals, and the environment thrive together.",
     "description2": "We don't just build healthcare apps — through trustworthy medical data infrastructure, we bridge gaps in healthcare access and strive toward a world where more people receive better health management.",
     "value1Title": "Trust",
-    "value1Desc": "Medical data is the most sensitive personal information. We promise the highest level of security and transparency.",
+    "value1Desc": "Medical data is highly sensitive. We prioritize security and transparent operations.",
     "value2Title": "Connection",
     "value2Desc": "From healthcare providers and patients, to industrial sites and pets — we connect all health data into one ecosystem.",
     "value3Title": "Innovation",
@@ -197,7 +197,7 @@
     "ev2Title": "SafeWay Platform",
     "ev2Subtitle": "25 Years of Expertise Consolidated",
     "ev2P0": "Unified data platform integrating telemedicine, wellness & chronic care",
-    "ev2P1": "Global-standard architecture based on HL7 FHIR · HIPAA",
+    "ev2P1": "HL7 FHIR–first architecture; HIPAA and similar references reflected in design (not a certification statement).",
     "ev2P2": "AI-powered prevention & predictive healthcare infrastructure",
     "disclosureTitle": "Expertise Disclosure",
     "disclosureName": "Hyun Young-ho",
@@ -326,7 +326,7 @@
     },
     "techbg": {
       "sectionBadge": "Technical Background",
-      "title": "WorkCare Expertise & National-Grade Operations Know-how",
+      "title": "WorkCare expertise and field operations know-how",
       "subtitle": "SafeSync's health management logic is built on system expertise validated at large-scale industrial sites over many years.",
       "pillars": {
         "workcare": {
@@ -335,19 +335,19 @@
           "desc": "SafeSync directly inherits the design and operational expertise of the WorkCare system, which has run in major Korean corporate medical offices for over 20 years."
         },
         "public": {
-          "badge": "National-Grade Validated",
+          "badge": "Public-sector experience",
           "title": "Public & Government Sector Know-how",
           "desc": "System-building experience from Korea's critical public sectors — Defense, Corrections, Public Health, Emergency — is embedded in SafeSync's architecture."
         },
         "global": {
           "badge": "Global Experience",
-          "title": "Validated at Large-Scale Domestic & International Sites",
-          "desc": "Global project expertise from diverse healthcare environments in Europe, Asia, and Latin America — combined with major Korean industrial site operations know-how."
+          "title": "Domestic & international project experience",
+          "desc": "Project experience across healthcare environments in Europe, Asia, and Latin America — combined with major Korean industrial site operations know-how."
         },
         "security": {
-          "badge": "Global Security Standards",
-          "title": "Highest Security for Worker Health Data",
-          "desc": "AES-256 encryption, role-based access control (RBAC), and full compliance with Korea's Personal Information Protection Act and Medical Act to protect sensitive health data."
+          "badge": "Security design",
+          "title": "Protecting worker health data",
+          "desc": "Encryption, RBAC, and other controls; privacy and medical-law requirements are reflected in design. Final legal or administrative compliance is for each customer to verify."
         }
       }
     },
@@ -367,12 +367,12 @@
       "badgeStandard": "International Standards-Based Architecture",
       "title1": "Anywhere, Safely",
       "title2": "Connecting Patients & Providers",
-      "desc1": "A national-grade telemedicine platform built on 20 years of remote healthcare architecture expertise.",
-      "desc2": "An international-standards-based architecture that fully meets the demands of public and medical institutions worldwide.",
+      "desc1": "A telemedicine platform built on two decades of remote-care architecture experience.",
+      "desc2": "Architecture grounded in international standards, with typical public- and hospital-sector requirements in mind.",
       "ctaPrimary": "Request a Demo",
       "ctaSecondary": "See Technical Background",
       "stats": {
-        "standard": { "label": "Medical Info Standard", "value": "HL7 FHIR", "sub": "Full international compliance" },
+        "standard": { "label": "Medical Info Standard", "value": "HL7 FHIR", "sub": "FHIR R4–based" },
         "sector": { "label": "Public Sector Expertise", "value": "4 Sectors", "sub": "Defense · Corrections · Health · Emergency" },
         "global": { "label": "Global Experience", "value": "3 Continents", "sub": "Europe · Asia · Latin America" },
         "years": { "label": "Architecture Design Career", "value": "20+ yrs", "sub": "Telemedicine specialist" }
@@ -380,8 +380,8 @@
     },
     "arch": {
       "sectionBadge": "Consultation Architecture",
-      "title": "Service Consultation Structure Centered on SafeLync",
-      "subtitle": "On the SafeWay platform, all services consult in real time — with SafeLync as the hub.",
+      "title": "Service links centered on SafeLync",
+      "subtitle": "On SafeWay, service data is routed through SafeLync.",
       "foundationLabel": "SafeWay Platform — Infrastructure Foundation",
       "hubLabel": "SafeLync — Central Consultation Hub",
       "connections": {
@@ -389,49 +389,49 @@
           "id": "01",
           "route": "SafeLync ↔ SafeLync",
           "channel": "CHANNEL: peer_consultation",
-          "title": "Peer Physician Consultation",
-          "desc": "Requests for specialist second opinions between providers on the same platform. Case sharing and parallel consultations handled via standard API."
+          "title": "Peer requests",
+          "desc": "Consultation requests and second opinions on the same platform. Handled via standard API."
         },
         "entry": {
           "id": "02",
           "route": "SafeLync ← SafeEntry",
           "channel": "TRIGGER: entry_health_anomaly_detected",
-          "title": "Immediate Link on Entry Anomaly",
-          "desc": "When SafeEntry detects a health anomaly during pre-placement screening, a SafeLync consultation channel is activated event-driven immediately."
+          "title": "Entry screening to SafeLync",
+          "desc": "When SafeEntry flags an anomaly, data is passed via SafeSync so a SafeLync care channel can open."
         },
         "sync": {
           "id": "03",
           "route": "SafeLync ← SafeSync",
           "channel": "CHANNEL: realtime_biometric_stream",
-          "title": "Continuous Monitoring Data Feed",
-          "desc": "Real-time biometric streams collected by SafeSync are fed directly into SafeLync consultation sessions, enabling remote monitoring-based care."
+          "title": "Monitoring data link",
+          "desc": "Biometric data from SafeSync is available as context in SafeLync sessions."
         },
         "step": {
           "id": "04",
           "route": "SafeLync ← SafeStep Pro / Lite",
           "channel": "CHANNEL: care_plan_context_feed",
-          "title": "Care Plan & Health History Integration",
-          "desc": "SafeStep's care plans, medication history, and cumulative activity data are automatically provided as consultation context in SafeLync sessions."
+          "title": "Care plan & history link",
+          "desc": "Care plans, medication history, and activity data from SafeStep are passed into SafeLync as consultation context."
         }
       }
     },
     "value": {
       "sectionBadge": "Core Value",
-      "title": "Everything in Telemedicine,",
-      "titleHighlight": "One Platform",
-      "subtitle": "From video consultations and prescription management to multi-institution collaboration — a unified telemedicine solution that safely connects physicians and patients.",
+      "title": "Telemedicine,",
+      "titleHighlight": "one platform",
+      "subtitle": "Video visits, e-prescriptions, and cross-facility links in one product.",
       "cards": {
         "consult": {
-          "title": "Video Consultation",
-          "desc": "Low-latency HD video consultations. Consultation recording, electronic prescription signing, and medical record sync — all in one place."
+          "title": "Video consultation",
+          "desc": "Low-latency HD video. Recording, e-signed prescriptions, record sync."
         },
         "prescription": {
-          "title": "Electronic Prescription",
-          "desc": "PKI-signed legally valid electronic prescriptions — issuance, delivery, and history management with automated pharmacy system integration."
+          "title": "E-prescription",
+          "desc": "PKI-signed e-prescriptions: issue, deliver, history. Pharmacy integration."
         },
         "collab": {
-          "title": "Inter-institutional Collaboration",
-          "desc": "Connect heterogeneous EMR/HIS systems via standard APIs for real-time referral requests, image sharing, and result delivery."
+          "title": "Requests & results",
+          "desc": "Standard API bridges for consultation requests and result delivery across heterogeneous EMR, HIS, and PACS systems."
         }
       }
     },
@@ -448,12 +448,12 @@
         "samd": {
           "badge": "Quality & Compliance",
           "title": "Quality Management & SaMD Readiness",
-          "desc": "A strict unit-test-driven development process is maintained to align with Software as a Medical Device (SaMD) certification requirements. A traceability management framework is established at the source code level, designed with MFDS and CE-MDR Technical File documentation in mind."
+          "desc": "Development and change control include unit tests, with SaMD documentation and certification expectations in traceability from source. This is process posture — not a statement of certification obtained."
         },
         "security": {
           "badge": "Security & Privacy",
           "title": "Security & Privacy",
-          "desc": "Privacy by Design principles are applied from the architecture stage to prevent sensitive data exposure in logs. RBAC (Role-Based Access Control) manages precise data access rights from super-administrators to general users, following coding guidelines aligned with ISMS-P and international security standards."
+          "desc": "Privacy by Design from early architecture; practices aim to keep sensitive data out of logs and observability. RBAC limits access by role. Internal coding guidelines reference ISMS-P and common international materials — not a claim of certification."
         },
         "org": {
           "badge": "Organization Management",
@@ -467,7 +467,7 @@
       "title": "20 Years of Proven Telemedicine Expertise",
       "subtitle": "SafeLync is not just software. It is the crystallization of large-scale remote healthcare architecture design know-how built at the forefront of domestic and international systems for over 20 years.",
       "credentialBadge": "Verified National-Grade System Expert Group",
-      "credentialDesc": "Delivering the highest levels of reliability, security, and interoperability demanded by domestic and international public health institutions — engineered from the ground up.",
+      "credentialDesc": "Reliability, security, and interoperability requirements common in public and medical institutions are reflected early in design.",
       "global": {
         "label": "Global Project Experience",
         "title": "Diverse Medical Environments (Europe, Mongolia, Amazon Hospital Ship, Ocean-going Vessels, etc.)",
@@ -480,7 +480,7 @@
       "public": {
         "label": "Domestic Public Sector Expertise",
         "title": "4 Key Public Sector Systems Built",
-        "desc": "Experience designing and operating telemedicine systems for Korea's most demanding public sectors — each requiring the highest trust, security, and reliability standards.",
+        "desc": "Experience designing and operating telemedicine systems for Korea's public sectors with demanding trust and security expectations.",
         "sectors": {
           "defense": { "name": "Defense", "desc": "Military & Police telemedicine system build & operations" },
           "corrections": { "name": "Corrections", "desc": "Correctional facility remote medical infrastructure" },
@@ -489,36 +489,36 @@
         }
       },
       "standards": {
-        "title": "Full Compliance with International Medical Information Standards",
-        "subtitle": "All integration interfaces are built on international standards, enabling immediate connection with existing hospital systems (EMR/HIS) without custom development.",
+        "title": "International medical information standards",
+        "subtitle": "Integration interfaces are designed against international standards.",
         "fhir": { "name": "HL7 FHIR R4", "desc": "International health data exchange standard" },
         "dicom": { "name": "DICOM 3.0", "desc": "Medical imaging information standard" },
         "icd": { "name": "ICD-10/11", "desc": "International disease classification codes" },
         "openapi": { "name": "OpenAPI 3.0", "desc": "Standard REST API interface" },
-        "pki": { "name": "PKI e-Signature", "desc": "Legal validity for electronic prescriptions" }
+        "pki": { "name": "PKI e-Signature", "desc": "Signing flow for e-prescription integration" }
       },
       "interop": {
-        "title": "Perfect Inter-System Consultation (Collaboration) Capability",
-        "desc": "SafeLync's core technical strength lies in building standards-based API bridges between disparate EMR, HIS, and PACS systems — enabling real-time referral requests, image sharing, and result delivery. Collaboration begins on your existing infrastructure without replacing a single system."
+        "title": "Standard API bridge for requests and results",
+        "desc": "Standard API bridges for consultation requests and result delivery across heterogeneous EMR, HIS, and PACS systems."
       },
       "stats": {
         "years": { "value": "20+ yrs", "label": "Telemedicine architecture design career" },
         "sectors": { "value": "4 Sectors", "label": "Domestic public sector systems built" },
         "continents": { "value": "3 Continents", "label": "Global project regions" },
-        "standards": { "value": "5+ Types", "label": "International medical info standards met" }
+        "standards": { "value": "5+ Types", "label": "International standards referenced in design" }
       }
     },
     "features": {
       "sectionBadge": "Key Features",
       "title": "What Makes SafeLync Different",
-      "subtitle": "Every telemedicine challenge — solved with verified national-grade architecture.",
+      "subtitle": "Summary of implemented capabilities.",
       "cards": {
-        "video": { "title": "HD Video Consultation", "desc": "Low-latency WebRTC-based HD video engine with adaptive codecs that maintain stable connections even in unstable network environments." },
-        "emr": { "title": "Instant EMR/HIS Integration", "desc": "Instant HL7 FHIR API integration with existing hospital systems — no replacement or re-entry of patient data required." },
-        "prescription": { "title": "Legal E-Prescription", "desc": "PKI-signed legally valid e-prescriptions with automated delivery to pharmacy systems." },
-        "security": { "title": "Medical Data Security", "desc": "E2E encryption in transit, AES-256 encryption at rest. Full compliance with privacy and medical laws." },
-        "multisite": { "title": "Multi-institution Collaboration Hub", "desc": "Unified management of referrals, image sharing, and results between hospitals, clinics, health centers, and public agencies." },
-        "audit": { "title": "Clinical Audit Trail", "desc": "Immutable audit logs for all consultations, prescriptions, and referrals — ensuring full legal and administrative accountability." }
+        "video": { "title": "HD video visits", "desc": "WebRTC HD video. Low latency, adaptive codecs." },
+        "emr": { "title": "EMR/HIS integration", "desc": "HL7 FHIR API links to existing hospital systems. No duplicate patient entry." },
+        "prescription": { "title": "Legal e-prescription", "desc": "PKI-signed e-prescriptions. Delivery to pharmacy systems." },
+        "security": { "title": "Medical data security", "desc": "Encryption in transit and at rest. Design aligned with privacy and medical regulations." },
+        "multisite": { "title": "Cross-facility flows", "desc": "Standard API bridges for requests and results. Facility-level flows on one platform." },
+        "audit": { "title": "Clinical audit trail", "desc": "Audit logs for visits, prescriptions, and integration actions. For legal and administrative traceability." }
       }
     },
     "cta": {
@@ -542,7 +542,7 @@
       "titleTime": "within 2 min",
       "desc1": "Fulfill your legal pre-assignment health check obligation with SafeEntry.",
       "desc2": "From BP, temperature, and alcohol measurement to auto-reporting—",
-      "desc3": "SafeEntry covers all of the employer's legal responsibilities.",
+      "desc3": "SafeEntry helps employers meet statutory obligations.",
       "ctaPrimary": "Request a Demo",
       "ctaSecondary": "See It in Action"
     },
@@ -695,7 +695,7 @@
           "2": "Exemption periods calculated automatically by the system",
           "3": "Alerts for the 30-day reporting deadline and one-click submission",
           "4": "Consistent judgments using embedded legal standards",
-          "5": "100% compliance through 30-second kiosk measurements"
+          "5": "30-second kiosk flow to cut missed on-site logging and reporting"
         }
       }
     },
