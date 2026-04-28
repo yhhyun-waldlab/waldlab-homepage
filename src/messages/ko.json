@@ -652,7 +652,7 @@
           "title": "EMR/HIS 연동",
           "desc": "HL7 FHIR API를 기준으로 병원 시스템 연동 범위를 넓히는 중입니다. 환자 데이터 재입력을 줄이는 흐름을 목표로 설계합니다.",
           "point1Label": "FHIR R4 리소스",
-          "point1Desc": "Patient·Observation 등 표준 기반 데이터 교환",
+          "point1Desc": "Patient·Observation 등 표준 기반 데이터",
           "point2Label": "REST 연동",
           "point2Desc": "기관별 EMR/HIS 어댑터와의 HTTP API 계약",
           "point3Label": "동기화·멱등",
@@ -667,7 +667,7 @@
           "point2Label": "전달·중계",
           "point2Desc": "외부 시스템으로의 표준화된 처방 전달(단계적)",
           "point3Label": "규제 프로파일",
-          "point3Desc": "기관·지역별 전자처방 요건을 정책·모듈로 반영"
+          "point3Desc": "개별 전자처방 요건을 정책·모듈로 반영"
         },
         "security": {
           "eyebrow": "요약",
