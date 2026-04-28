@@ -435,6 +435,33 @@
         }
       }
     },
+    "tech": {
+      "sectionBadge": "Technology",
+      "title": "Technical Principles\nFrom the Codebase",
+      "subtitle": "No exaggeration — described based on what is currently implemented.",
+      "pillars": {
+        "interop": {
+          "badge": "Interoperability",
+          "title": "Interoperability",
+          "desc": "SafeLync is designed on HL7 FHIR R4 (v4.0.1), the global standard for medical information exchange. A dedicated mapping engine applies LOINC, UCUM, and KCD standard codes to core biometric data such as vital signs, with ongoing expansion of data interoperability with external healthcare systems."
+        },
+        "samd": {
+          "badge": "Quality & Compliance",
+          "title": "Quality Management & SaMD Readiness",
+          "desc": "A strict unit-test-driven development process is maintained to align with Software as a Medical Device (SaMD) certification requirements. A traceability management framework is established at the source code level, designed with MFDS and CE-MDR Technical File documentation in mind."
+        },
+        "security": {
+          "badge": "Security & Privacy",
+          "title": "Security & Privacy",
+          "desc": "Privacy by Design principles are applied from the architecture stage to prevent sensitive data exposure in logs. RBAC (Role-Based Access Control) manages precise data access rights from super-administrators to general users, following coding guidelines aligned with ISMS-P and international security standards."
+        },
+        "org": {
+          "badge": "Organization Management",
+          "title": "Organization Management & Multi-tenancy",
+          "desc": "A clinic-level data isolation architecture allows diverse healthcare institutions to operate independently. A recursive org chart management feature for super-administrators enables clear visibility and efficient operation of complex medical networks and member roles."
+        }
+      }
+    },
     "techbg": {
       "sectionBadge": "Global & Public Standard",
       "title": "20 Years of Proven Telemedicine Expertise",
