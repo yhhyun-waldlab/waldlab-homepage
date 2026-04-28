@@ -638,7 +638,7 @@ export default function SafeLyncPage() {
                 </p>
                 {/* 기술 태그 */}
                 <div className="flex flex-wrap gap-2">
-                  {["API Gateway", "FHIR R4 Bridge", "DICOM Router", "Async Messaging", "Zero-downtime Integration"].map((tag) => (
+                  {["EMR", "HIS", "PACS"].map((tag) => (
                     <span key={tag}
                       className="px-3 py-1 rounded-full text-xs font-semibold font-mono"
                       style={{ background: "rgba(34,139,230,0.12)", color: `${BLUE}cc`, border: `1px solid ${BLUE_BORDER}` }}>
