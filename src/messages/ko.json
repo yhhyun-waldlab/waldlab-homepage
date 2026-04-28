@@ -15,7 +15,7 @@
     "titleHighlight": "숲",
     "titlePart2": "이 되다",
     "tagline": "Bridging Care Through the Digital Forest",
-    "subtitle": "25년의 설계·구현의 신뢰로 구축한 가장 안전한 헬스케어 인프라, SafeWay",
+    "subtitle": "25년의 설계·구현 경험을 바탕으로 한 헬스케어 인프라, SafeWay",
     "cta": "서비스 알아보기",
     "ctaSecondary": "회사 소개",
     "stat1Value": "6+",
@@ -36,7 +36,7 @@
     "feature2Title": "실시간 분석 엔진",
     "feature2Desc": "수집된 데이터를 실시간으로 분석하여 즉각적인 인사이트와 알림을 제공",
     "feature3Title": "보안·컴플라이언스",
-    "feature3Desc": "의료 데이터 국제 표준(HL7 FHIR)과 개인정보보호법을 준수한 최고 수준의 데이터 보안",
+    "feature3Desc": "HL7 FHIR·개인정보보호법 등을 고려한 보안·접근 통제 설계",
     "feature4Title": "확장형 API",
     "feature4Desc": "표준화된 Open API로 다양한 서드파티 서비스 및 의료기관과의 연동 지원",
     "learnMore": "자세히 보기"
@@ -101,7 +101,7 @@
     "description1": "발트랩(Wald Lab)은 '숲(Wald)'에서 이름을 가져 왔습니다. 숲은 수천 종의 생명체가 서로 의존하며 건강한 생태계를 이루듯, 저희는 사람·동물·환경이 함께 건강한 세상을 만드는 기술을 개발합니다.",
     "description2": "발트랩(Wald Lab)은 디지털 헬스케어의 가능성을 깊이 있게 탐구하는 **연구소**입니다.\n\n우리는 단순한 앱을 넘어 신뢰할 수 있는 의료 데이터 인프라로 건강 격차를 줄이고 모두가 더 나은 삶을 누리는 세상을 지향합니다.",
     "value1Title": "신뢰",
-    "value1Desc": "의료 데이터는 가장 민감한 개인 정보입니다. 우리는 최고 수준의 보안과 투명성을 약속합니다.",
+    "value1Desc": "의료 데이터는 가장 민감한 개인 정보입니다. 보안과 투명한 운영을 우선합니다.",
     "value2Title": "연결",
     "value2Desc": "의료진, 환자, 산업 현장, 반려동물까지 — 모든 건강 데이터를 하나의 생태계로 연결합니다.",
     "value3Title": "혁신",
@@ -197,7 +197,7 @@
     "ev2Title": "SafeWay Platform",
     "ev2Subtitle": "25년 노하우의 집대성",
     "ev2P0": "원격의료·건강관리·만성질환을 통합하는 데이터 플랫폼",
-    "ev2P1": "HL7 FHIR · HIPAA 기반 글로벌 표준 아키텍처",
+    "ev2P1": "HL7 FHIR 중심, HIPAA 등 규제 레퍼런스를 설계에 반영한 아키텍처",
     "ev2P2": "AI 연계 예방·예측 중심 헬스케어 인프라",
     "disclosureTitle": "전문성 고지 (Expertise Disclosure)",
     "disclosureName": "현영호",
@@ -400,19 +400,19 @@
           "desc": "20년 이상 국내 주요 기업 의무실에서 운영된 워크케어(WorkCare) 시스템의 설계·운영 전문성을 SafeSync가 직접 계승합니다."
         },
         "public": {
-          "badge": "국가급 검증",
+          "badge": "공공 부문 경험",
           "title": "공공·국가기관 운영 노하우",
           "desc": "국방·교정·보건·응급 등 고신뢰·고보안을 요구하는 국내 핵심 공공기관의 시스템 구축 경험이 SafeSync 아키텍처에 반영됩니다."
         },
         "integration": {
           "badge": "SafeWay 생태계",
           "title": "SafeWay 통합 아키텍처",
-          "desc": "SafeLync·SafeEntry 등 SafeWay 생태계와 이벤트 기반으로 실시간 연동이 가능합니다. 이상 감지 즉시 협진 채널이 활성화되는 통합 설계입니다."
+          "desc": "SafeLync·SafeEntry 등과 이벤트 기반 연동. 이상 징후 시 진료 채널로 넘기는 흐름을 지원합니다."
         },
         "security": {
-          "badge": "글로벌 표준 보안",
-          "title": "근로자 건강정보 최고 수준 보안",
-          "desc": "AES-256 암호화, 역할 기반 접근 제어(RBAC), 개인정보보호법·의료법 완전 준수 구조로 민감 건강 정보를 보호합니다."
+          "badge": "보안 설계",
+          "title": "근로자 건강정보 보호",
+          "desc": "암호화·RBAC 등 통제를 두고, 개인정보보호법·의료법 요건을 설계에 반영합니다. 법적·행정적 최종 판단은 고객의 검토가 필요합니다."
         }
       }
     },
@@ -436,14 +436,14 @@
       "title1": "어디서나, 안전하게",
       "title2": "의료진과 환자를 잇다",
       "desc1": "20년의 원격의료 시스템 설계 노하우로 구현한 비대면 진료 플랫폼.",
-      "desc2": "국내외 공공·의료기관의 요구를 충족하는 국제 표준 기반 아키텍처.",
+      "desc2": "국내외 공공·의료기관에서 흔히 요구되는 규제·표준을 설계에 반영합니다.",
       "ctaPrimary": "도입 문의하기",
       "ctaSecondary": "기술 배경 보기",
       "stats": {
         "standard": {
           "label": "의료정보 표준",
           "value": "HL7 FHIR",
-          "sub": "국제 표준 완전 준수"
+          "sub": "FHIR R4 기반"
         },
         "sector": {
           "label": "공공 전문 분야",
@@ -464,8 +464,8 @@
     },
     "arch": {
       "sectionBadge": "Consultation Architecture",
-      "title": "SafeLync를 중심으로 한 서비스 협진 구조",
-      "subtitle": "SafeWay 플랫폼 위에서, 모든 서비스는 SafeLync를 허브로 실시간 협진한다.",
+      "title": "SafeLync 중심 서비스 연결",
+      "subtitle": "SafeWay 위에서 서비스 간 데이터가 SafeLync를 경유해 연결됩니다.",
       "foundationLabel": "SafeWay Platform — Infrastructure Foundation",
       "hubLabel": "SafeLync — Central Consultation Hub",
       "connections": {
@@ -473,8 +473,8 @@
           "id": "01",
           "route": "SafeLync ↔ SafeLync",
           "channel": "CHANNEL: peer_consultation",
-          "title": "의료진 간 협진",
-          "desc": "동일 플랫폼 내 의료진 간 전문과 협진 및 2차 소견을 요청한다. 케이스 공유와 병행 진료를 표준 API로 처리한다."
+          "title": "의료진 간 요청",
+          "desc": "동일 플랫폼 내 진료 요청·2차 소견. 표준 API로 처리합니다."
         },
         "entry": {
           "id": "02",
@@ -488,34 +488,34 @@
           "route": "SafeLync ← SafeSync",
           "channel": "CHANNEL: realtime_biometric_stream",
           "title": "상시 모니터링 데이터 연동",
-          "desc": "SafeSync가 수집한 생체 신호 스트림이 SafeLync 진료 세션에 직접 제공된다. 원격 모니터링 기반 진료를 구현한다."
+          "desc": "SafeSync가 수집한 생체 신호를 SafeLync 진료 세션 컨텍스트로 제공합니다."
         },
         "step": {
           "id": "04",
           "route": "SafeLync ← SafeStep Pro / Lite",
           "channel": "CHANNEL: care_plan_context_feed",
           "title": "케어 플랜 및 누적 건강 기록 연동",
-          "desc": "SafeStep의 케어 플랜, 복약 이력, 누적 활동 데이터가 SafeLync 진료 컨텍스트로 자동 제공된다."
+          "desc": "SafeStep의 케어 플랜, 복약 이력, 활동 데이터를 SafeLync 진료 컨텍스트로 넘깁니다."
         }
       }
     },
     "value": {
       "sectionBadge": "핵심 가치",
-      "title": "비대면 진료의 모든 것,",
-      "titleHighlight": "하나의 플랫폼으로",
-      "subtitle": "화상을 통한 원격진료부터 처방 관리, 다기관 협진까지 - 의료진간, 의료진과 환자간을 안전하게 연결하는 통합 원격의료 솔루션입니다.",
+      "title": "비대면 진료,",
+      "titleHighlight": "통합 플랫폼",
+      "subtitle": "화상 진료·전자처방·기관 간 연동을 한 제품에서 제공합니다.",
       "cards": {
         "consult": {
           "title": "화상 진료",
-          "desc": "저지연 HD 영상 통화 기반 비대면 진료. 진료 녹화, 전자서명 처방, 의료기록 동기화까지 원스톱으로 처리합니다."
+          "desc": "저지연 HD 화상. 진료 녹화, 전자서명 처방, 의료기록 동기화."
         },
         "prescription": {
           "title": "전자처방 관리",
-          "desc": "PKI 전자서명 기반 법적 유효 전자처방전 발행·전달·이력 관리. 약국 및 약사 시스템 자동 연동."
+          "desc": "PKI 전자서명 전자처방전 발행·전달·이력. 약국 시스템 연동."
         },
         "collab": {
-          "title": "기관 간 협진",
-          "desc": "이종 EMR·HIS 시스템 간 표준 API로 협진 요청·영상 공유·결과 회신을 실시간 연결합니다."
+          "title": "진료 요청·결과 회신",
+          "desc": "이종 EMR·HIS·PACS 간 진료 요청 및 결과 회신을 위한 표준 API 브릿지를 구축합니다."
         }
       }
     },
@@ -532,12 +532,12 @@
         "samd": {
           "badge": "Quality & Compliance",
           "title": "품질 관리 및 SaMD 대응",
-          "desc": "의료기기 소프트웨어(SaMD) 인증 규격을 준수하기 위해 단위 테스트 기반의 개발 프로세스를 엄격히 준수합니다. 소스 코드 레벨에서부터 식약처 및 CE-MDR 기술문서(Technical File) 작성을 고려한 추적성(Traceability) 관리 체계를 구축하여 소프트웨어의 신뢰성을 확보하고 있습니다."
+          "desc": "SaMD 인증·기술문서를 염두에 두고, 단위 테스트를 포함한 개발·변경 절차를 운영합니다. 소스 단위에서 식약처·CE-MDR Technical File에 필요한 추적성(Traceability)을 남깁니다. 인증 취득을 의미하지는 않습니다."
         },
         "security": {
           "badge": "Security & Privacy",
           "title": "보안 및 개인정보 보호",
-          "desc": "설계 단계부터 개인정보 보호(Privacy by Design) 원칙을 적용하여 로그 내 민감 정보 노출을 원천 차단합니다. RBAC(역할 기반 접근 제어)를 통해 수퍼 관리자부터 일반 사용자까지 정교한 데이터 접근 권한을 관리하며, ISMS-P 및 국제 보안 표준을 충족할 수 있는 코딩 가이드라인을 준수합니다."
+          "desc": "설계 초기부터 Privacy by Design를 적용하고, 로그·관측 데이터에 민감정보가 남지 않도록 합니다. RBAC로 역할별 접근을 제한합니다. ISMS-P·국제 보안 가이드를 참고한 내부 코딩 가이드를 둡니다. 표준 인증 완료를 주장하지 않습니다."
         },
         "org": {
           "badge": "Organization Management",
@@ -551,7 +551,7 @@
       "title": "20년이 증명하는 원격의료 전문성",
       "subtitle": "SafeLync는 단순한 소프트웨어 이상입니다. 지난 20년간 국내외 최전선에서 축적한 대규모 원격 의료 아키텍처 설계 노하우의 결정체입니다.",
       "credentialBadge": "원격의료 시스템 설계·운영 전문가 그룹",
-      "credentialDesc": "국내외 공공·의료 기관이 요구하는 최고 수준의 신뢰성·보안성·상호운용성을 설계 단계부터 구현합니다.",
+      "credentialDesc": "국내외 공공·의료기관에서 요구되는 신뢰성·보안·상호운용 요건을 설계 초기에 반영합니다.",
       "global": {
         "label": "글로벌 프로젝트 경험",
         "title": "다양한 의료 환경(유럽,몽골전역,아마존 병원선,원양선박 등)",
@@ -585,8 +585,8 @@
         }
       },
       "standards": {
-        "title": "국제 의료 정보 표준 준수",
-        "subtitle": "모든 연동 인터페이스는 국제 표준을 기반으로 설계되어, 의료기관간 표준에 기반한 연동이 수월합니다.",
+        "title": "국제 의료 정보 표준",
+        "subtitle": "연동 인터페이스는 국제 표준을 기준으로 설계합니다.",
         "fhir": {
           "name": "HL7 FHIR R4",
           "desc": "의료 데이터 교환 국제 표준"
@@ -605,12 +605,12 @@
         },
         "pki": {
           "name": "PKI 전자서명",
-          "desc": "전자처방전 법적 유효성"
+          "desc": "전자처방 등 연계 시 서명 체계"
         }
       },
       "interop": {
-        "title": "이종 시스템 간 표준에 기반한 협진(Consultation) 구현",
-        "desc": "SafeLync의 핵심 기술력은 서로 다른 EMR·HIS·PACS 시스템 사이에 표준 기반 API 브릿지를 구성하여 진료 요청, 영상 공유, 결과 회신을 실시간으로 연결하는 데 있습니다. 병원 교체 없이, 기존 인프라 위에서 협진이 시작됩니다."
+        "title": "진료 요청·결과 회신용 표준 API 브릿지",
+        "desc": "이종 EMR·HIS·PACS 간 진료 요청 및 결과 회신을 위한 표준 API 브릿지를 구축합니다."
       },
       "stats": {
         "years": {
@@ -627,38 +627,38 @@
         },
         "standards": {
           "value": "5종+",
-          "label": "국제 의료정보 표준 준수"
+          "label": "설계에 참고한 국제 의료정보 표준"
         }
       }
     },
     "features": {
       "sectionBadge": "핵심 기능",
       "title": "SafeLync가 다른 이유",
-      "subtitle": "원격의료의 모든 과제를 검증된 국가급 아키텍처로 해결합니다.",
+      "subtitle": "구현된 기능 요약입니다.",
       "cards": {
         "video": {
           "title": "HD 화상 진료",
-          "desc": "WebRTC 기반 저지연 HD 화상 진료 엔진. 네트워크 불안정 환경에서도 적응형 코덱으로 안정적 연결을 유지합니다."
+          "desc": "WebRTC 기반 HD 화상. 저지연·적응형 코덱."
         },
         "emr": {
-          "title": "EMR/HIS 즉시 연동",
-          "desc": "기존 병원 시스템 교체 없이 HL7 FHIR API로 즉시 연동. 환자 데이터 이중화·재입력 불필요."
+          "title": "EMR/HIS 연동",
+          "desc": "HL7 FHIR API로 기존 병원 시스템과 연동. 환자 데이터 재입력 없음."
         },
         "prescription": {
           "title": "법적 전자처방전",
-          "desc": "PKI 전자서명 기반 법적 유효 전자처방전 발행 및 약국 시스템 자동 전달."
+          "desc": "PKI 전자서명 전자처방전. 약국 시스템 전달."
         },
         "security": {
           "title": "의료 데이터 보안",
-          "desc": "전송 구간 E2E 암호화, 저장 데이터 AES-256 암호화. 개인정보보호법·의료법 완전 준수 구조."
+          "desc": "전송 구간 암호화, 저장 데이터 암호화. 개인정보보호법·의료법 정합 설계."
         },
         "multisite": {
-          "title": "다기관 협진 허브",
-          "desc": "병원·의원·보건소·공공기관 간 협진 요청·영상 공유·결과 전달을 단일 플랫폼에서 통합 관리."
+          "title": "기관 간 연동",
+          "desc": "진료 요청·결과 회신용 표준 API 브릿지. 동일 플랫폼에서 기관 단위 흐름 관리."
         },
         "audit": {
           "title": "진료 감사 추적",
-          "desc": "모든 진료·처방·협진 행위에 불변 감사 로그 생성. 법적·행정적 책임 추적을 완벽히 보장합니다."
+          "desc": "진료·처방·연동 기록에 감사 로그. 법적·행정적 추적에 활용합니다."
         }
       }
     },
@@ -683,7 +683,7 @@
       "titleTime": "2분 이내",
       "desc1": "법적 의무인 배치전 건강진단을 SafeEntry로 해결하세요.",
       "desc2": "혈압·체온·알코올 측정부터 자동 기록·보고까지,",
-      "desc3": " SafeEntry가 사업주의 법적 책임을 완전히 커버합니다.",
+      "desc3": " SafeEntry는 사업주의 법적 의무 이행을 지원합니다.",
       "ctaPrimary": "도입 문의하기",
       "ctaSecondary": "실제 화면 보기"
     },
@@ -836,7 +836,7 @@
           "2": "면제 인정기간 시스템이 자동 계산",
           "3": "30일 보고 기한 알림 및 원클릭 제출",
           "4": "법령 기준 내장으로 일관된 판정",
-          "5": "30초 키오스크 측정으로 100% 이행률"
+          "5": "30초 키오스크 측정으로 현장 기록·보고 누락을 줄입니다"
         }
       }
     },
