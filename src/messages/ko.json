@@ -519,6 +519,33 @@
         }
       }
     },
+    "tech": {
+      "sectionBadge": "Technology",
+      "title": "코드베이스가 말하는\n기술 원칙",
+      "subtitle": "과장 없이, 현재 구현된 사실을 기반으로 설명합니다.",
+      "pillars": {
+        "interop": {
+          "badge": "Interoperability",
+          "title": "상호운용성",
+          "desc": "SafeLync는 글로벌 의료 정보 표준인 HL7 FHIR R4(v4.0.1)를 기반으로 설계되었습니다. 특히 바이탈 사인(Vitals) 등 핵심 생체 데이터에 대해 LOINC, UCUM, KCD 표준 코드를 매핑하는 전용 엔진을 탑재하여, 타 의료 시스템과의 데이터 상호운용성 영역을 지속적으로 확대하고 있습니다."
+        },
+        "samd": {
+          "badge": "Quality & Compliance",
+          "title": "품질 관리 및 SaMD 대응",
+          "desc": "의료기기 소프트웨어(SaMD) 인증 규격을 준수하기 위해 단위 테스트 기반의 개발 프로세스를 엄격히 준수합니다. 소스 코드 레벨에서부터 식약처 및 CE-MDR 기술문서(Technical File) 작성을 고려한 추적성(Traceability) 관리 체계를 구축하여 소프트웨어의 신뢰성을 확보하고 있습니다."
+        },
+        "security": {
+          "badge": "Security & Privacy",
+          "title": "보안 및 개인정보 보호",
+          "desc": "설계 단계부터 개인정보 보호(Privacy by Design) 원칙을 적용하여 로그 내 민감 정보 노출을 원천 차단합니다. RBAC(역할 기반 접근 제어)를 통해 수퍼 관리자부터 일반 사용자까지 정교한 데이터 접근 권한을 관리하며, ISMS-P 및 국제 보안 표준을 충족할 수 있는 코딩 가이드라인을 준수합니다."
+        },
+        "org": {
+          "badge": "Organization Management",
+          "title": "조직 관리 및 멀티 테넌시",
+          "desc": "다양한 의료 기관이 독립적으로 운영될 수 있는 기관(Clinic) 단위 데이터 격리 아키텍처를 제공합니다. 수퍼 관리자를 위한 재귀적 조직도(Recursive Org Chart) 관리 기능을 통해 복잡한 의료 네트워크와 소속 구성원의 역할을 한눈에 파악하고 효율적으로 운영할 수 있습니다."
+        }
+      }
+    },
     "techbg": {
       "sectionBadge": "Global & Public Standard",
       "title": "20년이 증명하는 원격의료 전문성",
