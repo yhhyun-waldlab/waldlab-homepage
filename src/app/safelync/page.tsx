@@ -378,7 +378,86 @@ export default function SafeLyncPage() {
         </div>
       </section>
 
-      {/* ── 3. TECHNICAL BACKGROUND ──────────────────────────────────── */}
+      {/* ── 3. TECHNOLOGY PILLARS ────────────────────────────────────── */}
+      <section
+        id="technology"
+        className="py-20 lg:py-28 bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+
+          {/* 섹션 헤더 */}
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-black tracking-[0.22em] uppercase mb-6"
+              style={{ background: BLUE_LIGHT, border: `1.5px solid ${BLUE_BORDER}`, color: BLUE }}>
+              <Cpu size={13} /> {t("safelyncPage.tech.sectionBadge")}
+            </span>
+            <h2 className="text-3xl lg:text-5xl font-bold text-wald-900 mb-5 leading-tight">
+              {t("safelyncPage.tech.title").split("\n").map((line, i) => (
+                <span key={i} className="block">{line}</span>
+              ))}
+            </h2>
+            <p className="text-wald-500 text-base max-w-xl mx-auto leading-relaxed">
+              {t("safelyncPage.tech.subtitle")}
+            </p>
+          </div>
+
+          {/* 2×2 필라 그리드 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {([
+              { key: "interop",  icon: ArrowLeftRight, accent: BLUE,       tags: ["HL7 FHIR R4 v4.0.1", "LOINC", "UCUM", "KCD"] },
+              { key: "samd",     icon: ClipboardList,  accent: "#20C997",  tags: ["Unit Test", "SaMD", "식약처 / MFDS", "CE-MDR", "Traceability"] },
+              { key: "security", icon: Lock,           accent: "#7950F2",  tags: ["Privacy by Design", "RBAC", "ISMS-P"] },
+              { key: "org",      icon: Building2,      accent: "#FD7E14",  tags: ["Multi-tenancy", "Clinic Isolation", "Recursive Org Chart"] },
+            ] as const).map(({ key, icon: Icon, accent, tags }) => (
+              <div
+                key={key}
+                className="rounded-2xl p-7 border border-wald-100 hover:border-wald-200 hover:shadow-md transition-all group"
+              >
+                {/* 아이콘 + 뱃지 */}
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: `${accent}15` }}
+                  >
+                    <Icon size={20} style={{ color: accent }} />
+                  </div>
+                  <span
+                    className="text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full"
+                    style={{ background: `${accent}12`, color: accent, border: `1px solid ${accent}30` }}
+                  >
+                    {t(`safelyncPage.tech.pillars.${key}.badge`)}
+                  </span>
+                </div>
+
+                {/* 제목 */}
+                <h3 className="text-lg font-bold text-wald-900 mb-3">
+                  {t(`safelyncPage.tech.pillars.${key}.title`)}
+                </h3>
+
+                {/* 설명 */}
+                <p className="text-wald-500 text-sm leading-relaxed mb-5">
+                  {t(`safelyncPage.tech.pillars.${key}.desc`)}
+                </p>
+
+                {/* 기술 태그 */}
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-wald-100">
+                  {tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold"
+                      style={{ background: `${accent}10`, color: accent, border: `1px solid ${accent}25` }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. TECHNICAL BACKGROUND ──────────────────────────────────── */}
       <section
         id="techbg"
         className="py-20 lg:py-32 relative overflow-hidden"
