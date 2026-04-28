@@ -453,7 +453,7 @@
         "security": {
           "badge": "Security & Privacy",
           "title": "Security & Privacy",
-          "desc": "Privacy by Design from early architecture; practices aim to keep sensitive data out of logs and observability. RBAC limits access by role. Internal coding guidelines reference ISMS-P and common international materials — not a claim of certification."
+          "desc": "Privacy by Design from early architecture; practices aim to keep sensitive data out of logs and observability. RBAC limits access by role. Internal coding guidelines reference ISMS-P and common international materials in preparation for standard certifications."
         },
         "org": {
           "badge": "Organization Management",
