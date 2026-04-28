@@ -698,8 +698,25 @@ export default function SafeLyncPage() {
                   style={{ background: `${accent}12` }}>
                   <Icon size={20} style={{ color: accent }} />
                 </div>
-                <h3 className="font-bold text-wald-900 mb-2">{t(`safelyncPage.features.cards.${key}.title`)}</h3>
-                <p className="text-wald-500 text-sm leading-relaxed">{t(`safelyncPage.features.cards.${key}.desc`)}</p>
+                <h3 className="font-bold text-wald-900 mb-2">
+                  <span className="block text-[11px] font-bold tracking-[0.12em] uppercase text-wald-500 mb-1.5">
+                    {t(`safelyncPage.features.cards.${key}.eyebrow`)}
+                  </span>
+                  {t(`safelyncPage.features.cards.${key}.title`)}
+                </h3>
+                <p className="text-wald-500 text-sm leading-relaxed mb-4">
+                  {t(`safelyncPage.features.cards.${key}.desc`)}
+                </p>
+                <ul className="space-y-2.5 text-sm border-t border-wald-100 pt-4">
+                  {([1, 2, 3] as const).map((i) => (
+                    <li key={i} className="leading-snug">
+                      <span className="font-semibold text-wald-800">
+                        {t(`safelyncPage.features.cards.${key}.point${i}Label`)}:
+                      </span>{" "}
+                      <span className="text-wald-600">{t(`safelyncPage.features.cards.${key}.point${i}Desc`)}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
