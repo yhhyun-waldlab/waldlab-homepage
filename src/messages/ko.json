@@ -652,7 +652,7 @@
           "title": "EMR/HIS 연동",
           "desc": "HL7 FHIR API를 기준으로 병원 시스템 연동 범위를 넓히는 중입니다. 환자 데이터 재입력을 줄이는 흐름을 목표로 설계합니다.",
           "point1Label": "FHIR R4 리소스",
-          "point1Desc": "Patient·Observation 등 표준 리소스 기반 데이터 교환",
+          "point1Desc": "Patient·Observation 등 표준 기반 데이터 교환",
           "point2Label": "REST 연동",
           "point2Desc": "기관별 EMR/HIS 어댑터와의 HTTP API 계약",
           "point3Label": "동기화·멱등",
