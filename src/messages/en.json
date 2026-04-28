@@ -448,7 +448,7 @@
         "samd": {
           "badge": "Quality & Compliance",
           "title": "Quality Management & SaMD Readiness",
-          "desc": "Development and change control include unit tests, with SaMD documentation and certification expectations in traceability from source. This is process posture — not a statement of certification obtained."
+          "desc": "Development and change control include unit tests, with SaMD documentation and certification expectations in traceability from source."
         },
         "security": {
           "badge": "Security & Privacy",
