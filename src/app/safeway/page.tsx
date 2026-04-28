@@ -249,13 +249,13 @@ export default function SafeWayPage() {
                 title: ko ? "데이터 표준 및 확장성" : "Data Standardization",
                 subtitle: "Standardization",
                 desc: ko
-                  ? "HL7 FHIR 국제 표준을 데이터 설계 기준으로 채택하여 대형 병원·공공 시스템과의 원활한 상호운용성을 보장합니다."
-                  : "Adopting HL7 FHIR as our data design standard ensures seamless interoperability with major hospitals and public healthcare systems.",
+                  ? "HL7 FHIR 국제 표준을 데이터 설계 기준으로 삼아, 대형 병원·공공 시스템과의 상호운용을 염두에 둡니다."
+                  : "HL7 FHIR as the data design baseline, with interoperability toward major hospital and public systems in mind.",
               },
               {
                 num: "02",
                 icon: Shield,
-                title: ko ? "최고 수준의 데이터 보안" : "Data Security",
+                title: ko ? "데이터 보안" : "Data Security",
                 subtitle: "Security by Design",
                 desc: ko
                   ? "설계 단계부터 데이터 보안을 최우선으로. 전송 구간 암호화와 저장 데이터 암호화로 개인 의료정보를 철저히 보호합니다."
@@ -333,8 +333,8 @@ export default function SafeWayPage() {
                     <h4 className="font-bold text-wald-900 mb-1">FHIR-Ready Architecture</h4>
                     <p className="text-wald-600 text-sm leading-relaxed">
                       {ko
-                        ? "의료 데이터 국제 표준인 HL7 FHIR의 리소스 모델을 데이터 설계의 기준으로 채택했습니다. 이는 향후 대형 병원 및 공공 의료 시스템과의 원활한 데이터 상호운용성을 보장합니다."
-                        : "We adopted the HL7 FHIR resource model as our data design standard, ensuring seamless data interoperability with major hospitals and public healthcare systems."}
+                        ? "데이터 설계에 HL7 FHIR 리소스 모델을 씁니다. 대형 병원·공공 의료 시스템과의 상호운용을 염두에 둡니다."
+                        : "The HL7 FHIR resource model guides data design, with interoperability toward major hospitals and public systems in mind."}
                     </p>
                   </div>
                 </div>
@@ -528,13 +528,12 @@ export default function SafeWayPage() {
               <Shield size={13} /> 02 / SECURITY BY DESIGN
             </span>
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-5 leading-tight">
-              {ko ? "최고 수준의 " : "Uncompromising "}
               <span style={{ color: GREEN }}>{ko ? "데이터 보안" : "Data Security"}</span>
             </h2>
             <p className="text-wald-400 text-base max-w-2xl mx-auto leading-relaxed">
               {ko
-                ? "개인 의료 정보를 다루는 만큼, 국내외 엄격한 보안 가이드라인을 철저히 준용합니다. Wald Lab은 물리적 서버 보안은 글로벌 클라우드 인프라에 위임하고, 오직 데이터 자체의 암호화에만 역량을 집중합니다."
-                : "Given the sensitive nature of personal health data, we rigorously align with domestic and international security guidelines. Wald Lab delegates physical server security to global cloud infrastructure, focusing our expertise exclusively on data-level encryption."}
+                ? "개인 의료 정보를 다루므로 국내외 보안 가이드라인을 설계와 운영에 참고합니다. 물리적 인프라는 클라우드 사업자 범위에 두고, 제품 측면에서는 데이터 암호화 등에 집중합니다."
+                : "Personal health data is sensitive: we reflect domestic and international security guidelines in design and operations. Physical infrastructure stays within cloud-provider scope; product work emphasizes encryption and related controls."}
             </p>
 
             {/* Security by Design 뱃지 */}
@@ -833,8 +832,8 @@ export default function SafeWayPage() {
                 </h3>
                 <p className="text-wald-300 text-sm leading-relaxed mb-5">
                   {ko
-                    ? "물리적 서버실 관리나 네트워크 인프라 보안은 AWS, Azure 등 글로벌 클라우드 사업자의 최고 수준 인증에 위임합니다. Wald Lab은 오직 '데이터 자체의 보안(암호화)'에만 역량을 집중합니다. 그것이 가장 효율적이고 강력한 선택입니다."
-                    : "Physical server management and network infrastructure security are delegated to the world-class certifications of global cloud providers like AWS and Azure. Wald Lab focuses exclusively on 'data-level security (encryption)'. This is the most efficient and powerful approach."}
+                    ? "물리 서버·네트워크 경계는 AWS·Azure 등 클라우드 사업자의 통제 범위에 둡니다. Wald Lab은 제품에서 데이터 암호화 등 애플리케이션·데이터 층 통제에 집중합니다."
+                    : "Physical facilities and network perimeter sit within each cloud provider's scope; Wald Lab focuses on application- and data-layer controls such as encryption."}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
