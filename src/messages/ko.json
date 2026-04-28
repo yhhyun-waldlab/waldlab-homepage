@@ -532,7 +532,7 @@
         "samd": {
           "badge": "Quality & Compliance",
           "title": "품질 관리 및 SaMD 대응",
-          "desc": "SaMD 인증·기술문서를 염두에 두고, 단위 테스트를 포함한 개발·변경 절차를 운영합니다. 소스 단위에서 식약처·CE-MDR Technical File에 필요한 추적성(Traceability)을 남깁니다. 인증 취득을 의미하지는 않습니다."
+          "desc": "SaMD 인증·기술문서를 염두에 두고, 단위 테스트를 포함한 개발·변경 절차를 운영합니다. 소스 단위에서 식약처·CE-MDR Technical File에 필요한 추적성(Traceability)을 남깁니다."
         },
         "security": {
           "badge": "Security & Privacy",
