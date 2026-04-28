@@ -423,7 +423,7 @@
       "cards": {
         "consult": {
           "title": "Video consultation",
-          "desc": "Low-latency HD video. Recording, e-signed prescriptions, record sync."
+          "desc": "Real-time communication on WebRTC standards; adaptive codecs tuned to network conditions support stable sessions. Recording, e-signed prescriptions, record sync."
         },
         "prescription": {
           "title": "E-prescription",
@@ -513,7 +513,17 @@
       "title": "What Makes SafeLync Different",
       "subtitle": "Summary of implemented capabilities.",
       "cards": {
-        "video": { "title": "HD video visits", "desc": "WebRTC HD video. Low latency, adaptive codecs." },
+        "video": {
+          "eyebrow": "Summary",
+          "title": "Video visit optimization",
+          "desc": "WebRTC standard–based real-time communication. Adaptive codecs tuned to network conditions support stable connections.",
+          "point1Label": "Adaptive Bitrate",
+          "point1Desc": "Picture quality adjusts with available bandwidth",
+          "point2Label": "Low Latency",
+          "point2Desc": "Lower-latency streaming for synchronous telemedicine",
+          "point3Label": "WebRTC Standard",
+          "point3Desc": "Browser-based sessions without a separate install"
+        },
         "emr": { "title": "EMR/HIS integration", "desc": "HL7 FHIR API links to existing hospital systems. No duplicate patient entry." },
         "prescription": { "title": "Legal e-prescription", "desc": "PKI-signed e-prescriptions. Delivery to pharmacy systems." },
         "security": { "title": "Medical data security", "desc": "Encryption in transit and at rest. Design aligned with privacy and medical regulations." },
