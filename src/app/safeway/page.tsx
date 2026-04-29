@@ -365,9 +365,11 @@ export default function SafeWayPage() {
               className="rounded-2xl p-8"
               style={{ background: "#060f09", border: "1px solid rgba(130,201,30,0.15)" }}
             >
+              {/* eslint-disable react/jsx-no-comment-textnodes -- mono code-style label */}
               <div className="font-mono text-[10px] text-wald-600 mb-6 tracking-widest">
                 // DATA ARCHITECTURE OVERVIEW
               </div>
+              {/* eslint-enable react/jsx-no-comment-textnodes */}
 
               <div className="space-y-3">
                 {/* External Systems */}
@@ -532,8 +534,8 @@ export default function SafeWayPage() {
             </h2>
             <p className="text-wald-400 text-base max-w-2xl mx-auto leading-relaxed">
               {ko
-                ? "개인 의료 정보를 다루므로 국내외 보안 가이드라인을 설계와 운영에 참고합니다. 물리적 인프라는 클라우드 사업자 범위에 두고, 제품 측면에서는 데이터 암호화 등에 집중합니다."
-                : "Personal health data is sensitive: we reflect domestic and international security guidelines in design and operations. Physical infrastructure stays within cloud-provider scope; product work emphasizes encryption and related controls."}
+                ? "개인 의료 정보를 다루므로 국내외 보안 가이드라인을 설계와 운영에 반영합니다. 클라우드 사업자의 인프라 위에 S/W 측면의 데이터 암호화 등에 집중합니다."
+                : "Personal health data is sensitive: we reflect domestic and international security guidelines in design and operations. We focus on software-layer data encryption and related controls on the cloud provider's infrastructure."}
             </p>
 
             {/* Security by Design 뱃지 */}
