@@ -1035,8 +1035,8 @@ export default function SafeWayPage() {
           </h2>
           <p className="text-wald-300 text-base mb-8 leading-relaxed">
             {ko
-              ? "SafeWay는 외부에 판매되는 별도 상품이 아닙니다. Wald Lab이 자체 개발한 기반 기술로, 모든 서비스의 신뢰성과 보안을 묵묵히 책임집니다. SafeWay 위에서 구동되는 Wald Lab의 서비스를 만나보세요."
-              : "SafeWay is not a standalone product. It is Wald Lab's proprietary foundation technology — quietly ensuring the reliability and security of every service we offer. Explore the services built on SafeWay."}
+              ? "SafeWay는 Wald Lab이 라인업한 솔루션의 기반 플랫폼으로, 모든 서비스의 신뢰성과 보안을 책임집니다. SafeWay 위에서 구동되는 Wald Lab의 서비스를 만나보세요."
+              : "SafeWay is the foundation platform for Wald Lab's lineup of solutions—ensuring reliability and security across every service. Explore Wald Lab services built on SafeWay."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
