@@ -39,12 +39,8 @@ interface LogoComponentProps {
   onHoverChange?: (v: boolean) => void;
 }
 
-const LogoComponent = memo(function LogoComponent({
-  leafStroke,
-  midrib,
-  animated,
-  onHoverChange,
-}: LogoComponentProps) {
+const LogoComponent = memo(function LogoComponent(props: LogoComponentProps) {
+  const { leafStroke, midrib, onHoverChange } = props;
   /* 노드 그룹별 개별 AnimationControls */
   const ctrl0 = useAnimation();
   const ctrl1 = useAnimation();
