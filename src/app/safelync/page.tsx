@@ -11,7 +11,6 @@ import {
   SafeEntryIcon,
   SafeSyncIcon,
   SafeStepProIcon,
-  SafeStepLiteIcon,
 } from "@/components/ui/SafeIcons";
 import {
   Video,
@@ -230,7 +229,7 @@ export default function SafeLyncPage() {
               {t("safelyncPage.arch.title")}
             </h2>
             <p className="text-xs text-wald-500 leading-relaxed font-mono max-w-xl mx-auto">
-              // {t("safelyncPage.arch.subtitle")}
+              {`// ${t("safelyncPage.arch.subtitle")}`}
             </p>
           </div>
 
