@@ -26,6 +26,133 @@ import FadeIn from "@/components/ui/FadeIn";
 
 const LIME = "#82C91E";
 
+interface HeritageTimelineItem {
+  year: string;
+  title: string;
+  org: string;
+  desc: string;
+  side: "top" | "bottom";
+  highlight?: boolean;
+  /** Softer than `highlight` — anchor tenure without stealing focus from the latest milestone */
+  tenureAccent?: boolean;
+  logoSrc?: string;
+  logoAlt?: string;
+}
+
+function timelineYearColorDesktop(item: HeritageTimelineItem): string {
+  if (item.highlight) return LIME;
+  if (item.tenureAccent) return "rgba(184, 223, 138, 0.95)";
+  return "rgba(116,198,157,0.7)";
+}
+
+function timelineYearColorMobile(item: HeritageTimelineItem): string {
+  if (item.highlight) return LIME;
+  if (item.tenureAccent) return "rgba(184, 223, 138, 0.95)";
+  return "rgba(116,198,157,0.6)";
+}
+
+function timelineDotDesktop(item: HeritageTimelineItem): { background: string; boxShadow: string } {
+  if (item.highlight) {
+    return {
+      background: LIME,
+      boxShadow: `0 0 12px ${LIME}, 0 0 24px rgba(130,201,30,0.4)`,
+    };
+  }
+  if (item.tenureAccent) {
+    return {
+      background: "rgba(130,201,30,0.72)",
+      boxShadow: "0 0 10px rgba(130,201,30,0.22)",
+    };
+  }
+  return {
+    background: "rgba(130,201,30,0.5)",
+    boxShadow: "none",
+  };
+}
+
+function timelineDotMobile(item: HeritageTimelineItem): { background: string; boxShadow: string } {
+  if (item.highlight) {
+    return {
+      background: LIME,
+      boxShadow: `0 0 8px ${LIME}`,
+    };
+  }
+  if (item.tenureAccent) {
+    return {
+      background: "rgba(130,201,30,0.72)",
+      boxShadow: "0 0 7px rgba(130,201,30,0.35)",
+    };
+  }
+  return {
+    background: "rgba(130,201,30,0.5)",
+    boxShadow: "none",
+  };
+}
+
+function timelineTextBlockMinHeight(item: HeritageTimelineItem): string {
+  return item.logoSrc ? "126px" : "90px";
+}
+
+/** Shared copy block for horizontal / vertical career timeline nodes */
+function HeritageTimelineLabels({
+  item,
+  layout,
+}: {
+  item: HeritageTimelineItem;
+  layout: "desktop" | "mobile";
+}) {
+  const yearColor = layout === "desktop" ? timelineYearColorDesktop(item) : timelineYearColorMobile(item);
+
+  return (
+    <>
+      <div className="text-[11px] font-semibold mb-0.5" style={{ color: yearColor }}>
+        {item.year}
+      </div>
+      <div
+        className={
+          layout === "desktop"
+            ? "text-white text-[12px] font-bold leading-tight mb-1"
+            : "text-white text-sm font-bold mb-0.5"
+        }
+      >
+        {item.title}
+      </div>
+      <div
+        className={layout === "desktop" ? "text-[10px] leading-snug" : "text-[11px] mb-1"}
+        style={{
+          color: layout === "desktop" ? "rgba(116,198,157,0.5)" : "rgba(116,198,157,0.55)",
+        }}
+      >
+        {item.org}
+      </div>
+      {item.logoSrc ? (
+        <span
+          className={
+            layout === "desktop"
+              ? "mx-auto mt-1.5 inline-flex rounded-md px-1 py-0.5"
+              : "mb-1.5 inline-flex rounded-md px-1 py-0.5"
+          }
+          style={{
+            background: "rgba(0,0,0,0.28)",
+            border: "1px solid rgba(116,198,157,0.16)",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.logoSrc}
+            alt={item.logoAlt ?? ""}
+            className={
+              layout === "desktop"
+                ? "h-[22px] w-auto max-w-[92px] object-contain opacity-[0.82] hover:opacity-95 transition-opacity duration-300"
+                : "block h-[22px] w-auto max-w-[100px] object-contain opacity-[0.82] hover:opacity-95 transition-opacity duration-300"
+            }
+          />
+        </span>
+      ) : null}
+    </>
+  );
+}
+
 /* ── 서브 컴포넌트: 카운터 애니메이션 통계 카드 ─────────────────────── */
 function StatCard({
   target, suffix, label, sub, duration,
@@ -80,15 +207,24 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
   ];
 
   /* ── 커리어 타임라인 ────────────────────────────────────────────── */
-  const TIMELINE = [
-    { year: "1998", title: t("heritage.tl0Title"), org: t("heritage.tl0Org"), desc: t("heritage.tl0Desc"), side: "top"    as const },
-    { year: "2003", title: t("heritage.tl1Title"), org: t("heritage.tl1Org"), desc: t("heritage.tl1Desc"), side: "bottom" as const },
-    { year: "2005", title: t("heritage.tl2Title"), org: t("heritage.tl2Org"), desc: t("heritage.tl2Desc"), side: "top"    as const },
-    { year: "2010", title: t("heritage.tl3Title"), org: t("heritage.tl3Org"), desc: t("heritage.tl3Desc"), side: "bottom" as const },
-    { year: "2015", title: t("heritage.tl4Title"), org: t("heritage.tl4Org"), desc: t("heritage.tl4Desc"), side: "top"    as const },
-    { year: "2017", title: t("heritage.tl5Title"), org: t("heritage.tl5Org"), desc: t("heritage.tl5Desc"), side: "bottom" as const },
-    { year: "2022", title: t("heritage.tl6Title"), org: t("heritage.tl6Org"), desc: t("heritage.tl6Desc"), side: "top"    as const },
-    { year: "2024", title: t("heritage.tl7Title"), org: t("heritage.tl7Org"), desc: t("heritage.tl7Desc"), side: "bottom" as const, highlight: true },
+  const TIMELINE: HeritageTimelineItem[] = [
+    { year: "1998", title: t("heritage.tl0Title"), org: t("heritage.tl0Org"), desc: t("heritage.tl0Desc"), side: "top"    },
+    {
+      year: "2003",
+      title: t("heritage.tl1Title"),
+      org: t("heritage.tl1Org"),
+      desc: t("heritage.tl1Desc"),
+      side: "bottom",
+      tenureAccent: true,
+      logoSrc: "/brand/bitcomputer-logo.png",
+      logoAlt: t("heritage.tl1LogoAlt"),
+    },
+    { year: "2005", title: t("heritage.tl2Title"), org: t("heritage.tl2Org"), desc: t("heritage.tl2Desc"), side: "top"    },
+    { year: "2010", title: t("heritage.tl3Title"), org: t("heritage.tl3Org"), desc: t("heritage.tl3Desc"), side: "bottom" },
+    { year: "2015", title: t("heritage.tl4Title"), org: t("heritage.tl4Org"), desc: t("heritage.tl4Desc"), side: "top"    },
+    { year: "2017", title: t("heritage.tl5Title"), org: t("heritage.tl5Org"), desc: t("heritage.tl5Desc"), side: "bottom" },
+    { year: "2022", title: t("heritage.tl6Title"), org: t("heritage.tl6Org"), desc: t("heritage.tl6Desc"), side: "top"    },
+    { year: "2024", title: t("heritage.tl7Title"), org: t("heritage.tl7Org"), desc: t("heritage.tl7Desc"), side: "bottom", highlight: true },
   ];
 
   /* ── 글로벌 프로젝트 ─────────────────────────────────────────────── */
@@ -229,50 +365,25 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
                 >
                   {/* 상단 텍스트 */}
                   {item.side === "top" && (
-                    <div className="pb-4 text-center px-1" style={{ minHeight: "90px" }}>
-                      <div className="text-[11px] font-semibold mb-0.5"
-                        style={{ color: item.highlight ? LIME : "rgba(116,198,157,0.7)" }}>
-                        {item.year}
-                      </div>
-                      <div className="text-white text-[12px] font-bold leading-tight mb-1">
-                        {item.title}
-                      </div>
-                      <div className="text-[10px] leading-snug"
-                        style={{ color: "rgba(116,198,157,0.5)" }}>
-                        {item.org}
-                      </div>
+                    <div className="pb-4 text-center px-1" style={{ minHeight: timelineTextBlockMinHeight(item) }}>
+                      <HeritageTimelineLabels item={item} layout="desktop" />
                     </div>
                   )}
-                  {item.side === "bottom" && <div style={{ minHeight: "90px" }} />}
+                  {item.side === "bottom" && <div style={{ minHeight: timelineTextBlockMinHeight(item) }} />}
 
                   {/* 도트 */}
                   <div
                     className="w-3 h-3 rounded-full relative z-10 flex-shrink-0"
-                    style={{
-                      background: item.highlight ? LIME : "rgba(130,201,30,0.5)",
-                      boxShadow: item.highlight
-                        ? `0 0 12px ${LIME}, 0 0 24px rgba(130,201,30,0.4)`
-                        : "none",
-                    }}
+                    style={timelineDotDesktop(item)}
                   />
 
                   {/* 하단 텍스트 */}
                   {item.side === "bottom" && (
-                    <div className="pt-4 text-center px-1" style={{ minHeight: "90px" }}>
-                      <div className="text-[11px] font-semibold mb-0.5"
-                        style={{ color: item.highlight ? LIME : "rgba(116,198,157,0.7)" }}>
-                        {item.year}
-                      </div>
-                      <div className="text-white text-[12px] font-bold leading-tight mb-1">
-                        {item.title}
-                      </div>
-                      <div className="text-[10px] leading-snug"
-                        style={{ color: "rgba(116,198,157,0.5)" }}>
-                        {item.org}
-                      </div>
+                    <div className="pt-4 text-center px-1" style={{ minHeight: timelineTextBlockMinHeight(item) }}>
+                      <HeritageTimelineLabels item={item} layout="desktop" />
                     </div>
                   )}
-                  {item.side === "top" && <div style={{ minHeight: "90px" }} />}
+                  {item.side === "top" && <div style={{ minHeight: timelineTextBlockMinHeight(item) }} />}
                 </div>
               ))}
             </div>
@@ -286,10 +397,7 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
                 <div className="flex flex-col items-center">
                   <div
                     className="w-2.5 h-2.5 rounded-full flex-shrink-0 mt-1"
-                    style={{
-                      background: item.highlight ? LIME : "rgba(130,201,30,0.5)",
-                      boxShadow: item.highlight ? `0 0 8px ${LIME}` : "none",
-                    }}
+                    style={timelineDotMobile(item)}
                   />
                   {i < TIMELINE.length - 1 && (
                     <div
@@ -300,14 +408,8 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
                 </div>
                 {/* 텍스트 */}
                 <div className="pb-6">
-                  <div className="text-[11px] font-semibold mb-0.5"
-                    style={{ color: item.highlight ? LIME : "rgba(116,198,157,0.6)" }}>
-                    {item.year}
-                  </div>
-                  <div className="text-white text-sm font-bold mb-0.5">{item.title}</div>
-                  <div className="text-[11px] mb-1"
-                    style={{ color: "rgba(116,198,157,0.55)" }}>{item.org}</div>
-                  <div className="text-[11px] leading-relaxed"
+                  <HeritageTimelineLabels item={item} layout="mobile" />
+                  <div className="text-[11px] leading-relaxed mt-1"
                     style={{ color: "rgba(116,198,157,0.4)" }}>{item.desc}</div>
                 </div>
               </div>
