@@ -210,7 +210,7 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
   const TIMELINE: HeritageTimelineItem[] = [
     { year: "1998", title: t("heritage.tl0Title"), org: t("heritage.tl0Org"), desc: t("heritage.tl0Desc"), side: "top"    },
     {
-      year: "2003",
+      year: "2003~2022",
       title: t("heritage.tl1Title"),
       org: t("heritage.tl1Org"),
       desc: t("heritage.tl1Desc"),
