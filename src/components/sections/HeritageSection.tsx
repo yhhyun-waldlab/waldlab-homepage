@@ -208,7 +208,7 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
 
   /* ── 커리어 타임라인 ────────────────────────────────────────────── */
   const TIMELINE: HeritageTimelineItem[] = [
-    { year: "1998", title: t("heritage.tl0Title"), org: t("heritage.tl0Org"), desc: t("heritage.tl0Desc"), side: "top"    },
+    { year: "1998~2002", title: t("heritage.tl0Title"), org: t("heritage.tl0Org"), desc: t("heritage.tl0Desc"), side: "top"    },
     {
       year: "2003~2022",
       title: t("heritage.tl1Title"),
@@ -222,9 +222,9 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
     { year: "2005", title: t("heritage.tl2Title"), org: t("heritage.tl2Org"), desc: t("heritage.tl2Desc"), side: "top"    },
     { year: "2010", title: t("heritage.tl3Title"), org: t("heritage.tl3Org"), desc: t("heritage.tl3Desc"), side: "bottom" },
     { year: "2015", title: t("heritage.tl4Title"), org: t("heritage.tl4Org"), desc: t("heritage.tl4Desc"), side: "top"    },
-    { year: "2017", title: t("heritage.tl5Title"), org: t("heritage.tl5Org"), desc: t("heritage.tl5Desc"), side: "bottom" },
+    { year: "2017~", title: t("heritage.tl5Title"), org: t("heritage.tl5Org"), desc: t("heritage.tl5Desc"), side: "bottom" },
     { year: "2022", title: t("heritage.tl6Title"), org: t("heritage.tl6Org"), desc: t("heritage.tl6Desc"), side: "top"    },
-    { year: "2024", title: t("heritage.tl7Title"), org: t("heritage.tl7Org"), desc: t("heritage.tl7Desc"), side: "bottom", highlight: true },
+    { year: "2024~", title: t("heritage.tl7Title"), org: t("heritage.tl7Org"), desc: t("heritage.tl7Desc"), side: "bottom", highlight: true },
   ];
 
   /* ── 글로벌 프로젝트 ─────────────────────────────────────────────── */
