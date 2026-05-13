@@ -7,6 +7,7 @@ const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
   variable: "--font-noto-sans-kr",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
