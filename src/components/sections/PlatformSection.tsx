@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Database,
@@ -29,9 +30,14 @@ export default function PlatformSection({ t }: PlatformSectionProps) {
           </span>
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px flex-1 max-w-16 bg-gradient-to-r from-transparent to-wald-300" />
-            <span className="text-3xl lg:text-4xl font-black tracking-tight text-wald-900">
-              Safe<span className="text-wald-500">Way</span>
-            </span>
+            <Image
+              src="/images/SafeWay-logo.png"
+              alt="SafeWay"
+              height={104}
+              width={400}
+              className="object-contain h-20 lg:h-26 w-auto"
+              priority
+            />
             <div className="h-px flex-1 max-w-16 bg-gradient-to-l from-transparent to-wald-300" />
           </div>
           <p className="text-wald-600 text-base font-medium mb-6">
