@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   Database,
@@ -30,14 +29,14 @@ export default function PlatformSection({ t }: PlatformSectionProps) {
           </span>
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px flex-1 max-w-16 bg-gradient-to-r from-transparent to-wald-300" />
-            <Image
+            <img
               src="/images/SafeWay-logo.png"
               alt="SafeWay"
-              height={104}
               width={400}
+              height={104}
               className="object-contain h-20 lg:h-26 w-auto"
-              priority
-              unoptimized
+              decoding="async"
+              fetchPriority="high"
             />
             <div className="h-px flex-1 max-w-16 bg-gradient-to-l from-transparent to-wald-300" />
           </div>
