@@ -53,7 +53,9 @@ export default function SafeWayPage() {
   };
 
   useEffect(() => {
-    import(`@/messages/${locale}.json`).then((mod) => setMessages(mod.default));
+    import(`@/messages/${locale}.json`)
+      .then((mod) => setMessages(mod.default))
+      .catch(() => import("@/messages/ko.json").then((mod) => setMessages(mod.default)));
   }, [locale]);
 
   if (!messages) {
