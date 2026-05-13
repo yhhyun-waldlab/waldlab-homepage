@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import WaldblattLogo from "@/components/ui/WaldblattLogo";
 import Footer from "@/components/layout/Footer";
-import { useEffect } from "react";
 import type { Locale } from "@/lib/i18n";
 import { createTranslator } from "@/lib/i18n";
 import {
@@ -301,7 +300,9 @@ export default function SafeEntryPage() {
   };
 
   useEffect(() => {
-    import(`@/messages/${locale}.json`).then((mod) => setMessages(mod.default));
+    import(`@/messages/${locale}.json`)
+      .then((mod) => setMessages(mod.default))
+      .catch(() => import("@/messages/ko.json").then((mod) => setMessages(mod.default)));
   }, [locale]);
 
   if (!messages) {
@@ -827,13 +828,12 @@ export default function SafeEntryPage() {
                 border: "1px solid rgba(0,0,0,0.07)",
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/bangsilsoft-logo.png"
-                alt="BangsilSoft"
-                className="h-8 w-auto object-contain"
-                style={{ filter: "grayscale(20%) opacity(0.85)" }}
-              />
+              <span
+                className="text-base font-bold tracking-tight"
+                style={{ color: "rgba(40,40,40,0.7)", fontFamily: "'Manrope','Inter',sans-serif" }}
+              >
+                Bangsil<span style={{ color: "rgba(40,40,40,0.45)" }}>Soft</span>
+              </span>
             </div>
           </div>
 
