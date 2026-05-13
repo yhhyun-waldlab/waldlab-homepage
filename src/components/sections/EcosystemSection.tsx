@@ -121,8 +121,18 @@ export default function EcosystemSection({ t }: EcosystemSectionProps) {
                 return (
                   <g
                     key={svc.key}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isActive}
+                    aria-label={svc.label}
                     transform={`translate(${pos.x - nodeSize / 2}, ${pos.y - nodeSize / 2})`}
                     onClick={() => setActiveService(isActive ? null : svc.key)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setActiveService(isActive ? null : svc.key);
+                      }
+                    }}
                     style={{ cursor: "pointer" }}
                   >
                     {/* Node bg */}
