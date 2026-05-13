@@ -38,10 +38,12 @@ export default function FadeIn({
     const el = ref.current;
     if (!el) return;
 
+    let timeoutId: ReturnType<typeof setTimeout>;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), delay);
+          timeoutId = setTimeout(() => setVisible(true), delay);
           observer.disconnect();
         }
       },
@@ -49,7 +51,10 @@ export default function FadeIn({
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+    };
   }, [delay, threshold]);
 
   return (
