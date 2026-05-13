@@ -37,6 +37,7 @@ export default function PlatformSection({ t }: PlatformSectionProps) {
               width={400}
               className="object-contain h-20 lg:h-26 w-auto"
               priority
+              unoptimized
             />
             <div className="h-px flex-1 max-w-16 bg-gradient-to-l from-transparent to-wald-300" />
           </div>
