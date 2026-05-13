@@ -49,51 +49,23 @@ export function validatePhone(phone: string): boolean {
   return true;
 }
 
-/* ── GAS Web App URL ─────────────────────────────────────────────────── */
-
-function getWebAppUrl(): string {
-  if (typeof process !== "undefined") {
-    const url = (process.env as Record<string, string | undefined>)[
-      "NEXT_PUBLIC_GAS_WEBAPP_URL"
-    ];
-    if (typeof url === "string" && url.startsWith("https://script.google.com/")) {
-      return url.trim();
-    }
-  }
-  return "";
-}
-
 /* ── Submit ──────────────────────────────────────────────────────────── */
 
 /**
- * 개인정보 동의 여부를 먼저 확인한 후 GAS Web App으로 직접 전송.
+ * 개인정보 동의 여부를 먼저 확인한 후 /api/contact 를 통해 GAS 로 전송.
  *
- * GAS 스크립트가 JSON.parse(e.postData.contents) 로 수신하는 구조이므로
- * Content-Type: application/json + JSON body 로 POST.
- * CORS 오류 회피를 위해 mode: 'no-cors' 사용 (응답은 opaque — 전송 완료 = 성공).
- *
- * 필드명: name / contact / company / solution / message
+ * 서버 라우트가 GAS 302 리다이렉트를 처리하므로 CORS 문제 없음.
  *
  * privacy 미동의 시 Error("privacy") throw.
+ * 전송 실패 시 Error("submit_failed") 또는 서버 에러 코드를 throw.
  */
 export async function submitToGoogleForm(data: ContactFormData): Promise<void> {
-  // 1. 개인정보 동의 선확인
   if (!data.privacyAgreed) {
     throw new Error("privacy");
   }
 
-  const url = getWebAppUrl();
-  if (!url) {
-    console.warn(
-      "[contactForm] NEXT_PUBLIC_GAS_WEBAPP_URL 이 설정되지 않았습니다."
-    );
-    return;
-  }
-
-  // 2. GAS 스크립트 필드명으로 매핑 후 JSON POST
-  await fetch(url, {
+  const res = await fetch("/api/contact", {
     method:  "POST",
-    mode:    "no-cors",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name:     data.contactName.trim(),
@@ -104,4 +76,9 @@ export async function submitToGoogleForm(data: ContactFormData): Promise<void> {
       message:  data.inquiry.trim(),
     }),
   });
+
+  if (!res.ok) {
+    const json = await res.json().catch(() => ({})) as { error?: string };
+    throw new Error(json.error ?? "submit_failed");
+  }
 }
