@@ -58,7 +58,12 @@ export default function CTASection({ t }: CTASectionProps) {
             {t("cta.primary")}
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
-          <button className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-wald-800/60 text-white font-semibold text-sm rounded-2xl border border-wald-600/40 hover:bg-wald-700/60 transition-all backdrop-blur-sm">
+          <button
+            disabled
+            aria-disabled="true"
+            title="Coming soon"
+            className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-wald-800/60 text-white font-semibold text-sm rounded-2xl border border-wald-600/40 transition-all backdrop-blur-sm opacity-50 cursor-not-allowed"
+          >
             <Play size={15} className="text-wald-400" />
             {t("cta.secondary")}
           </button>
