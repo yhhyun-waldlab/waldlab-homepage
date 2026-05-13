@@ -94,14 +94,22 @@ export default function Footer({ t }: FooterProps) {
             </h3>
             <ul className="flex flex-col gap-2.5">
               <li>
-                <a href="#" className="text-wald-400 text-sm hover:text-wald-200 transition-colors">
+                <span
+                  aria-disabled="true"
+                  title="Coming soon"
+                  className="text-wald-600 text-sm cursor-default select-none"
+                >
                   {t("footer.privacy")}
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="text-wald-400 text-sm hover:text-wald-200 transition-colors">
+                <span
+                  aria-disabled="true"
+                  title="Coming soon"
+                  className="text-wald-600 text-sm cursor-default select-none"
+                >
                   {t("footer.terms")}
-                </a>
+                </span>
               </li>
             </ul>
           </div>
