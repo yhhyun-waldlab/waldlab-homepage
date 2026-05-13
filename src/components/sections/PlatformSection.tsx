@@ -36,6 +36,7 @@ export default function PlatformSection({ t }: PlatformSectionProps) {
               height={104}
               width={400}
               className="object-contain h-20 lg:h-26 w-auto"
+              style={{ mixBlendMode: "multiply" }}
               priority
             />
             <div className="h-px flex-1 max-w-16 bg-gradient-to-l from-transparent to-wald-300" />
