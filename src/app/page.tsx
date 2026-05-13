@@ -19,22 +19,28 @@ import HeritageSection from "@/components/sections/HeritageSection";
 type Messages = Record<string, unknown>;
 
 export default function HomePage() {
-  const [locale, setLocale] = useState<Locale>("ko");
+  const [locale, setLocale] = useState<Locale>(() => {
+    if (typeof window === "undefined") return "ko";
+    const saved = window.localStorage.getItem("waldlab_locale");
+    return saved === "en" || saved === "ko" ? saved : "ko";
+  });
   const [messages, setMessages] = useState<Messages | null>(null);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      window.localStorage.setItem("waldlab_locale", locale);
-    } catch {
-      // ignore storage errors
+  const setPersistedLocale = (next: Locale) => {
+    setLocale(next);
+    if (typeof window !== "undefined") {
+      try {
+        window.localStorage.setItem("waldlab_locale", next);
+      } catch {
+        // ignore storage errors
+      }
     }
-  }, [locale]);
+  };
 
   useEffect(() => {
-    import(`@/messages/${locale}.json`).then((mod) => {
-      setMessages(mod.default);
-    });
+    import(`@/messages/${locale}.json`)
+      .then((mod) => setMessages(mod.default))
+      .catch(() => import("@/messages/ko.json").then((mod) => setMessages(mod.default)));
   }, [locale]);
 
   if (!messages) {
@@ -56,7 +62,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
-      <Header t={t} locale={locale} onLocaleChange={setLocale} />
+      <Header t={t} locale={locale} onLocaleChange={setPersistedLocale} />
       <HeroSection t={t} />
       <PlatformSection t={t} />
       <ServicesSection t={t} />
