@@ -220,7 +220,7 @@ export default function ServicesSection({ t }: ServicesSectionProps) {
           </p>
         </FadeIn>
 
-        {/* 서비스 카드 그리드 — 7개 × 3열 */}
+        {/* 서비스 카드 그리드 — 6개 × 3열 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((svc, i) => (
             <FadeIn key={svc.key} delay={i * 80} direction="up">
