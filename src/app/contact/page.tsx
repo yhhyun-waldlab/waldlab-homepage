@@ -74,11 +74,12 @@ export default function ContactPage() {
   const [touched, setTouched] = useState<Partial<Record<keyof FormData, boolean>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
-    import(`@/messages/${locale}.json`).then((mod) => {
-      setMessages(mod.default);
-    });
+    import(`@/messages/${locale}.json`)
+      .then((mod) => setMessages(mod.default))
+      .catch(() => import("@/messages/ko.json").then((mod) => setMessages(mod.default)));
   }, [locale]);
 
   // 로케일 변경 시 이미 touched된 필드의 에러 문구를 새 번역으로 갱신
@@ -168,18 +169,17 @@ export default function ContactPage() {
     if (Object.keys(errs).length > 0) return;
 
     setSubmitting(true);
+    setSubmitError(null);
     try {
       await submitToGoogleForm(form);
       setShowSuccess(true);
     } catch (err) {
       if (err instanceof Error) {
         if (err.message === "privacy") {
-          // 개인정보 동의 미체크 (이중 방어)
           setErrors((prev) => ({ ...prev, privacy: t("contact.errors.privacy") }));
           setTouched((prev) => ({ ...prev, privacyAgreed: true }));
         } else {
-          // 서버/네트워크 오류
-          console.error("[contact] submit error:", err.message);
+          setSubmitError(t("contact.errors.submitFailed"));
         }
       }
     } finally {
@@ -403,6 +403,14 @@ export default function ContactPage() {
             </label>
             <FieldError msg={touched.privacyAgreed ? errors.privacy : undefined} />
           </div>
+
+          {/* ── Submit Error ────────────────────────────────────────── */}
+          {submitError && (
+            <div className="mb-4 flex items-center gap-2 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+              <AlertCircle size={15} className="shrink-0" />
+              {submitError}
+            </div>
+          )}
 
           {/* ── Submit Button ────────────────────────────────────────── */}
           <button
