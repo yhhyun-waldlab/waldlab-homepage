@@ -65,11 +65,15 @@ export async function POST(req: Request) {
           { status: 502 }
         );
       }
-      await fetch(location, {
+      const step2 = await fetch(location, {
         method:  "POST",
         headers: formHeaders,
         body:    formBody,
       });
+      if (!step2.ok) {
+        console.error("[api/contact] GAS redirect step failed:", step2.status);
+        return NextResponse.json({ ok: false, error: "gas_error" }, { status: 502 });
+      }
     }
     // 리다이렉트 없이 바로 200 이면 완료
 
