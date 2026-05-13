@@ -246,7 +246,8 @@
       "email": "Please enter a valid email address",
       "emailInvalid": "Invalid email format",
       "inquiry": "Please enter at least 10 characters",
-      "privacy": "Please agree to the privacy policy"
+      "privacy": "Please agree to the privacy policy",
+      "submitFailed": "Submission failed. Please try again later."
     },
     "success": {
       "title": "Inquiry successfully received",
