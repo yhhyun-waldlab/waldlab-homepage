@@ -19,7 +19,9 @@ import {
   Layers,
   TrendingUp,
   ChevronRight,
+  ChevronDown,
   AlertCircle,
+  ClipboardList,
 } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 import FadeIn from "@/components/ui/FadeIn";
@@ -187,6 +189,339 @@ function StatCard({
       </div>
       <div className="text-white font-semibold text-sm mb-1">{label}</div>
       <div className="text-[11px]" style={{ color: "rgba(116,198,157,0.5)" }}>{sub}</div>
+    </div>
+  );
+}
+
+/* ── 수행 프로젝트 데이터 (KO) ───────────────────────────────────────── */
+const DOMESTIC_PROJECTS_KO = [
+  {
+    period: "2023 ~ 2020",
+    role: "PM / 설계",
+    slogan: "공공·민간 협력과 최신 트렌드 반영",
+    items: [
+      { name: "비대면 기반 협진 플랫폼 구축·개발", client: "㈜창헬스케어" },
+      { name: "범부처전주기의료기기 연구개발사업", client: "범부처전주기의료기기사업단" },
+      { name: "2021년 몽골사후관리센터 운영 사업", client: "한국보건산업진흥원" },
+      { name: "부산EDC 웰니스센터 구축", client: "한국수자원공사" },
+      { name: "2021년 근로자건강센터 앱 및 전산시스템 고도화", client: "한국산업안전보건공단" },
+      { name: "스마트병원 선도모델 개발지원 사업", client: "보건복지부" },
+      { name: "2020년 근로자건강센터 앱 개발 및 전산시스템 고도화", client: "한국산업안전보건공단" },
+      { name: "2020년 몽골 사후관리시스템 운영", client: "한국보건산업진흥원" },
+      { name: "ICT기반 의료시스템 해외진출 시범사업 (태국)", client: "한국보건산업진흥원" },
+    ],
+  },
+  {
+    period: "2019 ~ 2015",
+    role: "PM / 설계",
+    slogan: "공공성과 글로벌 확장성 동시 실현",
+    items: [
+      { name: "2019년 몽골 사후관리시스템 운영", client: "한국보건산업진흥원" },
+      { name: "SK건설 건강관리솔루션 구축 (출입·통제시스템 연계)", client: "㈜ADT캡스 (現 SK쉴더스)" },
+      { name: "2019년 근로자건강센터 앱 개발 및 전산시스템 고도화", client: "한국산업안전보건공단" },
+      { name: "PHR기반 개인맞춤형 건강관리 시스템", client: "산업통상자원부" },
+      { name: "캄보디아 노인 만성질환 대처 연구 (자문)", client: "UN ESCAP" },
+      { name: "2018년 근로자건강센터 통합 전산시스템 고도화", client: "한국산업안전보건공단" },
+      { name: "2018년 몽골 사후관리센터 운영", client: "한국보건산업진흥원" },
+      { name: "2018 디지털헬스케어 동남아 로드쇼 (베트남·인도네시아)", client: "보건복지부" },
+      { name: "2017년 몽골 사후관리센터 운영", client: "한국보건산업진흥원" },
+      { name: "스마트 After-Care 서비스 구축 및 실증 (태국·캄보디아)", client: "한국정보화진흥원" },
+      { name: "2017년 근로자건강센터 분소 설치·운영 장비 구매 및 인프라", client: "한국산업안전보건공단" },
+      { name: "몽골 EDCF National Diagnostic and Treatment Center", client: "수출입은행 (대한전선㈜)" },
+      { name: "브라질 아마존 현지 수출형 스마트 의료선 개발", client: "산업통상자원부" },
+      { name: "2016년 몽골 사후관리 센터 구축", client: "한국보건산업진흥원" },
+      { name: "2016년 근로자건강센터 헬스존 설치·운영", client: "한국산업안전보건공단" },
+      { name: "조선대병원-청산도 마을회관 원격 화상상담 시스템 구축", client: "농림축산부" },
+      { name: "글로벌 CSR사업 — 기술학교 (캄보디아)", client: "KOTRA" },
+      { name: "원양선박 원격의료지원 시범사업", client: "해양수산부" },
+      { name: "군 ICT 융합 원격진료시스템 구축사업", client: "국방부 국군의무사령부" },
+      { name: "스마트 After-Care 서비스 테스트베드 구축 및 실증 (UAE)", client: "가톨릭대학교 산학협력단" },
+      { name: "원격의료 활성화 모델 개발 및 실증", client: "한국보건산업진흥원" },
+      { name: "서울시민 건강포탈시스템 구축", client: "서울특별시 서울의료원" },
+    ],
+  },
+  {
+    period: "2014 ~ 2010",
+    role: "PM / 설계 / 구현",
+    slogan: "신뢰 기반 국가기관 인프라 구축",
+    items: [
+      { name: "육군훈련소 교육대 의무대 진료접수 자동화 시스템", client: "육군본부" },
+      { name: "캄보디아 의과대학 교육시스템 구축 (KOICA)", client: "순천향대 산학협력단" },
+      { name: "보건기관 원격건강관리 인프라 구축 (강원도)", client: "강원도" },
+      { name: "ODA대상 국가 u-Health 서비스 모델 개발 (캄보디아)", client: "산업자원부" },
+      { name: "원주 U-City 웰니스 센터 구축", client: "㈜한화 S&C" },
+      { name: "국방부 원격진료 시스템 (백두)", client: "국방부 1266부대" },
+      { name: "USN기반 원격건강 모니터링 시스템 구축 (충남 서산·병원선)", client: "한국정보화진흥원" },
+      { name: "원격진료시스템 구축 (통영)", client: "통영시" },
+      { name: "원격진료 시스템 구축 (독도경비대·경찰병원·경찰교육원)", client: "경찰청" },
+      { name: "통합의료정보시스템 구축 (교정기관 원격진료)", client: "법무부" },
+      { name: "서울시 u-헬스케어시스템 구축", client: "서울특별시" },
+      { name: "해상 원격진료시스템 구축", client: "한국해양대학교" },
+      { name: "복지정보통신 인프라구축 시범사업", client: "한국정보화진흥원" },
+      { name: "복지시설·의료기관 연계 u-Health 확산 서비스", client: "부산광역시" },
+      { name: "충남 USN기반 원격건강 모니터링 시스템 구축 (보령)", client: "충청남도" },
+      { name: "강남구 보건소 원격진료시범사업", client: "강남구 보건소" },
+      { name: "원격진료 통합서버 구축 및 장비구입 (강릉교도소)", client: "강릉교도소" },
+      { name: "경북 USN기반 원격 모니터링 시스템 구축", client: "경북 영양군" },
+      { name: "해양경찰청 응급 원격 진료 시범사업", client: "해양경찰청" },
+      { name: "도서지역 원격진료 시스템 구축 (신안군)", client: "전라남도" },
+    ],
+  },
+  {
+    period: "2009 ~ 2005",
+    role: "PM / 설계 / 구현",
+    slogan: "공공 신뢰 확보 — 초기 원격의료 기반 구축",
+    items: [
+      { name: "SW 프로세스 품질 인증 절차·척도 (K-모델) 적용", client: "한국정보사회진흥원" },
+      { name: "대한간호협회 간협신보 구축", client: "(사)대한간호협회" },
+      { name: "우크라이나 원격진료 시스템 구축", client: "한국국제협력단 (KOICA)" },
+      { name: "법무부 안양교도소-병원 원격진료 시스템", client: "법무부" },
+      { name: "국방부 국군의무사령부 원격진료 시스템", client: "국방부" },
+      { name: "대한적십자사 혈액 정보공유시스템 (BISS)", client: "대한적십자사 혈액관리본부" },
+      { name: "안산보건소 원격진료 시스템 구축", client: "안산시" },
+      { name: "질병관리본부 펄스넷 (PulseNet) 운영전산 시스템", client: "질병관리본부" },
+      { name: "안양시 정신보건센터 화상상담시스템", client: "안양시" },
+      { name: "연세대 의과대학 의료기관 감염인 상담 시스템", client: "연세대 의료원 산학협력단" },
+      { name: "보건복지부 검체검사 적정성 평가시스템", client: "보건복지부" },
+      { name: "의료-IT 융합산업육성 인프라 구축 (원격진료)", client: "순창군" },
+    ],
+  },
+  {
+    period: "2004 ~ 1998",
+    role: "설계 / 구현",
+    slogan: "기술 커리어의 토대 — 초기 시스템 개발",
+    items: [
+      { name: "드러그인포 (의약품 정보 시스템)", client: "㈜비트컴퓨터" },
+      { name: "CRM과 연계한 DM 자동화·발송 시스템", client: "㈜디엠플러스" },
+      { name: "경기 남부지역 자동차 부품 산학 협력 네트워크", client: "오산대학교" },
+      { name: "다기준 의사분석에 의한 E-Sourcing One-Stop Process", client: "BSPM" },
+      { name: "Parking & Hospitality Management System", client: "컴스" },
+    ],
+  },
+] as const;
+
+/* ── 수행 프로젝트 데이터 (EN) ───────────────────────────────────────── */
+const DOMESTIC_PROJECTS_EN = [
+  {
+    period: "2023 ~ 2020",
+    role: "PM / Design",
+    slogan: "Public-private collaboration & latest trends",
+    items: [
+      { name: "Non-face-to-face Collaborative Care Platform", client: "Chang Healthcare" },
+      { name: "Multi-ministry Medical Device R&D Program", client: "Multi-ministry Medical Device Agency" },
+      { name: "2021 Mongolia Post-Care Center Operation", client: "KHIDI" },
+      { name: "Busan EDC Wellness Center Construction", client: "K-Water" },
+      { name: "2021 Worker Health Center App & IT System Enhancement", client: "KOSHA" },
+      { name: "Smart Hospital Leading Model Development", client: "Ministry of Health & Welfare" },
+      { name: "2020 Worker Health Center App & IT System Enhancement", client: "KOSHA" },
+      { name: "2020 Mongolia Post-Care System Operation", client: "KHIDI" },
+      { name: "ICT-based Healthcare Overseas Expansion Pilot (Thailand)", client: "KHIDI" },
+    ],
+  },
+  {
+    period: "2019 ~ 2015",
+    role: "PM / Design",
+    slogan: "Public integrity meets global scalability",
+    items: [
+      { name: "2019 Mongolia Post-Care System Operation", client: "KHIDI" },
+      { name: "SK Construction Health Management Solution (Access Control Integration)", client: "ADT Caps (now SK Shieldus)" },
+      { name: "2019 Worker Health Center App & IT System Enhancement", client: "KOSHA" },
+      { name: "PHR-based Personalized Health Management System", client: "Ministry of Trade, Industry & Energy" },
+      { name: "ICT Solutions for Elderly Chronic Disease in Cambodia (Advisory)", client: "UN ESCAP" },
+      { name: "2018 Worker Health Center IT System Enhancement", client: "KOSHA" },
+      { name: "2018 Mongolia Post-Care Center Operation", client: "KHIDI" },
+      { name: "2018 Digital Healthcare Southeast Asia Roadshow (Vietnam · Indonesia)", client: "Ministry of Health & Welfare" },
+      { name: "2017 Mongolia Post-Care Center Operation", client: "KHIDI" },
+      { name: "Smart After-Care Service Pilot (Thailand · Cambodia)", client: "NIA" },
+      { name: "2017 Worker Health Center Branch Setup & Infrastructure", client: "KOSHA" },
+      { name: "Mongolia EDCF National Diagnostic and Treatment Center", client: "Korea Eximbank / Daihan Electric Wire" },
+      { name: "Brazil Amazon Export Smart Medical Vessel Development", client: "Ministry of Trade, Industry & Energy" },
+      { name: "2016 Mongolia Post-Care Center Construction", client: "KHIDI" },
+      { name: "2016 Worker Health Center Health Zone Setup", client: "KOSHA" },
+      { name: "Remote Video Consultation System — Chosun Univ. Hospital to Cheongsando", client: "Ministry of Agriculture" },
+      { name: "Global CSR — Technical School (Cambodia)", client: "KOTRA" },
+      { name: "Deep-sea Vessel Telemedicine Support Pilot", client: "Ministry of Oceans & Fisheries" },
+      { name: "Military ICT-integrated Telemedicine System", client: "MND / AFMC" },
+      { name: "Smart After-Care Testbed (UAE)", client: "The Catholic Univ. Industry-Academic Cooperation" },
+      { name: "Telemedicine Activation Model Development & Pilot", client: "KHIDI" },
+      { name: "Seoul Citizen Health Portal System", client: "Seoul Metropolitan Govt. / Seoul Medical Center" },
+    ],
+  },
+  {
+    period: "2014 ~ 2010",
+    role: "PM / Design / Build",
+    slogan: "Trust-based national infrastructure",
+    items: [
+      { name: "Army Training Center Medical Clinic Automation System", client: "Army HQ" },
+      { name: "Cambodia Medical University Education System (KOICA)", client: "Soonchunhyang Univ. IAC" },
+      { name: "Regional Health Center Remote Health Infrastructure (Gangwon)", client: "Gangwon Province" },
+      { name: "u-Health Service Model for ODA Countries (Cambodia)", client: "Ministry of Commerce & Energy" },
+      { name: "Wonju U-City Wellness Center", client: "Hanwha S&C" },
+      { name: "MND Telemedicine System (Baekdu)", client: "MND 1266 Unit" },
+      { name: "USN-based Remote Health Monitoring System (Chungnam Seosan · Hospital Ship)", client: "NIA" },
+      { name: "Telemedicine System (Tongyeong)", client: "Tongyeong City" },
+      { name: "Telemedicine System (Dokdo Security Force · Police Hospital · Academy)", client: "National Police Agency" },
+      { name: "Integrated Medical Information System (Corrections Telemedicine)", client: "Ministry of Justice" },
+      { name: "Seoul u-Healthcare System", client: "Seoul Metropolitan Government" },
+      { name: "Maritime Telemedicine System", client: "Korea Maritime & Ocean University" },
+      { name: "Welfare IT Infrastructure Pilot", client: "NIA" },
+      { name: "u-Health Service Linking Welfare Facilities & Hospitals", client: "Busan Metropolitan City" },
+      { name: "Chungnam USN-based Remote Health Monitoring (Boryeong)", client: "Chungcheongnam-do" },
+      { name: "Gangnam-gu Health Center Telemedicine Pilot", client: "Gangnam-gu Health Center" },
+      { name: "Integrated Telemedicine Server (Gangneung Prison)", client: "Gangneung Prison" },
+      { name: "Gyeongbuk USN-based Remote Monitoring System", client: "Gyeongbuk Yeongyang County" },
+      { name: "Korea Coast Guard Emergency Telemedicine Pilot", client: "Korea Coast Guard" },
+      { name: "Remote Islands Telemedicine System (Sinan County)", client: "Jeollanam-do" },
+    ],
+  },
+  {
+    period: "2009 ~ 2005",
+    role: "PM / Design / Build",
+    slogan: "Building public trust — early telemedicine foundation",
+    items: [
+      { name: "SW Process Quality Certification (K-Model)", client: "NIA" },
+      { name: "Korea Nurses Association Bulletin System", client: "Korean Nurses Association" },
+      { name: "Ukraine Telemedicine System", client: "KOICA" },
+      { name: "Anyangso Prison-Hospital Telemedicine System", client: "Ministry of Justice" },
+      { name: "AFMC Telemedicine System", client: "Ministry of National Defense" },
+      { name: "Korean Red Cross Blood Information Sharing System (BISS)", client: "Korean Red Cross Blood Services" },
+      { name: "Ansan Public Health Center Telemedicine System", client: "Ansan City" },
+      { name: "Korea CDC PulseNet Operations System", client: "Korea CDC" },
+      { name: "Anyang Mental Health Center Video Counseling System", client: "Anyang City" },
+      { name: "Yonsei Univ. Medical School HIV Counseling System", client: "Yonsei University Medical Center" },
+      { name: "MOHW Specimen Inspection Adequacy Evaluation System", client: "Ministry of Health & Welfare" },
+      { name: "Medical-IT Convergence Infrastructure (Telemedicine)", client: "Sunchang County" },
+    ],
+  },
+  {
+    period: "2004 ~ 1998",
+    role: "Design / Build",
+    slogan: "Foundation of a technical career",
+    items: [
+      { name: "DrugInfo (Pharmaceutical Information System)", client: "BIT Computer" },
+      { name: "CRM-linked DM Automation & Dispatch System", client: "DM Plus" },
+      { name: "Gyeonggi Southern Auto Parts Industry-Academia Network", client: "Osan University" },
+      { name: "E-Sourcing One-Stop Process via Multi-Criteria Decision Analysis", client: "BSPM" },
+      { name: "Parking & Hospitality Management System", client: "COMS" },
+    ],
+  },
+] as const;
+
+type ProjectGroup = { period: string; role: string; slogan: string; items: readonly { name: string; client: string }[] };
+
+/* ── 수행실적 아코디언 아이템 ────────────────────────────────────────── */
+function ProjectAccordion({ groups, t }: { groups: readonly ProjectGroup[]; t: (k: string) => string }) {
+  const [open, setOpen] = useState<number | null>(0);
+  const [expandAll, setExpandAll] = useState(false);
+
+  const toggle = (i: number) => {
+    if (expandAll) {
+      setExpandAll(false);
+      setOpen(i);
+    } else {
+      setOpen(open === i ? null : i);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      {/* 전체 펼치기 토글 */}
+      <div className="flex justify-end mb-1">
+        <button
+          type="button"
+          onClick={() => { setExpandAll(!expandAll); setOpen(null); }}
+          className="text-[11px] font-semibold px-3 py-1 rounded-full transition-all"
+          style={{
+            color: LIME,
+            background: "rgba(130,201,30,0.08)",
+            border: "1px solid rgba(130,201,30,0.2)",
+          }}
+        >
+          {expandAll ? t("heritage.projectsCollapse") : t("heritage.projectsAll")}
+        </button>
+      </div>
+
+      {groups.map((group, i) => {
+        const isOpen = expandAll || open === i;
+        return (
+          <div
+            key={group.period}
+            className="rounded-xl overflow-hidden transition-all duration-300"
+            style={{
+              background: isOpen ? "rgba(130,201,30,0.04)" : "rgba(255,255,255,0.02)",
+              border: `1px solid ${isOpen ? "rgba(130,201,30,0.25)" : "rgba(116,198,157,0.1)"}`,
+            }}
+          >
+            {/* 헤더 */}
+            <button
+              type="button"
+              onClick={() => toggle(i)}
+              className="w-full flex items-center justify-between px-5 py-4 text-left"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <span
+                  className="text-sm font-bold tabular-nums flex-shrink-0"
+                  style={{ color: isOpen ? LIME : "rgba(116,198,157,0.8)" }}
+                >
+                  {group.period}
+                </span>
+                <span
+                  className="hidden sm:block text-[11px] px-2 py-0.5 rounded-full flex-shrink-0"
+                  style={{
+                    background: "rgba(116,198,157,0.07)",
+                    color: "rgba(116,198,157,0.55)",
+                    border: "1px solid rgba(116,198,157,0.12)",
+                  }}
+                >
+                  {group.role}
+                </span>
+                <span className="text-[11px] truncate" style={{ color: "rgba(116,198,157,0.4)" }}>
+                  {group.slogan}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0 ml-3">
+                <span className="text-[10px] font-bold" style={{ color: "rgba(116,198,157,0.5)" }}>
+                  {group.items.length}건
+                </span>
+                <ChevronDown
+                  size={14}
+                  style={{
+                    color: isOpen ? LIME : "rgba(116,198,157,0.4)",
+                    transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform 0.25s",
+                  }}
+                />
+              </div>
+            </button>
+
+            {/* 목록 */}
+            {isOpen && (
+              <div className="px-5 pb-4">
+                <div className="border-t pt-3" style={{ borderColor: "rgba(116,198,157,0.1)" }}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+                    {group.items.map((item, j) => (
+                      <div key={j} className="flex items-start gap-2">
+                        <span
+                          className="mt-[5px] w-1 h-1 rounded-full flex-shrink-0"
+                          style={{ background: "rgba(130,201,30,0.5)" }}
+                        />
+                        <div className="min-w-0">
+                          <span className="text-[12px] leading-snug" style={{ color: "rgba(255,255,255,0.82)" }}>
+                            {item.name}
+                          </span>
+                          <span className="ml-1.5 text-[10px]" style={{ color: "rgba(116,198,157,0.45)" }}>
+                            {item.client}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -415,6 +750,24 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
               </div>
             ))}
           </div>
+        </FadeIn>
+
+        {/* ══ 주요 수행 프로젝트 연보 ══════════════════════════════════ */}
+        <FadeIn direction="up" className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <ClipboardList size={18} style={{ color: LIME }} />
+            <h3 className="text-lg font-bold text-white">{t("heritage.projectsTitle")}</h3>
+            <span
+              className="text-[11px] px-2.5 py-0.5 rounded-full"
+              style={{ background: "rgba(130,201,30,0.1)", color: LIME, border: "1px solid rgba(130,201,30,0.25)" }}
+            >
+              {t("heritage.projectsBadge")}
+            </span>
+          </div>
+          <ProjectAccordion
+            groups={t("heritage.lang") === "en" ? DOMESTIC_PROJECTS_EN : DOMESTIC_PROJECTS_KO}
+            t={t}
+          />
         </FadeIn>
 
         {/* ══ 글로벌 프로젝트 ══════════════════════════════════════════ */}
