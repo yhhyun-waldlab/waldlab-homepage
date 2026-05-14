@@ -528,7 +528,7 @@ function ProjectAccordion({ groups, t }: { groups: readonly ProjectGroup[]; t: (
                     {group.items.map((item, j) => (
                       <div key={j} className="flex items-start gap-2">
                         <span
-                          className="mt-[5px] w-1 h-1 rounded-full flex-shrink-0"
+                          className="w-1 h-1 rounded-full flex-shrink-0 self-center"
                           style={{ background: "rgba(130,201,30,0.5)" }}
                         />
                         <div className="min-w-0">
