@@ -197,7 +197,7 @@ function StatCard({
 const DOMESTIC_PROJECTS_KO = [
   {
     period: "2024 ~ 현재",
-    role: "PM / 설계",
+    role: "PM / 설계 / 구현",
     slogan: "모든 영역 대응을 위해 SafeWay 플랫폼 위에서 유기적으로 연결",
     items: [
       { name: "SafeWay 헬스케어 기반 플랫폼", client: "㈜발트랩" },
@@ -317,7 +317,7 @@ const DOMESTIC_PROJECTS_KO = [
 const DOMESTIC_PROJECTS_EN = [
   {
     period: "2024 ~ Present",
-    role: "PM / Design",
+    role: "PM / Design / Build",
     slogan: "Organically connected on the SafeWay platform to address every domain",
     items: [
       { name: "SafeWay - Healthcare Foundation Platform", client: "Wald Lab Inc." },
