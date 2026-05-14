@@ -196,6 +196,19 @@ function StatCard({
 /* ── 수행 프로젝트 데이터 (KO) ───────────────────────────────────────── */
 const DOMESTIC_PROJECTS_KO = [
   {
+    period: "2024 ~ 현재",
+    role: "PM / 설계",
+    slogan: "모든 영역 대응을 위해 SafeWay 플랫폼 위에서 유기적으로 연결",
+    items: [
+      { name: "SafeWay 헬스케어 기반 플랫폼", client: "㈜발트랩" },
+      { name: "SafeLync 원격의료시스템", client: "㈜발트랩" },
+      { name: "SafeSync 산업 현장 근로자 건강관리 시스템", client: "㈜발트랩" },
+      { name: "SafeEntry 배치 전 건강진단 시스템", client: "㈜발트랩" },
+      { name: "SafeStep 만성질환 관리 시스템", client: "㈜발트랩" },
+      { name: "SafePaws 동물 케어 시스템", client: "㈜발트랩" },
+    ],
+  },
+  {
     period: "2023 ~ 2020",
     role: "PM / 설계",
     slogan: "공공·민간 협력과 최신 트렌드 반영",
@@ -302,6 +315,19 @@ const DOMESTIC_PROJECTS_KO = [
 
 /* ── 수행 프로젝트 데이터 (EN) ───────────────────────────────────────── */
 const DOMESTIC_PROJECTS_EN = [
+  {
+    period: "2024 ~ Present",
+    role: "PM / Design",
+    slogan: "Organically connected on the SafeWay platform to address every domain",
+    items: [
+      { name: "SafeWay - Healthcare Foundation Platform", client: "Wald Lab Inc." },
+      { name: "SafeLync - Telemedicine System", client: "Wald Lab Inc." },
+      { name: "SafeSync - Industrial Worker Health Management System", client: "Wald Lab Inc." },
+      { name: "SafeEntry - Pre-deployment Health Screening System", client: "Wald Lab Inc." },
+      { name: "SafeStep - Chronic Disease Management System", client: "Wald Lab Inc." },
+      { name: "SafePaws - Animal Care System", client: "Wald Lab Inc." },
+    ],
+  },
   {
     period: "2023 ~ 2020",
     role: "PM / Design",
