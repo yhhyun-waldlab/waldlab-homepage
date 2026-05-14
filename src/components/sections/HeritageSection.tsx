@@ -382,7 +382,7 @@ const DOMESTIC_PROJECTS_EN = [
       { name: "SW Process Quality Certification (K-Model)", client: "NIA" },
       { name: "Korean Nurses Association Newspaper System", client: "Korean Nurses Association" },
       { name: "Ukraine Telemedicine System", client: "KOICA" },
-      { name: "Anyangso Prison-Hospital Telemedicine System", client: "Ministry of Justice" },
+      { name: "Telemedicine system between Anyang Prison and Hospital", client: "Ministry of Justice" },
       { name: "AFMC Telemedicine System", client: "Ministry of National Defense" },
       { name: "Korean Red Cross Blood Information Sharing System (BISS)", client: "Korean Red Cross Blood Services" },
       { name: "Ansan Public Health Center Telemedicine System", client: "Ansan City" },
