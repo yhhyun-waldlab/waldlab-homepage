@@ -196,7 +196,7 @@ function StatCard({
 /* ── 수행 프로젝트 데이터 (KO) ───────────────────────────────────────── */
 const DOMESTIC_PROJECTS_KO = [
   {
-    period: "2024 ~ 현재",
+    period: "현재 ~ 2024",
     role: "PM / 설계 / 구현",
     slogan: "모든 영역 대응을 위해 SafeWay 플랫폼 위에서 유기적으로 연결",
     items: [
@@ -316,7 +316,7 @@ const DOMESTIC_PROJECTS_KO = [
 /* ── 수행 프로젝트 데이터 (EN) ───────────────────────────────────────── */
 const DOMESTIC_PROJECTS_EN = [
   {
-    period: "2024 ~ Present",
+    period: "Present ~ 2024",
     role: "PM / Design / Build",
     slogan: "Organically connected on the SafeWay platform to address every domain",
     items: [
