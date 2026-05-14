@@ -380,7 +380,7 @@ const DOMESTIC_PROJECTS_EN = [
     slogan: "Building public trust — early telemedicine foundation",
     items: [
       { name: "SW Process Quality Certification (K-Model)", client: "NIA" },
-      { name: "Korea Nurses Association Bulletin System", client: "Korean Nurses Association" },
+      { name: "Korean Nurses Association Newspaper System", client: "Korean Nurses Association" },
       { name: "Ukraine Telemedicine System", client: "KOICA" },
       { name: "Anyangso Prison-Hospital Telemedicine System", client: "Ministry of Justice" },
       { name: "AFMC Telemedicine System", client: "Ministry of National Defense" },
