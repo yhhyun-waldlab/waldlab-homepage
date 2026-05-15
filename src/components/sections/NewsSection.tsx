@@ -11,7 +11,13 @@ interface NewsSectionProps {
 
 type LoadState = "pending" | "sheet" | "empty" | "fallback";
 
-type StaticCardId = "1" | "2";
+type StaticCardId = "1" | "2" | "3";
+
+function staticNewsKeyPrefix(card: StaticCardId): "news.card1" | "news.card2" | "news.card3" {
+  if (card === "2") return "news.card2";
+  if (card === "3") return "news.card3";
+  return "news.card1";
+}
 
 type ModalState =
   | { kind: "static"; card: StaticCardId }
@@ -83,7 +89,7 @@ export default function NewsSection({ t }: NewsSectionProps) {
     },
     {
       id: "3" as const,
-      interactive: false,
+      interactive: true,
       tag: t("news.card3.tag"),
       title: t("news.card3.title"),
       excerpt: t("news.card3.excerpt"),
@@ -205,7 +211,10 @@ export default function NewsSection({ t }: NewsSectionProps) {
                       <button
                         type="button"
                         onClick={() =>
-                          setModal({ kind: "static", card: card.id === "2" ? "2" : "1" })
+                          setModal({
+                            kind: "static",
+                            card: card.id,
+                          })
                         }
                         className="group w-full text-left h-full min-h-[220px] flex flex-col rounded-2xl border border-wald-700/45 border-l-[3px] border-l-wald-ember bg-wald-900/55 backdrop-blur-sm p-6 shadow-lg shadow-black/25 transition-all duration-300 hover:border-wald-500/50 hover:bg-wald-900/75 hover:shadow-[0_20px_50px_-12px_rgba(201,107,44,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-wald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-wald-950"
                       >
@@ -270,20 +279,27 @@ export default function NewsSection({ t }: NewsSectionProps) {
 
             {modal.kind === "static" ? (
               <>
+                {(() => {
+                  const pre = staticNewsKeyPrefix(modal.card);
+                  return (
+                    <>
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-wald-ember-light mb-2">
-                  {t(modal.card === "2" ? "news.card2.tag" : "news.card1.tag")}
+                  {t(`${pre}.tag`)}
                 </p>
                 <p className="text-xs text-wald-500 mb-3 tabular-nums">
-                  {t(modal.card === "2" ? "news.card2.date" : "news.card1.date")}
+                  {t(`${pre}.date`)}
                 </p>
                 <h3 id={`${titleId}-dialog-title`} className="text-xl sm:text-2xl font-bold text-white pr-10 leading-snug">
-                  {t(modal.card === "2" ? "news.card2.detailTitle" : "news.card1.detailTitle")}
+                  {t(`${pre}.detailTitle`)}
                 </h3>
                 <div className="mt-6 space-y-4 text-sm text-wald-200/90 leading-relaxed">
-                  <p>{t(modal.card === "2" ? "news.card2.detailP1" : "news.card1.detailP1")}</p>
-                  <p>{t(modal.card === "2" ? "news.card2.detailP2" : "news.card1.detailP2")}</p>
-                  <p>{t(modal.card === "2" ? "news.card2.detailP3" : "news.card1.detailP3")}</p>
+                  <p className="whitespace-pre-line">{t(`${pre}.detailP1`)}</p>
+                  <p className="whitespace-pre-line">{t(`${pre}.detailP2`)}</p>
+                  <p className="whitespace-pre-line">{t(`${pre}.detailP3`)}</p>
                 </div>
+                    </>
+                  );
+                })()}
               </>
             ) : (
               <>
