@@ -176,7 +176,7 @@ export default async function NewsPage({ searchParams }: Props) {
             <p className="text-sm text-wald-400">
               {locale === "ko" ? "현재 등록된 소식이 없습니다." : "No announcements yet."}
             </p>
-          </div>
+          </div> 
         )}
       </main>
     </div>
