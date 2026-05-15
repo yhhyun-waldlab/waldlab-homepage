@@ -896,10 +896,14 @@
       "detailP3": "We will continue intellectual property management and steadily expand our healthcare services."
     },
     "card3": {
-      "tag": "Notice",
-      "title": "Further stories ahead",
-      "excerpt": "Product, research, and partnership updates will be shared here in due course.",
-      "date": "—"
+      "tag": "Intellectual Property",
+      "title": "SafeEntry copyright registration completed",
+      "excerpt": "We have formally completed copyright registration for the SafeEntry program.",
+      "date": "May 2026",
+      "detailTitle": "SafeEntry copyright registration completed",
+      "detailP1": "We have formally completed copyright registration for the SafeEntry program.",
+      "detailP2": "This registration is an important step in protecting our service technology and strengthening intellectual property.\nWe will continue to systematically secure our core technologies and brand assets.",
+      "detailP3": "Registration No.: C-2026-023269\nCategory: Computer program work"
     },
     "sheetLoading": "Loading announcements…",
     "sheetEmpty": "No rows to show. Check the header row and data in your sheet.",
