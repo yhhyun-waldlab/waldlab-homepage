@@ -56,7 +56,11 @@ export default async function NewsPage({ searchParams }: Props) {
       title:   t("news.card3.title"),
       excerpt: t("news.card3.excerpt"),
       date:    t("news.card3.date"),
-      body:    "",
+      body: [
+        t("news.card3.detailP1"),
+        t("news.card3.detailP2"),
+        t("news.card3.detailP3"),
+      ].join("\n\n"),
     },
   ];
 
