@@ -127,9 +127,9 @@
     "titleLine1": "25 Years of ",
     "titleHighlight": "Healthcare Trust",
     "desc": "The proven expertise of CEO Hyun Young-ho, who has personally designed and built remote healthcare solutions since the dawn of telemedicine in Korea in 2003, forms the technological foundation of Wald Lab.",
-    "chipPrefix": "All records and figures in this section are based on\u00a0",
-    "chipBold": "the personal expertise of our founders and key personnel",
-    "chipSuffix": ", not corporate performance.",
+    "chipPrefix": "Aside from Wald Lab Inc. attributions in this section, records and figures are based on\u00a0",
+    "chipBold": "the personal expertise of our CEO and key personnel",
+    "chipSuffix": " rather than corporate performance.",
     "stat0Suffix": "yrs+",
     "stat0Label": "Telemedicine Expertise",
     "stat0Sub": "Since early 2000s",
@@ -207,8 +207,8 @@
     "projectsCollapse": "Collapse",
     "disclosureTitle": "Expertise Disclosure",
     "disclosureName": "Hyun Young-ho",
-    "disclosureText": "All project records, figures, and career details listed in this section are based on the personal expertise and experience of CEO",
-    "disclosureText2": "and key personnel, not the official performance of Wald Lab Inc. Wald Lab was founded on this expertise, and corporate performance has been tracked separately since establishment in June 2024."
+    "disclosureText": "Except for items explicitly attributed to Wald Lab Inc. in this section, other project records, figures, and career details are not the official corporate performance of Wald Lab Inc., but reflect the personal expertise and experience of CEO ",
+    "disclosureText2": "and key personnel. Wald Lab was founded on this expertise; corporate performance reflects Wald Lab Inc.–attributed results from its establishment in June 2024 onward."
   },
   "contact": {
     "pageTitle": "Contact Us",
