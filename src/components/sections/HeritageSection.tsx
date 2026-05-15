@@ -364,7 +364,7 @@ const DOMESTIC_PROJECTS_EN = [
       { name: "Brazil Amazon Export Smart Medical Vessel Development", client: "Ministry of Trade, Industry & Energy" },
       { name: "2016 Mongolia Post-Care Center Construction", client: "KHIDI" },
       { name: "2016 Worker Health Center Health Zone Setup", client: "KOSHA" },
-      { name: "Remote Video Consultation System — Chosun Univ. Hospital to Cheongsando", client: "Ministry of Agriculture" },
+      { name: "Remote Video Consultation System - Chosun Univ. Hospital to Cheongsando", client: "Ministry of Agriculture" },
       { name: "Global CSR - Technical School (Cambodia)", client: "KOTRA" },
       { name: "Deep-sea Vessel Telemedicine Support Pilot", client: "Ministry of Oceans & Fisheries" },
       { name: "Military ICT-integrated Telemedicine System", client: "MND / AFMC" },
