@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import Link from "next/link";
 import { Megaphone, X } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import type { SheetNewsItem } from "@/lib/sheetNews";
@@ -144,7 +145,13 @@ export default function NewsSection({ t }: NewsSectionProps) {
                   </p>
                 ) : null}
               </div>
-              <div className="hidden sm:block h-px flex-1 max-w-xs ml-8 bg-gradient-to-r from-wald-ember/50 to-transparent rounded-full" />
+              <Link
+                href="/archive"
+                className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-wald-400 hover:text-wald-ember-light transition-colors flex-shrink-0"
+              >
+                {t("news.viewAll")}
+                <span aria-hidden>→</span>
+              </Link>
             </div>
           </FadeIn>
 
@@ -249,6 +256,17 @@ export default function NewsSection({ t }: NewsSectionProps) {
               </div>
             </>
           )}
+
+          {/* 전체 소식 보기 (모바일 + 하단 공통) */}
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/archive"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-wald-400 hover:text-wald-ember-light border border-wald-800/60 hover:border-wald-600/60 bg-wald-900/40 hover:bg-wald-900/70 transition-all"
+            >
+              {t("news.viewAll")}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
