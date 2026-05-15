@@ -4,15 +4,25 @@ import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { Megaphone, X } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
-import type { SheetNewsItem } from "@/lib/sheetNews";
+import type { Locale } from "@/lib/i18n";
 
 interface NewsSectionProps {
   t: (key: string) => string;
+  locale: Locale;
 }
 
-type LoadState = "pending" | "sheet" | "empty" | "fallback";
+type LoadState = "pending" | "ready" | "fallback";
 
 type StaticCardId = "1" | "2" | "3";
+
+type AnnouncementItem = {
+  id: string;
+  tag: string;
+  title: string;
+  excerpt: string;
+  body: string;
+  date: string;
+};
 
 function staticNewsKeyPrefix(card: StaticCardId): "news.card1" | "news.card2" | "news.card3" {
   if (card === "2") return "news.card2";
@@ -21,30 +31,31 @@ function staticNewsKeyPrefix(card: StaticCardId): "news.card1" | "news.card2" | 
 }
 
 type ModalState =
+  | { kind: "announcement"; item: AnnouncementItem }
   | { kind: "static"; card: StaticCardId }
-  | { kind: "sheet"; item: SheetNewsItem }
   | null;
 
-export default function NewsSection({ t }: NewsSectionProps) {
+export default function NewsSection({ t, locale }: NewsSectionProps) {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const titleId = useId();
   const [loadState, setLoadState] = useState<LoadState>("pending");
-  const [sheetItems, setSheetItems] = useState<SheetNewsItem[]>([]);
+  const [announcementItems, setAnnouncementItems] = useState<AnnouncementItem[]>([]);
   const [modal, setModal] = useState<ModalState>(null);
 
   useEffect(() => {
     let cancelled = false;
+    setLoadState("pending");
     (async () => {
       try {
-        const res = await fetch("/api/sheet-news?limit=3");
+        const res = await fetch(`/api/announcements?limit=3&lang=${locale}`);
         const data = (await res.json()) as {
           ok: boolean;
-          items?: SheetNewsItem[];
+          items?: AnnouncementItem[];
         };
         if (cancelled) return;
-        if (data.ok && Array.isArray(data.items)) {
-          setSheetItems(data.items);
-          setLoadState(data.items.length > 0 ? "sheet" : "empty");
+        if (data.ok && Array.isArray(data.items) && data.items.length > 0) {
+          setAnnouncementItems(data.items);
+          setLoadState("ready");
         } else {
           setLoadState("fallback");
         }
@@ -55,7 +66,7 @@ export default function NewsSection({ t }: NewsSectionProps) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     if (!modal) return;
@@ -98,6 +109,8 @@ export default function NewsSection({ t }: NewsSectionProps) {
     },
   ];
 
+  const archiveHref = `/archive?lang=${locale}`;
+
   return (
     <>
       <section
@@ -139,14 +152,9 @@ export default function NewsSection({ t }: NewsSectionProps) {
                 <p className="mt-3 text-wald-300/90 text-sm sm:text-base max-w-xl leading-relaxed">
                   {t("news.subtitle")}
                 </p>
-                {loadState === "sheet" && sheetItems.length > 0 ? (
-                  <p className="mt-2 text-xs text-wald-600">
-                    {t("news.sheetPoweredBy")}
-                  </p>
-                ) : null}
               </div>
               <Link
-                href="/archive"
+                href={archiveHref}
                 className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-wald-400 hover:text-wald-ember-light transition-colors flex-shrink-0"
               >
                 {t("news.viewAll")}
@@ -171,17 +179,13 @@ export default function NewsSection({ t }: NewsSectionProps) {
                 </div>
               ))}
             </div>
-          ) : loadState === "empty" ? (
-            <div className="rounded-2xl border border-wald-800/70 bg-wald-950/40 px-6 py-10 text-center">
-              <p className="text-sm text-wald-400">{t("news.sheetEmpty")}</p>
-            </div>
-          ) : loadState === "sheet" ? (
+          ) : loadState === "ready" ? (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-              {sheetItems.map((item, index) => (
-                <FadeIn key={`${item.title}-${index}`} delay={index * 90}>
+              {announcementItems.map((item, index) => (
+                <FadeIn key={item.id} delay={index * 90}>
                   <button
                     type="button"
-                    onClick={() => setModal({ kind: "sheet", item })}
+                    onClick={() => setModal({ kind: "announcement", item })}
                     className="group w-full text-left h-full min-h-[220px] flex flex-col rounded-2xl border border-wald-700/45 border-l-[3px] border-l-wald-ember bg-wald-900/55 backdrop-blur-sm p-6 shadow-lg shadow-black/25 transition-all duration-300 hover:border-wald-500/50 hover:bg-wald-900/75 hover:shadow-[0_20px_50px_-12px_rgba(201,107,44,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-wald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-wald-950"
                   >
                     <span className="text-[11px] font-semibold uppercase tracking-wider text-wald-ember-light">
@@ -257,10 +261,9 @@ export default function NewsSection({ t }: NewsSectionProps) {
             </>
           )}
 
-          {/* 전체 소식 보기 (모바일 + 하단 공통) */}
           <div className="mt-10 flex justify-center">
             <Link
-              href="/archive"
+              href={archiveHref}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-wald-400 hover:text-wald-ember-light border border-wald-800/60 hover:border-wald-600/60 bg-wald-900/40 hover:bg-wald-900/70 transition-all"
             >
               {t("news.viewAll")}
@@ -295,31 +298,7 @@ export default function NewsSection({ t }: NewsSectionProps) {
               <X size={20} />
             </button>
 
-            {modal.kind === "static" ? (
-              <>
-                {(() => {
-                  const pre = staticNewsKeyPrefix(modal.card);
-                  return (
-                    <>
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-wald-ember-light mb-2">
-                  {t(`${pre}.tag`)}
-                </p>
-                <p className="text-xs text-wald-500 mb-3 tabular-nums">
-                  {t(`${pre}.date`)}
-                </p>
-                <h3 id={`${titleId}-dialog-title`} className="text-xl sm:text-2xl font-bold text-white pr-10 leading-snug">
-                  {t(`${pre}.detailTitle`)}
-                </h3>
-                <div className="mt-6 space-y-4 text-sm text-wald-200/90 leading-relaxed">
-                  <p className="whitespace-pre-line">{t(`${pre}.detailP1`)}</p>
-                  <p className="whitespace-pre-line">{t(`${pre}.detailP2`)}</p>
-                  <p className="whitespace-pre-line">{t(`${pre}.detailP3`)}</p>
-                </div>
-                    </>
-                  );
-                })()}
-              </>
-            ) : (
+            {modal.kind === "announcement" ? (
               <>
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-wald-ember-light mb-2">
                   {modal.item.tag || "—"}
@@ -328,11 +307,35 @@ export default function NewsSection({ t }: NewsSectionProps) {
                 <h3 id={`${titleId}-dialog-title`} className="text-xl sm:text-2xl font-bold text-white pr-10 leading-snug">
                   {modal.item.title}
                 </h3>
-                <div className="mt-6 text-sm text-wald-200/90 leading-relaxed whitespace-pre-wrap">
+                <div className="mt-6 text-sm text-wald-200/90 leading-relaxed whitespace-pre-line">
                   {(modal.item.body || modal.item.excerpt || "").trim() || "—"}
                 </div>
               </>
-            )}
+            ) : modal.kind === "static" ? (
+              <>
+                {(() => {
+                  const pre = staticNewsKeyPrefix(modal.card);
+                  return (
+                    <>
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-wald-ember-light mb-2">
+                        {t(`${pre}.tag`)}
+                      </p>
+                      <p className="text-xs text-wald-500 mb-3 tabular-nums">
+                        {t(`${pre}.date`)}
+                      </p>
+                      <h3 id={`${titleId}-dialog-title`} className="text-xl sm:text-2xl font-bold text-white pr-10 leading-snug">
+                        {t(`${pre}.detailTitle`)}
+                      </h3>
+                      <div className="mt-6 space-y-4 text-sm text-wald-200/90 leading-relaxed">
+                        <p className="whitespace-pre-line">{t(`${pre}.detailP1`)}</p>
+                        <p className="whitespace-pre-line">{t(`${pre}.detailP2`)}</p>
+                        <p className="whitespace-pre-line">{t(`${pre}.detailP3`)}</p>
+                      </div>
+                    </>
+                  );
+                })()}
+              </>
+            ) : null}
 
             <button
               type="button"
