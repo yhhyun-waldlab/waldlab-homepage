@@ -283,7 +283,7 @@ const DOMESTIC_PROJECTS_KO = [
   {
     period: "2009 ~ 2005",
     role: "PM / 설계 / 구현",
-    slogan: "공공 신뢰 확보 — 초기 원격의료 기반 구축",
+    slogan: "공공 신뢰 확보 - 초기 원격의료 기반 구축",
     items: [
       { name: "SW 프로세스 품질 인증 절차·척도 (K-모델) 적용", client: "한국정보사회진흥원" },
       { name: "대한간호협회 간협신보 구축", client: "(사)대한간호협회" },
@@ -302,7 +302,7 @@ const DOMESTIC_PROJECTS_KO = [
   {
     period: "2004 ~ 1998",
     role: "설계 / 구현",
-    slogan: "기술 커리어의 토대 — 초기 시스템 개발",
+    slogan: "기술 커리어의 토대 - 초기 시스템 개발",
     items: [
       { name: "드러그인포 (의약품 정보 시스템)", client: "㈜비트컴퓨터" },
       { name: "CRM과 연계한 DM 자동화·발송 시스템", client: "㈜디엠플러스" },
@@ -403,7 +403,7 @@ const DOMESTIC_PROJECTS_EN = [
   {
     period: "2009 ~ 2005",
     role: "PM / Design / Build",
-    slogan: "Building public trust — early telemedicine foundation",
+    slogan: "Building public trust - early telemedicine foundation",
     items: [
       { name: "SW Process Quality Certification (K-Model)", client: "NIA" },
       { name: "Korean Nurses Association Newspaper System", client: "Korean Nurses Association" },
