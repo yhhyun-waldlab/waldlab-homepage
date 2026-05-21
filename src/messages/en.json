@@ -80,7 +80,12 @@
     "safestep": {
       "name": "SafeStep",
       "category": "Health Management",
-      "desc": "Continuous health management from chronic disease patients to everyday wellness. Pro plan for clinical-grade care and Lite plan for daily health tracking — covering all levels of health needs."
+      "desc": "Switch seamlessly between Pro and Lite modes in a single app. From specialized chronic disease care (Pro) for diabetes and hypertension patients, to everyday step, sleep, and stress tracking (Lite) for the general public."
+    },
+    "safestepcenter": {
+      "name": "SafeStep Center",
+      "category": "Clinic Management",
+      "desc": "The clinic-partnership retention hub of the SafeStep ecosystem. A dedicated management solution for hospitals and wellness centers to build lasting patient relationships through continuous health data."
     },
     "safepaws": {
       "name": "SafePaws",
