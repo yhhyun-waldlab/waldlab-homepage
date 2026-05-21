@@ -218,7 +218,39 @@ export function SafeStepLiteIcon({
 }
 
 /* ════════════════════════════════════════════════════════════════
-   7. SafePawsIcon  —  전용 파일에서 re-export
+   7. SafeStepCenterIcon  ·  인디고 #4C6EF5
+   ────────────────────────────────────────────────────────────────
+   병·의원 상생형 리텐션 허브. 건물 실루엣 + 잎 노드 DNA.
+   아치 지붕(잎 곡선 DNA) + 병원 십자(의료) + 하단 문(출입 관리).
+   ════════════════════════════════════════════════════════════════ */
+export function SafeStepCenterIcon({
+  size = 24, color = "#4C6EF5", stemColor = DS,
+  strokeWidth = 1.75, className, style,
+}: SafeIconProps) {
+  const sw = strokeWidth;
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+      strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>
+      {/* 건물 외벽 */}
+      <rect x="5" y="10" width="14" height="11" rx="1" stroke={color} strokeWidth={sw} />
+      {/* 아치 지붕 (잎 곡선 DNA) */}
+      <path d="M3 10 C8 4.5 16 4.5 21 10" stroke={stemColor} strokeWidth={sw} />
+      {/* 상단 잎 노드 */}
+      <circle cx="12" cy="4.5" r="1.5" fill={color} />
+      <line x1="12" y1="6" x2="12" y2="10" stroke={stemColor} strokeWidth={sw * 0.65} />
+      {/* 건물 층 구분선 (측맥 DNA) */}
+      <line x1="5" y1="15" x2="19" y2="15" stroke={stemColor} strokeWidth={sw * 0.5} />
+      {/* 병원 십자 (상층) */}
+      <line x1="12" y1="11.5" x2="12" y2="14" stroke={color} strokeWidth={sw * 1.25} />
+      <line x1="10.5" y1="12.75" x2="13.5" y2="12.75" stroke={color} strokeWidth={sw * 1.25} />
+      {/* 출입문 (하층) */}
+      <rect x="10.5" y="17" width="3" height="4" rx="0.5" stroke={color} strokeWidth={sw * 0.8} />
+    </svg>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   8. SafePawsIcon  —  전용 파일에서 re-export
    src/components/ui/SafePawsIcon.tsx 참조
    ════════════════════════════════════════════════════════════════ */
 export { SafePawsIcon } from "./SafePawsIcon";
@@ -227,11 +259,13 @@ export { SafePawsIcon } from "./SafePawsIcon";
    색상 상수 — 서비스 카드 import용
    ════════════════════════════════════════════════════════════════ */
 export const SAFE_ICON_COLORS = {
-  safeWay:      "#82C91E",
-  safeLync:     "#228BE6",
-  safeSync:     "#FA5252",
-  safeEntry:    "#FD7E14",
-  safeStepPro:  "#7950F2",
-  safeStepLite: "#20C997",
-  safePaws:     "#FD7E14",
+  safeWay:         "#82C91E",
+  safeLync:        "#228BE6",
+  safeSync:        "#FA5252",
+  safeEntry:       "#FD7E14",
+  safeStepPro:     "#7950F2",
+  safeStepLite:    "#20C997",
+  safeStep:        "#7950F2",
+  safeStepCenter:  "#4C6EF5",
+  safePaws:        "#FD7E14",
 } as const;
