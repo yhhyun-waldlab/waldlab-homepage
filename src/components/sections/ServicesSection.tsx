@@ -9,7 +9,7 @@ import {
   SafeSyncIcon,
   SafeEntryIcon,
   SafeStepProIcon,
-  SafeStepLiteIcon,
+  SafeStepCenterIcon,
   SafePawsIcon,
   type SafeIconProps,
 } from "@/components/ui/SafeIcons";
@@ -30,12 +30,12 @@ type ServiceDef = {
 
 /* 확정 6대 서비스 (SafeWay는 기반 플랫폼 — 카드 미표시) */
 const SERVICES: ServiceDef[] = [
-  { key: "safelync",    Icon: SafeLyncIcon,     color: "#228BE6", href: "/safelync",   codev: false },
-  { key: "safesync",    Icon: SafeSyncIcon,     color: "#FA5252", href: "/safesync",   codev: false },
-  { key: "safeentry",   Icon: SafeEntryIcon,    color: "#FD7E14", href: "/safeentry",  codev: true  },
-  { key: "safesteppro", Icon: SafeStepProIcon,  color: "#7950F2", href: null,          codev: false },
-  { key: "safesteplit", Icon: SafeStepLiteIcon, color: "#20C997", href: null,          codev: false },
-  { key: "safepaws",    Icon: SafePawsIcon,     color: "#FD7E14", href: null,          codev: false },
+  { key: "safelync",       Icon: SafeLyncIcon,        color: "#228BE6", href: "/safelync",  codev: false },
+  { key: "safesync",       Icon: SafeSyncIcon,        color: "#FA5252", href: "/safesync",  codev: false },
+  { key: "safeentry",      Icon: SafeEntryIcon,       color: "#FD7E14", href: "/safeentry", codev: true  },
+  { key: "safestep",       Icon: SafeStepProIcon,     color: "#7950F2", href: null,         codev: false },
+  { key: "safestepcenter", Icon: SafeStepCenterIcon,  color: "#4C6EF5", href: null,         codev: false },
+  { key: "safepaws",       Icon: SafePawsIcon,        color: "#FD7E14", href: null,         codev: false },
 ];
 
 function ServiceCard({
