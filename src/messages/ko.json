@@ -79,8 +79,13 @@
     },
     "safestep": {
       "name": "SafeStep",
-      "category": "건강관리",
-      "desc": "만성질환 환자부터 일반인까지 커버하는 상시 건강관리 솔루션. Pro(만성질환 전문 관리)와 Lite(일상 건강관리) 두 플랜으로 모든 수준의 건강을 지원합니다."
+      "category": "상시 건강관리",
+      "desc": "하나의 앱에서 Pro·Lite 모드를 자유롭게 전환. 만성질환 환자를 위한 전문 케어(Pro)부터 일반인의 걸음·수면·스트레스 일상 관리(Lite)까지 모든 건강 수준을 지원합니다."
+    },
+    "safestepcenter": {
+      "name": "SafeStep Center",
+      "category": "병원·센터 관리",
+      "desc": "SafeStep 생태계의 병·의원 상생형 리텐션 허브. 환자 데이터를 기반으로 지속적인 관계를 구축하는 병원·센터 전용 관리 솔루션."
     },
     "safepaws": {
       "name": "SafePaws",
