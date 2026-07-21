@@ -186,12 +186,6 @@ export default async function ArchivePage({ searchParams }: Props) {
           )}
         </div>
 
-        {/* 카운트 안내 */}
-        <p className="mt-6 text-center text-xs text-wald-700">
-          {isKo
-            ? "새 공지사항을 추가하려면 src/data/announcements.json 파일에 항목을 추가하세요."
-            : "To add a new announcement, append an entry to src/data/announcements.json."}
-        </p>
       </main>
     </div>
   );
