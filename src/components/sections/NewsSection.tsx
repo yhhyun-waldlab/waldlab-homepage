@@ -44,8 +44,8 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
 
   useEffect(() => {
     let cancelled = false;
-    setLoadState("pending");
     (async () => {
+      setLoadState("pending");
       try {
         const res = await fetch(`/api/announcements?limit=3&lang=${locale}`);
         const data = (await res.json()) as {
