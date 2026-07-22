@@ -67,16 +67,6 @@
       "category": "근로자 건강관리",
       "desc": "산업 현장 근로자의 생체 신호를 모니터링. 이상 징후를 감지 하여 재해를 예방. 근로자의 건강과 현장의 안전을 동기화합니다."
     },
-    "safesteppro": {
-      "name": "SafeStep Pro",
-      "category": "만성질환 관리",
-      "desc": "당뇨, 고혈압 등 만성질환 환자를 위한 전문 상시 건강관리 서비스. 개인 맞춤형 건강 계획과 의료진 연계 지원."
-    },
-    "safesteplit": {
-      "name": "SafeStep Lite",
-      "category": "일반 건강관리",
-      "desc": "일반인을 위한 가벼운 상시 건강관리 솔루션. 걸음 수, 수면, 스트레스 등 일상 건강 데이터를 쉽고 직관적으로 관리."
-    },
     "safestep": {
       "name": "SafeStep",
       "category": "상시 건강관리",
@@ -242,8 +232,8 @@
       "safelync": "SafeLync · 원격의료",
       "safesync": "SafeSync · 산업 현장 근로자 건강관리",
       "safeentry": "SafeEntry · 배치전 건강진단",
-      "safesteppro": "SafeStep Pro · 만성질환 관리",
-      "safesteplit": "SafeStep Lite · 일반 건강관리",
+      "safestep": "SafeStep · 상시 건강관리",
+      "safestepcenter": "SafeStep Center · 병원·센터 관리",
       "safepaws": "SafePaws · 동물 케어",
       "consulting": "컨설팅 및 기타"
     },
@@ -1043,35 +1033,7 @@
       "detailP3": "등록번호: 제C-2026-023269호\n등록구분: 컴퓨터프로그램저작물"
     },
     "viewAll": "전체 소식 보기",
-    "sheetLoading": "공지를 불러오는 중…",
-    "sheetEmpty": "시트에서 가져올 공지가 없습니다. 시트 첫 행 헤더와 데이터를 확인해 주세요.",
-    "viewSamplePage": "시트 연동 샘플 페이지",
-    "sheetPoweredBy": "Google Sheets 상위 3행"
-  },
-  "sheetSample": {
-    "title": "Google Sheets 연동 샘플",
-    "subtitle": "메인 공지는 이 시트의 위에서부터 최대 3개 행을 사용합니다.",
-    "backHome": "홈으로",
-    "statusOn": "연결: 환경변수에 시트가 설정되어 있습니다.",
-    "statusOff": "미설정: .env.local에 GOOGLE_SHEET_ID 또는 GOOGLE_SHEET_CSV_URL을 넣어 주세요.",
-    "columnsTitle": "시트 첫 행(헤더) 예시",
-    "columnsHint": "영문 소문자 헤더 한 줄을 권장합니다. 본문은 셀 안에서 Alt+Enter로 줄바꿈 가능합니다.",
-    "tableCaption": "시트에서 불러온 행 (최대 100개)",
-    "colDate": "date",
-    "colTag": "tag",
-    "colTitle": "title",
-    "colExcerpt": "excerpt",
-    "colBody": "body",
-    "noRows": "데이터 행이 없거나 헤더의 title 열을 찾지 못했습니다.",
-    "errorFetch": "CSV를 가져오지 못했습니다. 시트 공개 범위와 환경변수를 확인하세요.",
-    "apiHint": "API",
-    "apiPath": "/api/sheet-news?limit=3",
-    "stepsTitle": "설정 순서",
-    "step1": "스프레드시트를 열고 공유 → 일반 액세스에서 «링크가 있는 모든 사용자»를 뷰어 이상으로 설정합니다.",
-    "step2": "URL에서 스프레드시트 ID를 복사합니다. ( /d/ 이후 /edit 앞 문자열 )",
-    "step3": ".env.local에 GOOGLE_SHEET_ID=복사한ID 를 저장하고 개발 서버를 다시 시작합니다.",
-    "step4": "다른 탭을 쓰는 경우 GOOGLE_SHEET_GID(시트 하단 탭의 gid= 값)를 지정합니다.",
-    "stepAlt": "또는 브라우저에서 열리는 CSV 전체 URL을 GOOGLE_SHEET_CSV_URL 로 넣을 수 있습니다."
+    "sheetLoading": "공지를 불러오는 중…"
   },
   "footer": {
     "company": "주식회사 발트랩",
@@ -1101,6 +1063,7 @@
       "safeentry": "SafeEntry",
       "safesync": "SafeSync",
       "safestep": "SafeStep",
+      "safestepcenter": "SafeStep Center",
       "safepaws": "SafePaws"
     }
   }
