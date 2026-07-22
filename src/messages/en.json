@@ -67,16 +67,6 @@
       "category": "Site Monitoring",
       "desc": "Real-time monitoring of workers' vital signs at industrial sites. Instantly detect anomalies and automatically alert to prevent industrial accidents."
     },
-    "safesteppro": {
-      "name": "SafeStep Pro",
-      "category": "Chronic Disease Care",
-      "desc": "A specialized continuous health management service for patients with chronic diseases such as diabetes and hypertension. Personalized health plans with healthcare provider support."
-    },
-    "safesteplit": {
-      "name": "SafeStep Lite",
-      "category": "General Wellness",
-      "desc": "A lightweight continuous health management solution for the general public. Easily and intuitively manage daily health data including steps, sleep, and stress."
-    },
     "safestep": {
       "name": "SafeStep",
       "category": "Health Management",
@@ -242,10 +232,10 @@
       "safelync":    "SafeLync · Telemedicine",
       "safesync":    "SafeSync · Workplace Health Monitoring",
       "safeentry":   "SafeEntry · Pre-assignment Health Check",
-      "safesteppro": "SafeStep Pro · Chronic Disease Management",
-      "safesteplit": "SafeStep Lite · General Health Management",
-      "safepaws":    "SafePaws · Animal Care",
-      "consulting":  "Consulting & Other"
+      "safestep":       "SafeStep · Continuous Health Management",
+      "safestepcenter": "SafeStep Center · Clinic Management",
+      "safepaws":       "SafePaws · Animal Care",
+      "consulting":     "Consulting & Other"
     },
     "errors": {
       "service": "Please select a service",
@@ -911,35 +901,7 @@
       "detailP3": "Registration No.: C-2026-023269\nCategory: Computer program work"
     },
     "viewAll": "View all announcements",
-    "sheetLoading": "Loading announcements…",
-    "sheetEmpty": "No rows to show. Check the header row and data in your sheet.",
-    "viewSamplePage": "Sheet integration sample",
-    "sheetPoweredBy": "Top 3 rows from Google Sheets"
-  },
-  "sheetSample": {
-    "title": "Google Sheets integration sample",
-    "subtitle": "The homepage uses up to the first 3 data rows from this sheet (top to bottom).",
-    "backHome": "Back to home",
-    "statusOn": "Connected: sheet URL or ID is set in environment variables.",
-    "statusOff": "Not configured: set GOOGLE_SHEET_ID or GOOGLE_SHEET_CSV_URL in .env.local.",
-    "columnsTitle": "Recommended header row",
-    "columnsHint": "Use lowercase English headers. Use Alt+Enter in a cell for line breaks in body.",
-    "tableCaption": "Rows loaded from the sheet (max 100)",
-    "colDate": "date",
-    "colTag": "tag",
-    "colTitle": "title",
-    "colExcerpt": "excerpt",
-    "colBody": "body",
-    "noRows": "No data rows, or the title column was not found.",
-    "errorFetch": "Could not fetch CSV. Check sharing settings and environment variables.",
-    "apiHint": "API",
-    "apiPath": "/api/sheet-news?limit=3",
-    "stepsTitle": "Setup",
-    "step1": "Share the spreadsheet so anyone with the link can view (or stronger).",
-    "step2": "Copy the spreadsheet ID from the URL (between /d/ and /edit).",
-    "step3": "Add GOOGLE_SHEET_ID=paste_id to .env.local and restart the dev server.",
-    "step4": "For a non-first tab, set GOOGLE_SHEET_GID from the tab’s gid= parameter.",
-    "stepAlt": "Alternatively, set GOOGLE_SHEET_CSV_URL to the full CSV export URL."
+    "sheetLoading": "Loading announcements…"
   },
   "footer": {
     "company": "Wald Lab Inc.",
@@ -969,6 +931,7 @@
       "safeentry": "SafeEntry",
       "safesync": "SafeSync",
       "safestep": "SafeStep",
+      "safestepcenter": "SafeStep Center",
       "safepaws": "SafePaws"
     }
   }
