@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { fetchSheetNews } from "@/lib/sheetNews";
-import { loadMessages, createTranslator } from "@/lib/i18n";
+import { ArrowLeft, Megaphone } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
-import { Megaphone, ArrowLeft, ExternalLink } from "lucide-react";
+import announcements from "@/data/announcements.json";
 
 export const metadata: Metadata = {
   title: "공지 · 소식 | Wald Lab",
@@ -12,73 +11,41 @@ export const metadata: Metadata = {
 
 type Props = { searchParams?: Promise<{ lang?: string }> };
 
-function truncate(s: string, max: number) {
-  const str = s.trim();
-  if (str.length <= max) return str;
-  return `${str.slice(0, max)}…`;
+type Announcement = (typeof announcements)[number];
+
+function localText(field: { ko: string; en: string }, locale: Locale) {
+  return locale === "en" ? field.en : field.ko;
 }
+
+/** "2026-05-01" → "2026.05" (ko) | "May 2026" (en) */
+function formatDate(iso: string, locale: Locale) {
+  const [y, m] = iso.split("-");
+  if (locale === "en") {
+    const months = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    ];
+    return `${months[parseInt(m, 10) - 1]} ${y}`;
+  }
+  return `${y}.${m}`;
+}
+
+/** Sort newest first */
+const sorted: Announcement[] = [...announcements].sort(
+  (a, b) => b.date.localeCompare(a.date)
+);
 
 export default async function NewsPage({ searchParams }: Props) {
   const sp = (await searchParams) ?? {};
   const locale = (sp.lang === "en" ? "en" : "ko") as Locale;
-  const messages = await loadMessages(locale);
-  const t = createTranslator(messages);
-
-  const result = await fetchSheetNews(50);
-  const sheetItems = result.ok ? result.items : [];
-  const hasSheet = sheetItems.length > 0;
-
-  const staticCards = [
-    {
-      tag:     t("news.card1.tag"),
-      title:   t("news.card1.title"),
-      excerpt: t("news.card1.excerpt"),
-      date:    t("news.card1.date"),
-      body:    [
-        t("news.card1.detailP1"),
-        t("news.card1.detailP2"),
-        t("news.card1.detailP3"),
-      ].join("\n\n"),
-    },
-    {
-      tag:     t("news.card2.tag"),
-      title:   t("news.card2.title"),
-      excerpt: t("news.card2.excerpt"),
-      date:    t("news.card2.date"),
-      body:    [
-        t("news.card2.detailP1"),
-        t("news.card2.detailP2"),
-        t("news.card2.detailP3"),
-      ].join("\n\n"),
-    },
-    {
-      tag:     t("news.card3.tag"),
-      title:   t("news.card3.title"),
-      excerpt: t("news.card3.excerpt"),
-      date:    t("news.card3.date"),
-      body: [
-        t("news.card3.detailP1"),
-        t("news.card3.detailP2"),
-        t("news.card3.detailP3"),
-      ].join("\n\n"),
-    },
-  ];
-
-  const items = hasSheet
-    ? sheetItems.map((i) => ({
-        tag:     i.tag  || "—",
-        title:   i.title,
-        excerpt: i.excerpt || (i.body ? truncate(i.body, 120) : ""),
-        date:    i.date || "—",
-        body:    i.body || i.excerpt || "",
-      }))
-    : staticCards;
+  const isKo = locale === "ko";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-wald-950 via-[#050a08] to-wald-900 text-wald-100">
 
-      {/* 배경 패턴 */}
-      <div className="pointer-events-none fixed inset-0 opacity-[0.025]"
+      {/* 배경 그리드 */}
+      <div
+        className="pointer-events-none fixed inset-0 opacity-[0.025]"
         style={{
           backgroundImage: `
             linear-gradient(90deg, rgba(82,183,136,0.5) 1px, transparent 1px),
@@ -96,19 +63,19 @@ export default async function NewsPage({ searchParams }: Props) {
             className="inline-flex items-center gap-1.5 text-sm font-medium text-wald-400 hover:text-wald-200 transition-colors"
           >
             <ArrowLeft size={14} />
-            {locale === "ko" ? "홈으로" : "Back to Home"}
+            {isKo ? "홈으로" : "Back to Home"}
           </Link>
           <div className="flex gap-2 text-xs">
             <Link
               href="/news?lang=ko"
-              className={locale === "ko" ? "text-wald-ember-light font-semibold" : "text-wald-500 hover:text-wald-300 transition-colors"}
+              className={isKo ? "text-wald-ember-light font-semibold" : "text-wald-500 hover:text-wald-300 transition-colors"}
             >
               KO
             </Link>
             <span className="text-wald-700">|</span>
             <Link
               href="/news?lang=en"
-              className={locale === "en" ? "text-wald-ember-light font-semibold" : "text-wald-500 hover:text-wald-300 transition-colors"}
+              className={!isKo ? "text-wald-ember-light font-semibold" : "text-wald-500 hover:text-wald-300 transition-colors"}
             >
               EN
             </Link>
@@ -116,68 +83,106 @@ export default async function NewsPage({ searchParams }: Props) {
         </div>
       </header>
 
-      {/* 메인 */}
+      {/* 본문 */}
       <main className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
 
-        {/* 페이지 타이틀 */}
-        <div className="mb-12">
+        {/* 타이틀 */}
+        <div className="mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-wald-800/70 border border-wald-600/35 mb-5">
             <Megaphone className="w-3.5 h-3.5 text-wald-ember-light" aria-hidden />
             <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-wald-300">
-              {t("news.badge")}
+              News
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
-            {t("news.title")}
+          <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-2">
+            {isKo ? "공지 · 소식" : "News & Announcements"}
           </h1>
-          <p className="text-wald-300/90 text-sm sm:text-base max-w-xl leading-relaxed">
-            {t("news.subtitle")}
+          <p className="text-wald-400 text-sm">
+            {isKo
+              ? `총 ${sorted.length}건 · 최신순 정렬`
+              : `${sorted.length} entries · newest first`}
           </p>
         </div>
 
-        {/* 뉴스 그리드 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {items.map((item, i) => (
-            <article
-              key={i}
-              className="flex flex-col rounded-2xl border border-wald-700/45 border-l-[3px] border-l-wald-ember bg-wald-900/55 backdrop-blur-sm p-6 shadow-lg shadow-black/25"
+        {/* 리스트 테이블 */}
+        <div className="rounded-2xl border border-wald-800/60 overflow-hidden">
+          {/* 헤더 행 */}
+          <div className="hidden sm:grid grid-cols-[7rem_8rem_1fr] bg-wald-900/80 border-b border-wald-800/60 px-6 py-3 text-[11px] font-semibold uppercase tracking-widest text-wald-500">
+            <span>{isKo ? "날짜" : "Date"}</span>
+            <span>{isKo ? "분류" : "Category"}</span>
+            <span>{isKo ? "제목" : "Title"}</span>
+          </div>
+
+          {/* 데이터 행 */}
+          {sorted.map((item) => (
+            <details
+              key={item.id}
+              className="group border-b border-wald-800/40 last:border-0"
             >
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-wald-ember-light">
-                {item.tag}
-              </span>
-              <span className="mt-2 text-xs text-wald-500 tabular-nums">{item.date}</span>
-              <h2 className="mt-3 text-base font-bold text-white leading-snug flex-1">
-                {item.title}
-              </h2>
-              {item.excerpt && (
-                <p className="mt-2 text-sm text-wald-300/85 leading-relaxed">
-                  {item.excerpt}
-                </p>
-              )}
-              {item.body && item.body.trim() && (
-                <details className="mt-4 group">
-                  <summary className="cursor-pointer text-xs font-semibold text-wald-400 hover:text-wald-ember-light transition-colors list-none flex items-center gap-1">
-                    <span className="group-open:hidden">{t("news.readMore")}</span>
-                    <span className="hidden group-open:inline">{locale === "ko" ? "접기" : "Collapse"}</span>
-                    <ExternalLink size={11} className="group-open:hidden" />
-                  </summary>
-                  <div className="mt-3 pt-3 border-t border-wald-800/60 text-xs text-wald-300/90 leading-relaxed whitespace-pre-wrap">
-                    {item.body}
+              <summary className="list-none cursor-pointer">
+                <div className="grid grid-cols-1 sm:grid-cols-[7rem_8rem_1fr] items-start sm:items-center gap-1 sm:gap-0 px-6 py-4 hover:bg-wald-900/50 transition-colors">
+                  {/* 날짜 */}
+                  <span className="tabular-nums text-xs text-wald-500 sm:text-wald-400">
+                    {formatDate(item.date, locale)}
+                  </span>
+                  {/* 태그 */}
+                  <span className="inline-flex items-center">
+                    <span
+                      className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full"
+                      style={{
+                        background: "rgba(201,107,44,0.12)",
+                        color: "rgba(232,149,74,0.9)",
+                        border: "1px solid rgba(201,107,44,0.25)",
+                      }}
+                    >
+                      {localText(item.tag, locale)}
+                    </span>
+                  </span>
+                  {/* 제목 */}
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-sm font-semibold text-white group-open:text-wald-ember-light transition-colors leading-snug">
+                      {localText(item.title, locale)}
+                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="flex-shrink-0 text-wald-600 group-open:rotate-180 transition-transform duration-200"
+                      aria-hidden
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
                   </div>
-                </details>
-              )}
-            </article>
+                </div>
+              </summary>
+
+              {/* 펼쳤을 때 본문 */}
+              <div className="px-6 pb-6 pt-2 bg-wald-950/30">
+                {/* excerpt */}
+                <p className="text-sm text-wald-300/90 mb-4 leading-relaxed">
+                  {localText(item.excerpt, locale)}
+                </p>
+                {/* body */}
+                <div className="text-sm text-wald-300/80 leading-relaxed whitespace-pre-line border-t border-wald-800/50 pt-4">
+                  {localText(item.body, locale)}
+                </div>
+              </div>
+            </details>
           ))}
+
+          {sorted.length === 0 && (
+            <div className="px-6 py-16 text-center text-sm text-wald-500">
+              {isKo ? "현재 등록된 소식이 없습니다." : "No announcements yet."}
+            </div>
+          )}
         </div>
 
-        {/* 빈 상태 */}
-        {items.length === 0 && (
-          <div className="rounded-2xl border border-wald-800/70 bg-wald-950/40 px-6 py-16 text-center">
-            <p className="text-sm text-wald-400">
-              {locale === "ko" ? "현재 등록된 소식이 없습니다." : "No announcements yet."}
-            </p>
-          </div> 
-        )}
       </main>
     </div>
   );
