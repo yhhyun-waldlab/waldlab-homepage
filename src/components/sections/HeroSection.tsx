@@ -9,8 +9,8 @@ const SERVICES = [
   "SafeLync",
   "SafeEntry",
   "SafeSync",
-  "SafeStep Pro",
-  "SafeStep Lite",
+  "SafeStep",
+  "SafeStep Center",
   "SafePaws",
 ];
 
