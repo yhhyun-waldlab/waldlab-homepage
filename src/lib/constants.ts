@@ -14,8 +14,8 @@ export const SERVICE_KEYS = [
   "safelync",
   "safeentry",
   "safesync",
-  "safesteppro",
-  "safesteplit",
+  "safestep",
+  "safestepcenter",
   "safepaws",
 ] as const;
 
