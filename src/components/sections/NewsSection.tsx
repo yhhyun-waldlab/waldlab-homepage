@@ -109,7 +109,7 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
     },
   ];
 
-  const archiveHref = `/archive?lang=${locale}`;
+  const archiveHref = `/news?lang=${locale}`;
 
   return (
     <>
