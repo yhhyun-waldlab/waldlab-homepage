@@ -113,8 +113,8 @@ export default function ContactPage() {
     { value: "safelync",    label: t("contact.services.safelync")    },
     { value: "safesync",    label: t("contact.services.safesync")    },
     { value: "safeentry",   label: t("contact.services.safeentry")   },
-    { value: "safesteppro", label: t("contact.services.safesteppro") },
-    { value: "safesteplit", label: t("contact.services.safesteplit") },
+    { value: "safestep",       label: t("contact.services.safestep")       },
+    { value: "safestepcenter", label: t("contact.services.safestepcenter") },
     { value: "safepaws",    label: t("contact.services.safepaws")    },
     { value: "consulting",  label: t("contact.services.consulting")  },
   ];
