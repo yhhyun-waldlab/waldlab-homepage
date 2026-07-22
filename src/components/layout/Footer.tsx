@@ -25,6 +25,7 @@ const serviceLinks = [
   { key: "footer.links.safeentry", href: "#services" },
   { key: "footer.links.safesync", href: "#services" },
   { key: "footer.links.safestep", href: "#services" },
+  { key: "footer.links.safestepcenter", href: "#services" },
   { key: "footer.links.safepaws", href: "#services" },
 ];
 
