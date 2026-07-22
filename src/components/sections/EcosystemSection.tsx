@@ -7,7 +7,7 @@ import {
   SafeEntryIcon,
   SafeSyncIcon,
   SafeStepProIcon,
-  SafeStepLiteIcon,
+  SafeStepCenterIcon,
   type SafeIconProps,
 } from "@/components/ui/SafeIcons";
 import { SafePawsIcon } from "@/components/ui/SafePawsIcon";
@@ -27,8 +27,8 @@ const services: Array<{
   { key: "safelync",    Icon: SafeLyncIcon,     label: "SafeLync",      color: "#228BE6", angle: 270 },
   { key: "safeentry",   Icon: SafeEntryIcon,     label: "SafeEntry",     color: "#FD7E14", angle: 330 },
   { key: "safesync",    Icon: SafeSyncIcon,     label: "SafeSync",      color: "#FA5252", angle: 30  },
-  { key: "safesteppro", Icon: SafeStepProIcon,  label: "SafeStep Pro",  color: "#7950F2", angle: 90  },
-  { key: "safesteplit", Icon: SafeStepLiteIcon, label: "SafeStep Lite", color: "#20C997", angle: 150 },
+  { key: "safestep",       Icon: SafeStepProIcon,    label: "SafeStep",        color: "#7950F2", angle: 90  },
+  { key: "safestepcenter", Icon: SafeStepCenterIcon, label: "SafeStep Center", color: "#4C6EF5", angle: 150 },
   { key: "safepaws",    Icon: SafePawsIcon,     label: "SafePaws",      color: "#FD7E14", angle: 210 },
 ];
 
