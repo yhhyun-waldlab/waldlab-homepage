@@ -1,0 +1,9 @@
+[
+  {
+    "id": "admin-1",
+    "email": "yhhyun@waldlab.kr",
+    "name": "관리자",
+    "passwordHash": "$2b$10$.2mNQTaNzVynzqRll0ojxunRjr6uO5kb47WO/NsEA/OoJT9P7yGi6",
+    "createdAt": "2026-09-17T06:53:08.055Z"
+  }
+]
