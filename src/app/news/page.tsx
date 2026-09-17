@@ -3,19 +3,28 @@ import Link from "next/link";
 import { ArrowLeft, Megaphone } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import announcements from "@/data/announcements.json";
+import { CATEGORY_LABELS, type AnnouncementCategory } from "@/types/announcement";
 
 export const metadata: Metadata = {
   title: "공지 · 소식 | Wald Lab",
   description: "Wald Lab의 주요 공지와 최신 소식을 확인하세요.",
 };
 
-type Props = { searchParams?: Promise<{ lang?: string }> };
+type Props = { searchParams?: Promise<{ lang?: string; category?: string }> };
 
 type Announcement = (typeof announcements)[number];
 
 function localText(field: { ko: string; en: string }, locale: Locale) {
   return locale === "en" ? field.en : field.ko;
 }
+
+const CATEGORY_COLORS: Record<AnnouncementCategory, { bg: string; text: string; border: string }> = {
+  update: { bg: "rgba(59,130,246,0.12)", text: "rgba(96,165,250,0.9)", border: "rgba(59,130,246,0.25)" },
+  "tech-news": { bg: "rgba(34,197,94,0.12)", text: "rgba(74,222,128,0.9)", border: "rgba(34,197,94,0.25)" },
+  insight: { bg: "rgba(168,85,247,0.12)", text: "rgba(192,132,252,0.9)", border: "rgba(168,85,247,0.25)" },
+  notice: { bg: "rgba(239,68,68,0.12)", text: "rgba(248,113,113,0.9)", border: "rgba(239,68,68,0.25)" },
+  ip: { bg: "rgba(201,107,44,0.12)", text: "rgba(232,149,74,0.9)", border: "rgba(201,107,44,0.25)" },
+};
 
 /** "2026-05-01" → "2026.05" (ko) | "May 2026" (en) */
 function formatDate(iso: string, locale: Locale) {
@@ -39,6 +48,12 @@ export default async function NewsPage({ searchParams }: Props) {
   const sp = (await searchParams) ?? {};
   const locale = (sp.lang === "en" ? "en" : "ko") as Locale;
   const isKo = locale === "ko";
+  const selectedCategory = sp.category as AnnouncementCategory | undefined;
+
+  // Filter by category if specified
+  const filtered = selectedCategory
+    ? sorted.filter((item) => item.category === selectedCategory)
+    : sorted;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-wald-950 via-[#050a08] to-wald-900 text-wald-100">
@@ -99,9 +114,36 @@ export default async function NewsPage({ searchParams }: Props) {
           </h1>
           <p className="text-wald-400 text-sm">
             {isKo
-              ? `총 ${sorted.length}건 · 최신순 정렬`
-              : `${sorted.length} entries · newest first`}
+              ? `총 ${filtered.length}건 · 최신순 정렬`
+              : `${filtered.length} entries · newest first`}
           </p>
+        </div>
+
+        {/* 카테고리 필터 */}
+        <div className="mb-6 flex flex-wrap gap-2">
+          <Link
+            href={`/news?lang=${locale}`}
+            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              !selectedCategory
+                ? "bg-wald-800 text-white border border-wald-600"
+                : "bg-wald-900/50 text-wald-400 border border-wald-800/50 hover:bg-wald-800/70"
+            }`}
+          >
+            {isKo ? "전체" : "All"}
+          </Link>
+          {(Object.keys(CATEGORY_LABELS) as AnnouncementCategory[]).map((cat) => (
+            <Link
+              key={cat}
+              href={`/news?lang=${locale}&category=${cat}`}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                selectedCategory === cat
+                  ? "bg-wald-800 text-white border border-wald-600"
+                  : "bg-wald-900/50 text-wald-400 border border-wald-800/50 hover:bg-wald-800/70"
+              }`}
+            >
+              {localText(CATEGORY_LABELS[cat], locale)}
+            </Link>
+          ))}
         </div>
 
         {/* 리스트 테이블 */}
@@ -114,7 +156,7 @@ export default async function NewsPage({ searchParams }: Props) {
           </div>
 
           {/* 데이터 행 */}
-          {sorted.map((item) => (
+          {filtered.map((item) => (
             <details
               key={item.id}
               className="group border-b border-wald-800/40 last:border-0"
@@ -130,9 +172,9 @@ export default async function NewsPage({ searchParams }: Props) {
                     <span
                       className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full"
                       style={{
-                        background: "rgba(201,107,44,0.12)",
-                        color: "rgba(232,149,74,0.9)",
-                        border: "1px solid rgba(201,107,44,0.25)",
+                        background: CATEGORY_COLORS[item.category as AnnouncementCategory]?.bg || "rgba(107,114,128,0.12)",
+                        color: CATEGORY_COLORS[item.category as AnnouncementCategory]?.text || "rgba(156,163,175,0.9)",
+                        border: `1px solid ${CATEGORY_COLORS[item.category as AnnouncementCategory]?.border || "rgba(107,114,128,0.25)"}`,
                       }}
                     >
                       {localText(item.tag, locale)}
@@ -176,9 +218,9 @@ export default async function NewsPage({ searchParams }: Props) {
             </details>
           ))}
 
-          {sorted.length === 0 && (
+          {filtered.length === 0 && (
             <div className="px-6 py-16 text-center text-sm text-wald-500">
-              {isKo ? "현재 등록된 소식이 없습니다." : "No announcements yet."}
+              {isKo ? "해당 카테고리에 소식이 없습니다." : "No announcements in this category."}
             </div>
           )}
         </div>
