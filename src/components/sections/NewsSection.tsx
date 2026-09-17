@@ -47,7 +47,7 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
     (async () => {
       setLoadState("pending");
       try {
-        const res = await fetch(`/api/announcements?limit=3&lang=${locale}`);
+        const res = await fetch(`/api/announcements?limit=6&lang=${locale}`);
         const data = (await res.json()) as {
           ok: boolean;
           items?: AnnouncementItem[];
@@ -164,8 +164,8 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
           </FadeIn>
 
           {loadState === "pending" ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6" aria-busy="true">
-              {[0, 1, 2].map((i) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6" aria-busy="true">
+              {[0, 1, 2, 3, 4, 5].map((i) => (
                 <div
                   key={i}
                   className="min-h-[220px] rounded-2xl border border-wald-800/60 bg-wald-900/30 p-6 animate-pulse"
@@ -180,7 +180,7 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
               ))}
             </div>
           ) : loadState === "ready" ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
               {announcementItems.map((item, index) => (
                 <FadeIn key={item.id} delay={index * 90}>
                   <button
@@ -215,7 +215,7 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
                 {staticCards.map((card, index) => (
                   <FadeIn key={card.id} delay={index * 90}>
                     {card.interactive ? (
