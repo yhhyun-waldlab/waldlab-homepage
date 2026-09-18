@@ -92,9 +92,13 @@ export async function PUT(req: NextRequest) {
       return NextResponse.json({ error: 'Post not found' }, { status: 404 });
     }
 
+    // Preserve existing fields and only update provided ones
     announcements[index] = {
-      ...updatedPost,
-      updatedAt: new Date().toISOString(),
+      ...announcements[index], // Keep existing fields
+      ...updatedPost, // Override with updated fields
+      id: announcements[index].id, // Ensure ID never changes
+      createdAt: announcements[index].createdAt || new Date().toISOString(), // Preserve or set createdAt
+      updatedAt: new Date().toISOString(), // Always update timestamp
     };
     saveAnnouncements(announcements);
 
