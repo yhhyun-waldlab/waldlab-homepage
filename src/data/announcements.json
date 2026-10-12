@@ -1,5 +1,28 @@
 [
   {
+    "id": "post-1790754626987",
+    "date": "2026-09-30",
+    "category": "notice",
+    "tag": {
+      "ko": "공지",
+      "en": "Notice"
+    },
+    "title": {
+      "ko": "테스트",
+      "en": "test"
+    },
+    "excerpt": {
+      "ko": "ercel KV 또는 Supabase 사용\n→ 프로덕션에서도 관리자 페이지 작동\n→ 언제 어디서나 게시물 관리 가능",
+      "en": "export interface JWTPayload {\n  email: string;\n  id: string;\n}\n\n// Read admin accounts from file\nexport function getAdminAccounts(): AdminAccount[] {\n  if (!fs.existsSync(ACCOUNTS_FILE)) {"
+    },
+    "body": {
+      "ko": "ercel KV 또는 Supabase 사용\n→ 프로덕션에서도 관리자 페이지 작동\n→ 언제 어디서나 게시물 관리 가능",
+      "en": "export interface JWTPayload {\n  email: string;\n  id: string;\n}\n\n// Read admin accounts from file\nexport function getAdminAccounts(): AdminAccount[] {\n  if (!fs.existsSync(ACCOUNTS_FILE)) {"
+    },
+    "createdAt": "2026-09-30T07:50:26.987Z",
+    "updatedAt": "2026-09-30T07:50:26.987Z"
+  },
+  {
     "id": "post-1789628650610",
     "date": "2026-09-17",
     "category": "update",
