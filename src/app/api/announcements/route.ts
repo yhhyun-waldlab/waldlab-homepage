@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import announcements from "@/data/announcements.json";
 import type { Locale } from "@/lib/i18n";
-
-type Row = (typeof announcements)[number];
+import { listAnnouncements } from "@/lib/announcements-store";
 
 function formatDisplayDate(iso: string, locale: Locale): string {
   const [y, m] = iso.split("-");
@@ -19,7 +17,7 @@ function formatDisplayDate(iso: string, locale: Locale): string {
   return `${y}.${m}`;
 }
 
-export function GET(request: NextRequest) {
+export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const rawLimit = parseInt(searchParams.get("limit") ?? "50", 10);
   const limit = Number.isFinite(rawLimit)
@@ -27,19 +25,28 @@ export function GET(request: NextRequest) {
     : 50;
   const lang = (searchParams.get("lang") === "en" ? "en" : "ko") as Locale;
 
-  const sorted: Row[] = [...announcements].sort((a, b) =>
-    b.date.localeCompare(a.date)
-  );
-  const slice = sorted.slice(0, limit);
+  try {
+    const announcements = await listAnnouncements();
+    const sorted = [...announcements].sort((a, b) =>
+      b.date.localeCompare(a.date)
+    );
+    const slice = sorted.slice(0, limit);
 
-  const items = slice.map((a) => ({
-    id: a.id,
-    tag: lang === "en" ? a.tag.en : a.tag.ko,
-    title: lang === "en" ? a.title.en : a.title.ko,
-    excerpt: lang === "en" ? a.excerpt.en : a.excerpt.ko,
-    body: lang === "en" ? a.body.en : a.body.ko,
-    date: formatDisplayDate(a.date, lang),
-  }));
+    const items = slice.map((a) => ({
+      id: a.id,
+      tag: lang === "en" ? a.tag.en : a.tag.ko,
+      title: lang === "en" ? a.title.en : a.title.ko,
+      excerpt: lang === "en" ? a.excerpt.en : a.excerpt.ko,
+      body: lang === "en" ? a.body.en : a.body.ko,
+      date: formatDisplayDate(a.date, lang),
+    }));
 
-  return NextResponse.json({ ok: true, items });
+    return NextResponse.json({ ok: true, items });
+  } catch (error) {
+    console.error("GET /api/announcements:", error);
+    return NextResponse.json(
+      { ok: false, error: "Failed to load announcements" },
+      { status: 500 }
+    );
+  }
 }
