@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "logo:knockout": "node scripts/knockout-edge-bg.mjs"
+    "logo:knockout": "node scripts/knockout-edge-bg.mjs",
+    "seed:supabase": "node scripts/seed-supabase.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
     "bcryptjs": "^3.0.3",
     "framer-motion": "^12.38.0",
     "jsonwebtoken": "^9.0.3",
