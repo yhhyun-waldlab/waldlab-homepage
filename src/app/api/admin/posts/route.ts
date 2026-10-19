@@ -1,147 +1,126 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { verifyToken } from '@/lib/auth';
-import fs from 'fs';
-import path from 'path';
-import type { Announcement } from '@/types/announcement';
-
-const ANNOUNCEMENTS_FILE = path.join(
-  process.cwd(),
-  'src/data/announcements.json'
-);
-
-function getAnnouncements(): Announcement[] {
-  const data = fs.readFileSync(ANNOUNCEMENTS_FILE, 'utf-8');
-  return JSON.parse(data);
-}
-
-function saveAnnouncements(announcements: Announcement[]): void {
-  fs.writeFileSync(
-    ANNOUNCEMENTS_FILE,
-    JSON.stringify(announcements, null, 2),
-    'utf-8'
-  );
-}
+import { NextRequest, NextResponse } from "next/server";
+import { verifyToken } from "@/lib/auth";
+import type { Announcement } from "@/types/announcement";
+import {
+  createAnnouncement,
+  deleteAnnouncement,
+  listAnnouncements,
+  updateAnnouncement,
+} from "@/lib/announcements-store";
 
 function verifyAdmin(req: NextRequest): boolean {
-  const token = req.cookies.get('admin_token')?.value;
+  const token = req.cookies.get("admin_token")?.value;
   if (!token) return false;
   return verifyToken(token) !== null;
 }
 
-// GET - List all posts (admin view)
 export async function GET(req: NextRequest) {
   if (!verifyAdmin(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
-    const announcements = getAnnouncements();
+    const announcements = await listAnnouncements();
     return NextResponse.json({ posts: announcements });
   } catch (error) {
-    console.error('Error reading announcements:', error);
+    console.error("Error reading announcements:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: "Internal server error" },
       { status: 500 }
     );
   }
 }
 
-// POST - Create new post
 export async function POST(req: NextRequest) {
   if (!verifyAdmin(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
     const newPost = await req.json();
-    const announcements = getAnnouncements();
+    const now = new Date().toISOString();
 
-    // Add metadata
     const post: Announcement = {
       ...newPost,
       id: newPost.id || `post-${Date.now()}`,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
+      createdAt: now,
+      updatedAt: now,
     };
 
-    announcements.unshift(post); // Add to beginning
-    saveAnnouncements(announcements);
-
-    return NextResponse.json({ success: true, post });
+    const saved = await createAnnouncement(post);
+    return NextResponse.json({ success: true, post: saved });
   } catch (error) {
-    console.error('Error creating post:', error);
+    console.error("Error creating post:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: "Internal server error" },
       { status: 500 }
     );
   }
 }
 
-// PUT - Update existing post
 export async function PUT(req: NextRequest) {
   if (!verifyAdmin(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
-    const updatedPost = await req.json();
-    const announcements = getAnnouncements();
+    const updatedPost = (await req.json()) as Announcement;
+    const announcements = await listAnnouncements();
+    const existing = announcements.find((p) => p.id === updatedPost.id);
 
-    const index = announcements.findIndex((p) => p.id === updatedPost.id);
-    if (index === -1) {
-      return NextResponse.json({ error: 'Post not found' }, { status: 404 });
+    if (!existing) {
+      return NextResponse.json({ error: "Post not found" }, { status: 404 });
     }
 
-    // Preserve existing fields and only update provided ones
-    announcements[index] = {
-      ...announcements[index], // Keep existing fields
-      ...updatedPost, // Override with updated fields
-      id: announcements[index].id, // Ensure ID never changes
-      createdAt: announcements[index].createdAt || new Date().toISOString(), // Preserve or set createdAt
-      updatedAt: new Date().toISOString(), // Always update timestamp
+    const merged: Announcement = {
+      ...existing,
+      ...updatedPost,
+      id: existing.id,
+      createdAt: existing.createdAt ?? new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
     };
-    saveAnnouncements(announcements);
 
-    return NextResponse.json({ success: true, post: announcements[index] });
+    const saved = await updateAnnouncement(merged);
+    return NextResponse.json({ success: true, post: saved });
   } catch (error) {
-    console.error('Error updating post:', error);
+    console.error("Error updating post:", error);
+    const message = error instanceof Error ? error.message : "";
+    if (message === "Post not found") {
+      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+    }
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: "Internal server error" },
       { status: 500 }
     );
   }
 }
 
-// DELETE - Delete post
 export async function DELETE(req: NextRequest) {
   if (!verifyAdmin(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
     const { searchParams } = new URL(req.url);
-    const id = searchParams.get('id');
+    const id = searchParams.get("id");
 
     if (!id) {
       return NextResponse.json(
-        { error: 'Post ID is required' },
+        { error: "Post ID is required" },
         { status: 400 }
       );
     }
 
-    const announcements = getAnnouncements();
-    const filtered = announcements.filter((p) => p.id !== id);
-
-    if (filtered.length === announcements.length) {
-      return NextResponse.json({ error: 'Post not found' }, { status: 404 });
-    }
-
-    saveAnnouncements(filtered);
+    await deleteAnnouncement(id);
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error deleting post:', error);
+    console.error("Error deleting post:", error);
+    const message = error instanceof Error ? error.message : "";
+    if (message === "Post not found") {
+      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+    }
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: "Internal server error" },
       { status: 500 }
     );
   }
