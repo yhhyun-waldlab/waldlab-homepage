@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Megaphone } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
-import announcements from "@/data/announcements.json";
-import { CATEGORY_LABELS, type AnnouncementCategory } from "@/types/announcement";
+import { listAnnouncements } from "@/lib/announcements-store";
+import {
+  CATEGORY_LABELS,
+  type Announcement,
+  type AnnouncementCategory,
+} from "@/types/announcement";
 
 export const metadata: Metadata = {
   title: "공지 · 소식 | Wald Lab",
@@ -11,8 +15,6 @@ export const metadata: Metadata = {
 };
 
 type Props = { searchParams?: Promise<{ lang?: string; category?: string }> };
-
-type Announcement = (typeof announcements)[number];
 
 function localText(field: { ko: string; en: string }, locale: Locale) {
   return locale === "en" ? field.en : field.ko;
@@ -39,18 +41,17 @@ function formatDate(iso: string, locale: Locale) {
   return `${y}.${m}`;
 }
 
-/** Sort newest first */
-const sorted: Announcement[] = [...announcements].sort(
-  (a, b) => b.date.localeCompare(a.date)
-);
-
 export default async function NewsPage({ searchParams }: Props) {
   const sp = (await searchParams) ?? {};
   const locale = (sp.lang === "en" ? "en" : "ko") as Locale;
   const isKo = locale === "ko";
   const selectedCategory = sp.category as AnnouncementCategory | undefined;
 
-  // Filter by category if specified
+  const announcements = await listAnnouncements();
+  const sorted: Announcement[] = [...announcements].sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
+
   const filtered = selectedCategory
     ? sorted.filter((item) => item.category === selectedCategory)
     : sorted;
