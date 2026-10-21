@@ -8,6 +8,7 @@ import {
   type Announcement,
   type AnnouncementCategory,
 } from "@/types/announcement";
+import { linkifyText } from "@/lib/linkify";
 
 export const metadata: Metadata = {
   title: "공지 · 소식 | Wald Lab",
@@ -209,11 +210,11 @@ export default async function NewsPage({ searchParams }: Props) {
               <div className="px-6 pb-6 pt-2 bg-wald-950/30">
                 {/* excerpt */}
                 <p className="text-sm text-wald-300/90 mb-4 leading-relaxed">
-                  {localText(item.excerpt, locale)}
+                  {linkifyText(localText(item.excerpt, locale))}
                 </p>
                 {/* body */}
                 <div className="text-sm text-wald-300/80 leading-relaxed whitespace-pre-line border-t border-wald-800/50 pt-4">
-                  {localText(item.body, locale)}
+                  {linkifyText(localText(item.body, locale))}
                 </div>
               </div>
             </details>
