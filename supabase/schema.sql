@@ -1,4 +1,4 @@
--- Run once in Supabase Dashboard → SQL Editor
+-- Run once in Supabase Dashboard → SQL Editore
 -- This will drop and recreate tables (data will be lost)
 
 -- Drop existing tables if they exist
