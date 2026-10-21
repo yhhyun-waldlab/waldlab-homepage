@@ -29,17 +29,18 @@ const CATEGORY_COLORS: Record<AnnouncementCategory, { bg: string; text: string; 
   ip: { bg: "rgba(201,107,44,0.12)", text: "rgba(232,149,74,0.9)", border: "rgba(201,107,44,0.25)" },
 };
 
-/** "2026-05-01" → "2026.05" (ko) | "May 2026" (en) */
+/** "2026-05-01" → "2026.05.01" (ko) | "May 1, 2026" (en) */
 function formatDate(iso: string, locale: Locale) {
-  const [y, m] = iso.split("-");
+  const [y, m, d] = iso.split("-");
+  if (!y || !m || !d) return iso;
   if (locale === "en") {
     const months = [
       "Jan", "Feb", "Mar", "Apr", "May", "Jun",
       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
     ];
-    return `${months[parseInt(m, 10) - 1]} ${y}`;
+    return `${months[parseInt(m, 10) - 1]} ${parseInt(d, 10)}, ${y}`;
   }
-  return `${y}.${m}`;
+  return `${y}.${m}.${d}`;
 }
 
 export default async function NewsPage({ searchParams }: Props) {
