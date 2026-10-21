@@ -3,8 +3,8 @@ import type { Locale } from "@/lib/i18n";
 import { listAnnouncements } from "@/lib/announcements-store";
 
 function formatDisplayDate(iso: string, locale: Locale): string {
-  const [y, m] = iso.split("-");
-  if (!y || !m) return iso;
+  const [y, m, d] = iso.split("-");
+  if (!y || !m || !d) return iso;
   if (locale === "en") {
     const months = [
       "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -12,9 +12,9 @@ function formatDisplayDate(iso: string, locale: Locale): string {
     ];
     const mi = parseInt(m, 10) - 1;
     if (mi < 0 || mi > 11) return iso;
-    return `${months[mi]} ${y}`;
+    return `${months[mi]} ${parseInt(d, 10)}, ${y}`;
   }
-  return `${y}.${m}`;
+  return `${y}.${m}.${d}`;
 }
 
 export async function GET(request: NextRequest) {
