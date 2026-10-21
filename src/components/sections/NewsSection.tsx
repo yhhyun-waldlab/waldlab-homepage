@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Megaphone, X } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import type { Locale } from "@/lib/i18n";
+import { linkifyText } from "@/lib/linkify";
 
 interface NewsSectionProps {
   t: (key: string) => string;
@@ -308,7 +309,7 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
                   {modal.item.title}
                 </h3>
                 <div className="mt-6 text-sm text-wald-200/90 leading-relaxed whitespace-pre-line">
-                  {(modal.item.body || modal.item.excerpt || "").trim() || "—"}
+                  {linkifyText((modal.item.body || modal.item.excerpt || "").trim() || "—")}
                 </div>
               </>
             ) : modal.kind === "static" ? (
@@ -327,9 +328,9 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
                         {t(`${pre}.detailTitle`)}
                       </h3>
                       <div className="mt-6 space-y-4 text-sm text-wald-200/90 leading-relaxed">
-                        <p className="whitespace-pre-line">{t(`${pre}.detailP1`)}</p>
-                        <p className="whitespace-pre-line">{t(`${pre}.detailP2`)}</p>
-                        <p className="whitespace-pre-line">{t(`${pre}.detailP3`)}</p>
+                        <p className="whitespace-pre-line">{linkifyText(t(`${pre}.detailP1`))}</p>
+                        <p className="whitespace-pre-line">{linkifyText(t(`${pre}.detailP2`))}</p>
+                        <p className="whitespace-pre-line">{linkifyText(t(`${pre}.detailP3`))}</p>
                       </div>
                     </>
                   );
