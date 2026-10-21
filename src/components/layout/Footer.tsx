@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Mail, MapPin } from "lucide-react";
 import WaldblattLogo from "@/components/ui/WaldblattLogo";
 
@@ -30,6 +34,31 @@ const serviceLinks = [
 ];
 
 export default function Footer({ t }: FooterProps) {
+  const router = useRouter();
+  const [clickCount, setClickCount] = useState(0);
+  const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleLogoClick = () => {
+    // Clear existing timer
+    if (clickTimerRef.current) {
+      clearTimeout(clickTimerRef.current);
+    }
+
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    if (newCount >= 3) {
+      // Navigate to admin dashboard
+      router.push("/admin/dashboard");
+      setClickCount(0);
+    } else {
+      // Reset count after 1 second if no more clicks
+      clickTimerRef.current = setTimeout(() => {
+        setClickCount(0);
+      }, 1000);
+    }
+  };
+
   return (
     <footer id="contact" className="bg-wald-900 text-white">
       {/* Main Footer */}
@@ -37,7 +66,19 @@ export default function Footer({ t }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="mb-4">
+            <div
+              className="mb-4 cursor-pointer select-none"
+              onClick={handleLogoClick}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleLogoClick();
+                }
+              }}
+              title="로고"
+            >
               <WaldblattLogo height={40} variant="light" />
             </div>
             <p className="text-wald-300 text-sm leading-relaxed mb-6 max-w-sm">
