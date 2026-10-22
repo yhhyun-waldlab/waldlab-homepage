@@ -41,7 +41,7 @@ export async function GET(request: NextRequest) {
       date: formatDisplayDate(a.date, lang),
     }));
 
-    return NextResponse.json({ ok: true, items });
+    return NextResponse.json({ ok: true, items, total: sorted.length });
   } catch (error) {
     console.error("GET /api/announcements:", error);
     return NextResponse.json(
