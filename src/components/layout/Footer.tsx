@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Mail, MapPin } from "lucide-react";
 import WaldblattLogo from "@/components/ui/WaldblattLogo";
 
-/* 사업자 정보 인라인 헬퍼  */
+/* 사업자 정보 인라인 헬퍼 */
 function BizItem({ label, value }: { label: string; value: string }) {
   return (
     <>
