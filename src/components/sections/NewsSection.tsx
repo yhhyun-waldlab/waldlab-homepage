@@ -41,6 +41,7 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
   const titleId = useId();
   const [loadState, setLoadState] = useState<LoadState>("pending");
   const [announcementItems, setAnnouncementItems] = useState<AnnouncementItem[]>([]);
+  const [totalCount, setTotalCount] = useState<number>(0);
   const [modal, setModal] = useState<ModalState>(null);
 
   useEffect(() => {
@@ -52,10 +53,12 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
         const data = (await res.json()) as {
           ok: boolean;
           items?: AnnouncementItem[];
+          total?: number;
         };
         if (cancelled) return;
         if (data.ok && Array.isArray(data.items) && data.items.length > 0) {
           setAnnouncementItems(data.items);
+          setTotalCount(data.total ?? data.items.length);
           setLoadState("ready");
         } else {
           setLoadState("fallback");
@@ -159,6 +162,11 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
                 className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-wald-400 hover:text-wald-ember-light transition-colors flex-shrink-0"
               >
                 {t("news.viewAll")}
+                {loadState === "ready" && totalCount > 6 && (
+                  <span className="text-wald-500">
+                    (+{totalCount - 6})
+                  </span>
+                )}
                 <span aria-hidden>→</span>
               </Link>
             </div>
@@ -268,6 +276,11 @@ export default function NewsSection({ t, locale }: NewsSectionProps) {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-wald-400 hover:text-wald-ember-light border border-wald-800/60 hover:border-wald-600/60 bg-wald-900/40 hover:bg-wald-900/70 transition-all"
             >
               {t("news.viewAll")}
+              {loadState === "ready" && totalCount > 6 && (
+                <span className="text-wald-500">
+                  (+{totalCount - 6})
+                </span>
+              )}
               <span aria-hidden>→</span>
             </Link>
           </div>
