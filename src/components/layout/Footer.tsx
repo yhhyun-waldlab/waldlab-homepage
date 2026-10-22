@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Mail, MapPin } from "lucide-react";
 import WaldblattLogo from "@/components/ui/WaldblattLogo";
 
@@ -34,7 +33,6 @@ const serviceLinks = [
 ];
 
 export default function Footer({ t }: FooterProps) {
-  const router = useRouter();
   const [clickCount, setClickCount] = useState(0);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -48,8 +46,8 @@ export default function Footer({ t }: FooterProps) {
     setClickCount(newCount);
 
     if (newCount >= 3) {
-      // Navigate to admin dashboard
-      router.push("/admin/dashboard");
+      // Open admin dashboard in new tab
+      window.open("/admin/dashboard", "_blank");
       setClickCount(0);
     } else {
       // Reset count after 1 second if no more clicks
