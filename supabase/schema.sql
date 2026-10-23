@@ -41,3 +41,41 @@ create table public.admin_accounts (
 );
 
 alter table public.admin_accounts enable row level security;
+
+-- Create contact_inquiries table
+drop table if exists public.contact_inquiries cascade;
+
+create table public.contact_inquiries (
+  id text primary key,
+  service text not null,
+  org_name text not null,
+  contact_name text not null,
+  phone text not null,
+  email text not null,
+  inquiry text not null,
+  status text not null default 'pending' check (
+    status in ('pending', 'in_progress', 'completed', 'archived')
+  ),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create index contact_inquiries_created_at_idx on public.contact_inquiries (created_at desc);
+create index contact_inquiries_status_idx on public.contact_inquiries (status);
+
+-- Enable RLS
+alter table public.contact_inquiries enable row level security;
+
+-- Anyone can insert inquiries (public form)
+create policy "Public insert inquiries"
+  on public.contact_inquiries
+  for insert
+  to anon, authenticated
+  with check (true);
+
+-- Only authenticated users can read (admin dashboard)
+create policy "Authenticated read inquiries"
+  on public.contact_inquiries
+  for select
+  to authenticated
+  using (true);
