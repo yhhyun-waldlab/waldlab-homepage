@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { sendInquiryNotification } from "@/lib/mailer";
 
 /**
- * Contact form submission → Supabase
+ * Contact form submission → Supabase + Email notification
  */
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
@@ -36,10 +37,13 @@ export async function POST(req: Request) {
   }
 
   try {
+    const inquiryId = generateId();
+    const createdAt = new Date().toISOString();
+
     const { error } = await supabase
       .from("contact_inquiries")
       .insert({
-        id: generateId(),
+        id: inquiryId,
         service: body.solution,
         org_name: body.company,
         contact_name: body.name,
@@ -47,11 +51,22 @@ export async function POST(req: Request) {
         email: body.email,
         inquiry: body.message,
         status: "pending",
+        created_at: createdAt,
       });
 
     if (error) {
       console.error("[api/contact] Supabase insert error:", error);
       return NextResponse.json({ ok: false, error: "database_error" }, { status: 500 });
+    }
+
+    // Send email notification to admin.
+    // On serverless (Vercel), fire-and-forget promises are frozen after the
+    // response is returned, so we MUST await the email before responding.
+    // Email failure should not block inquiry submission (caught + logged).
+    try {
+      await sendInquiryNotification(inquiryId, body.solution, createdAt);
+    } catch (err) {
+      console.error("[api/contact] Email notification failed:", err);
     }
 
     return NextResponse.json({ ok: true });
