@@ -101,10 +101,10 @@ export default function Header({ t, locale, onLocaleChange, forceScrolled = fals
           </nav>
 
           {/* Right actions */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* Locale toggle */}
+          <div className="hidden lg:flex items-center gap-2.5">
             {onLocaleChange && (
               <button
+                type="button"
                 onClick={() => {
                   const next = locale === "ko" ? "en" : "ko";
                   try {
@@ -114,7 +114,7 @@ export default function Header({ t, locale, onLocaleChange, forceScrolled = fals
                   }
                   onLocaleChange(next);
                 }}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-colors ${
+                className={`inline-flex h-9 min-w-[2.75rem] items-center justify-center px-3 text-xs font-semibold rounded-lg transition-colors ${
                   showScrolled
                     ? "text-wald-600 border border-wald-200 hover:bg-wald-50"
                     : "text-white/80 border border-white/30 hover:bg-white/10"
@@ -125,9 +125,9 @@ export default function Header({ t, locale, onLocaleChange, forceScrolled = fals
             )}
             <Link
               href="/contact"
-              className={`px-5 py-2.5 text-sm font-semibold rounded-xl transition-colors shadow-sm ${
+              className={`inline-flex h-9 items-center justify-center px-4 text-sm font-semibold leading-none rounded-lg transition-colors ${
                 showScrolled
-                  ? "bg-wald-800 text-white hover:bg-wald-700"
+                  ? "bg-wald-800 text-white hover:bg-wald-700 shadow-sm"
                   : "bg-white/15 text-white border border-white/25 hover:bg-white/25"
               }`}
             >
