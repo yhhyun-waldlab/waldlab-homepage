@@ -542,7 +542,7 @@ export default function SafeSyncPage() {
         </div>
       </section>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </main>
   );
 }

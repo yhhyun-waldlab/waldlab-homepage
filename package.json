@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "logo:knockout": "node scripts/knockout-edge-bg.mjs",
-    "seed:supabase": "node scripts/seed-supabase.mjs"
+    "seed:supabase": "node scripts/seed-supabase.mjs",
+    "db:migrate:position": "node -e \"console.log('Run in Supabase SQL Editor:\\n  supabase/migrations/20260331120000_add_contact_inquiries_position.sql\\nSee supabase/README.md')\""
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

@@ -12,7 +12,7 @@
  *   대표자 및 핵심 인력의 개인 전문성(Expertise)에 기반합니다.
  */
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
   Globe,
   Award,
@@ -39,6 +39,9 @@ interface HeritageTimelineItem {
   tenureAccent?: boolean;
   logoSrc?: string;
   logoAlt?: string;
+  /** @deprecated use logoVariant */
+  logoCompact?: boolean;
+  logoVariant?: "koica" | "escap" | "bit";
 }
 
 function timelineYearColorDesktop(item: HeritageTimelineItem): string {
@@ -91,17 +94,89 @@ function timelineDotMobile(item: HeritageTimelineItem): { background: string; bo
   };
 }
 
-function timelineTextBlockMinHeight(item: HeritageTimelineItem): string {
-  return item.logoSrc ? "126px" : "90px";
+function timelineLogoVariant(item: HeritageTimelineItem): "koica" | "escap" | "bit" {
+  if (item.logoVariant) return item.logoVariant;
+  if (item.logoCompact) return "koica";
+  return "bit";
+}
+
+const LOGO_BADGE_STYLE = {
+  background: "rgba(0,0,0,0.28)",
+  border: "1px solid rgba(116,198,157,0.16)",
+} as const;
+
+/** Top + bottom timeline logos — unified ~20px (h-5) */
+const TIMELINE_LOGO_H = "h-5";
+
+const LOGO_IMG_OPACITY =
+  "object-contain opacity-70 hover:opacity-100 hover:brightness-125 transition-all duration-200";
+
+function timelineLogoImgClass(
+  variant: "bit" | "koica" | "escap",
+  layout: "desktop" | "mobile",
+): string {
+  const maxW =
+    variant === "bit"
+      ? layout === "desktop"
+        ? "max-w-[88px]"
+        : "max-w-[96px]"
+      : variant === "koica"
+        ? layout === "desktop"
+          ? "max-w-[40px]"
+          : "max-w-[44px]"
+        : layout === "desktop"
+          ? "max-w-[52px]"
+          : "max-w-[56px]";
+  const block = layout === "mobile" && variant === "bit" ? "block " : "";
+  return `${block}${TIMELINE_LOGO_H} w-auto ${maxW} ${LOGO_IMG_OPACITY}`;
+}
+
+function TimelineLogoBadge({
+  layout,
+  children,
+}: {
+  layout: "desktop" | "mobile";
+  children: ReactNode;
+}) {
+  return (
+    <span
+      className={
+        layout === "desktop"
+          ? "mx-auto mt-1.5 mb-4 inline-flex items-center justify-center rounded-md px-1 py-0.5"
+          : "mb-1.5 inline-flex items-center justify-center rounded-md px-1 py-0.5"
+      }
+      style={LOGO_BADGE_STYLE}
+    >
+      {children}
+    </span>
+  );
+}
+
+function TimelineLogoImage({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className: string;
+}) {
+  return (
+    /* eslint-disable-next-line @next/next/no-img-element */
+    <img src={src} alt={alt} className={className} />
+  );
 }
 
 /** Shared copy block for horizontal / vertical career timeline nodes */
 function HeritageTimelineLabels({
   item,
   layout,
+  reserveLogoSlot = false,
 }: {
   item: HeritageTimelineItem;
   layout: "desktop" | "mobile";
+  /** Desktop top nodes: keep logo row height so year lines align */
+  reserveLogoSlot?: boolean;
 }) {
   const yearColor = layout === "desktop" ? timelineYearColorDesktop(item) : timelineYearColorMobile(item);
 
@@ -128,27 +203,23 @@ function HeritageTimelineLabels({
         {item.org}
       </div>
       {item.logoSrc ? (
+        <TimelineLogoBadge layout={layout}>
+          <TimelineLogoImage
+            src={item.logoSrc}
+            alt={item.logoAlt ?? ""}
+            className={timelineLogoImgClass(timelineLogoVariant(item), layout)}
+          />
+        </TimelineLogoBadge>
+      ) : reserveLogoSlot ? (
         <span
           className={
             layout === "desktop"
-              ? "mx-auto mt-1.5 inline-flex rounded-md px-1 py-0.5"
-              : "mb-1.5 inline-flex rounded-md px-1 py-0.5"
+              ? "mx-auto mt-1.5 mb-4 inline-flex items-center justify-center rounded-md px-1 py-0.5 invisible"
+              : "hidden"
           }
-          style={{
-            background: "rgba(0,0,0,0.28)",
-            border: "1px solid rgba(116,198,157,0.16)",
-          }}
+          aria-hidden
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={item.logoSrc}
-            alt={item.logoAlt ?? ""}
-            className={
-              layout === "desktop"
-                ? "h-[22px] w-auto max-w-[92px] object-contain opacity-[0.82] hover:opacity-95 transition-opacity duration-300"
-                : "block h-[22px] w-auto max-w-[100px] object-contain opacity-[0.82] hover:opacity-95 transition-opacity duration-300"
-            }
-          />
+          <span className="inline-block h-5 w-0 shrink-0" />
         </span>
       ) : null}
     </>
@@ -580,9 +651,27 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
       logoSrc: "/brand/bitcomputer-logo.png",
       logoAlt: t("heritage.tl1LogoAlt"),
     },
-    { year: "2005", title: t("heritage.tl2Title"), org: t("heritage.tl2Org"), desc: t("heritage.tl2Desc"), side: "top"    },
+    {
+      year: "2005",
+      title: t("heritage.tl2Title"),
+      org: t("heritage.tl2Org"),
+      desc: t("heritage.tl2Desc"),
+      side: "top",
+      logoSrc: "/images/logos/KOICA.png",
+      logoAlt: "KOICA",
+      logoVariant: "koica",
+    },
     { year: "2010", title: t("heritage.tl3Title"), org: t("heritage.tl3Org"), desc: t("heritage.tl3Desc"), side: "bottom" },
-    { year: "2015", title: t("heritage.tl4Title"), org: t("heritage.tl4Org"), desc: t("heritage.tl4Desc"), side: "top"    },
+    {
+      year: "2015",
+      title: t("heritage.tl4Title"),
+      org: t("heritage.tl4Org"),
+      desc: t("heritage.tl4Desc"),
+      side: "top",
+      logoSrc: "/images/logos/UN_ESCAP.png",
+      logoAlt: "UN ESCAP",
+      logoVariant: "escap",
+    },
     { year: "2017~", title: t("heritage.tl5Title"), org: t("heritage.tl5Org"), desc: t("heritage.tl5Desc"), side: "bottom" },
     { year: "2022", title: t("heritage.tl6Title"), org: t("heritage.tl6Org"), desc: t("heritage.tl6Desc"), side: "top"    },
     { year: "2024~", title: t("heritage.tl7Title"), org: t("heritage.tl7Org"), desc: t("heritage.tl7Desc"), side: "bottom", highlight: true },
@@ -717,34 +806,33 @@ export default function HeritageSection({ t }: HeritageSectionProps) {
               style={{ background: "linear-gradient(to right, transparent, rgba(130,201,30,0.3), rgba(130,201,30,0.6), rgba(130,201,30,0.3), transparent)" }}
             />
 
-            <div className="flex items-center justify-between relative">
+            <div className="relative flex min-h-[252px] items-stretch justify-between">
               {TIMELINE.map((item, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center"
-                  style={{ width: `${100 / TIMELINE.length}%` }}
+                  className="flex min-h-0 flex-1 flex-col items-center"
+                  style={{ maxWidth: `${100 / TIMELINE.length}%` }}
                 >
-                  {/* 상단 텍스트 */}
-                  {item.side === "top" && (
-                    <div className="pb-4 text-center px-1" style={{ minHeight: timelineTextBlockMinHeight(item) }}>
-                      <HeritageTimelineLabels item={item} layout="desktop" />
-                    </div>
-                  )}
-                  {item.side === "bottom" && <div style={{ minHeight: timelineTextBlockMinHeight(item) }} />}
+                  <div className="flex w-full min-h-0 flex-1 flex-col items-center justify-start pb-8 px-1 text-center">
+                    {item.side === "top" && (
+                      <HeritageTimelineLabels
+                        item={item}
+                        layout="desktop"
+                        reserveLogoSlot
+                      />
+                    )}
+                  </div>
 
-                  {/* 도트 */}
                   <div
-                    className="w-3 h-3 rounded-full relative z-10 flex-shrink-0"
+                    className="relative z-10 h-3 w-3 flex-shrink-0 rounded-full"
                     style={timelineDotDesktop(item)}
                   />
 
-                  {/* 하단 텍스트 */}
-                  {item.side === "bottom" && (
-                    <div className="pt-4 text-center px-1" style={{ minHeight: timelineTextBlockMinHeight(item) }}>
+                  <div className="flex w-full min-h-0 flex-1 flex-col items-center justify-start pt-8 px-1 text-center">
+                    {item.side === "bottom" && (
                       <HeritageTimelineLabels item={item} layout="desktop" />
-                    </div>
-                  )}
-                  {item.side === "top" && <div style={{ minHeight: timelineTextBlockMinHeight(item) }} />}
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

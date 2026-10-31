@@ -215,6 +215,8 @@
       "servicePlaceholder": "Select a service",
       "orgName": "Organization / Company",
       "orgNamePlaceholder": "Enter your organization or company name",
+      "position": "Title / Department",
+      "positionPlaceholder": "e.g. Team Lead, Senior Researcher",
       "contactName": "Contact Person",
       "contactNamePlaceholder": "Enter your name",
       "phone": "Phone Number",
@@ -903,14 +905,28 @@
     "viewAll": "View all announcements",
     "sheetLoading": "Loading announcements…"
   },
+  "terms": {
+    "pageTitle": "Legal",
+    "docTitle": "Wald Lab Inc. Website Terms of Use",
+    "pageSubtitle": "Terms governing use of the official website (www.waldlab.kr)",
+    "supplementaryTitle": "Supplementary Provision",
+    "supplementary": "These Terms shall come into effect on October 30, 2026."
+  },
+  "privacy": {
+    "pageTitle": "Legal",
+    "docTitle": "Wald Lab Inc. Privacy Policy",
+    "pageSubtitle": "Information on personal data protection and processing",
+    "supplementaryTitle": "Supplementary Provision",
+    "supplementary": "This Privacy Policy shall take effect on October 30, 2026."
+  },
   "footer": {
     "company": "Wald Lab Inc.",
     "tagline": "Technology for a Healthy Ecosystem",
-    "address": "Anyang, Gyeonggi-do, Korea | info@waldlab.kr, yhhyun@waldlab.kr",
+    "address": "Anyang, Gyeonggi-do, Korea | info@waldlab.kr",
     "location": "Anyang, Republic of Korea",
     "copyright": "© 2026 Wald Lab Inc. All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
+    "terms": "Terms of Use",
     "servicesTitle": "Services",
     "legalTitle": "Legal",
     "bizLabelCompany": "Company",
@@ -924,7 +940,7 @@
     "bizRegNum": "222-88-03231",
     "bizPrivacyOfficer": "Hyun Young-ho",
     "bizAddress": "D-5654, Genie center, 230 Simin-daero, Dongan-gu, Anyang-si, Gyeonggi-do, Korea",
-    "bizEmail": "info@waldlab.kr, yhhyun@waldlab.kr",
+    "bizEmail": "info@waldlab.kr",
     "links": {
       "platform": "SafeWay Platform",
       "safelync": "SafeLync",

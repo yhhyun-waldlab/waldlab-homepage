@@ -1,8 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import WaldblattLogo from "@/components/ui/WaldblattLogo";
+import type { Locale } from "@/lib/i18n";
+import { legalPageHref } from "@/lib/legal-page-locale";
 
 /* 사업자 정보 인라인 헬퍼 */
 function BizItem({ label, value }: { label: string; value: string }) {
@@ -20,6 +23,8 @@ function Sep() {
 
 interface FooterProps {
   t: (key: string) => string;
+  /** When omitted, reads waldlab_locale from localStorage on the client */
+  locale?: Locale;
 }
 
 const serviceLinks = [
@@ -32,9 +37,21 @@ const serviceLinks = [
   { key: "footer.links.safepaws", href: "#services" },
 ];
 
-export default function Footer({ t }: FooterProps) {
+export default function Footer({ t, locale: localeProp }: FooterProps) {
   const [clickCount, setClickCount] = useState(0);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [storedLocale, setStoredLocale] = useState<Locale>("ko");
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem("waldlab_locale");
+      if (saved === "en" || saved === "ko") setStoredLocale(saved);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const locale = localeProp ?? storedLocale;
 
   const handleLogoClick = () => {
     // Clear existing timer
@@ -85,21 +102,12 @@ export default function Footer({ t }: FooterProps) {
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 text-wald-400 text-sm flex-wrap">
                 <Mail size={15} className="shrink-0" />
-                <span>
-                  <a
-                    href="mailto:info@waldlab.kr"
-                    className="hover:text-wald-200 transition-colors"
-                  >
-                    info@waldlab.kr
-                  </a>
-                  <span className="text-wald-500">, </span>
-                  <a
-                    href="mailto:yhhyun@waldlab.kr"
-                    className="hover:text-wald-200 transition-colors"
-                  >
-                    yhhyun@waldlab.kr
-                  </a>
-                </span>
+                <a
+                  href="mailto:info@waldlab.kr"
+                  className="hover:text-wald-200 transition-colors"
+                >
+                  info@waldlab.kr
+                </a>
               </div>
               <div className="flex items-center gap-2 text-wald-400 text-sm">
                 <MapPin size={15} />
@@ -134,22 +142,20 @@ export default function Footer({ t }: FooterProps) {
             </h3>
             <ul className="flex flex-col gap-2.5">
               <li>
-                <span
-                  aria-disabled="true"
-                  title="Coming soon"
-                  className="text-wald-600 text-sm cursor-default select-none"
+                <Link
+                  href={legalPageHref("/privacy", locale)}
+                  className="text-wald-400 text-sm hover:text-wald-200 transition-colors"
                 >
                   {t("footer.privacy")}
-                </span>
+                </Link>
               </li>
               <li>
-                <span
-                  aria-disabled="true"
-                  title="Coming soon"
-                  className="text-wald-600 text-sm cursor-default select-none"
+                <Link
+                  href={legalPageHref("/terms", locale)}
+                  className="text-wald-400 text-sm hover:text-wald-200 transition-colors"
                 >
                   {t("footer.terms")}
-                </span>
+                </Link>
               </li>
             </ul>
           </div>

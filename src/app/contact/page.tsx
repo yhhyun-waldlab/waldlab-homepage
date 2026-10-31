@@ -18,6 +18,7 @@ type Messages = Record<string, unknown>;
 interface FormData {
   service: string;
   orgName: string;
+  position: string;
   contactName: string;
   phone: string;
   email: string;
@@ -38,6 +39,7 @@ interface FormErrors {
 const INITIAL_FORM: FormData = {
   service: "",
   orgName: "",
+  position: "",
   contactName: "",
   phone: "",
   email: "",
@@ -195,11 +197,12 @@ export default function ContactPage() {
   };
 
   /* ── Input class helpers ─────────────────────────────────────────── */
+  const baseInputClass =
+    "w-full bg-wald-950 rounded-xl px-4 py-3 text-white text-sm placeholder:text-wald-600 focus:outline-none transition-all duration-200 border";
+
   const inputClass = (field: keyof FormErrors) =>
     [
-      "w-full bg-wald-950 rounded-xl px-4 py-3 text-white text-sm",
-      "placeholder:text-wald-600 focus:outline-none transition-all duration-200",
-      "border",
+      baseInputClass,
       touched[field as keyof FormData] && errors[field]
         ? "border-red-500/70 focus:border-red-400 focus:ring-1 focus:ring-red-400/30"
         : "border-wald-700 focus:border-[#82C91E] focus:ring-1 focus:ring-[#82C91E]/20",
@@ -289,7 +292,7 @@ export default function ContactPage() {
             <FieldError msg={touched.service ? errors.service : undefined} />
           </div>
 
-          {/* ── Org & Contact Name ──────────────────────────────────── */}
+          {/* ── Org & Position ────────────────────────────────────────── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
               <FieldLabel label={t("contact.form.orgName")} required />
@@ -304,6 +307,21 @@ export default function ContactPage() {
               <FieldError msg={touched.orgName ? errors.orgName : undefined} />
             </div>
             <div>
+              <FieldLabel label={t("contact.form.position")} />
+              <input
+                type="text"
+                value={form.position}
+                onChange={(e) => setField("position", e.target.value)}
+                onBlur={() => handleBlur("position")}
+                placeholder={t("contact.form.positionPlaceholder")}
+                className={`${baseInputClass} border-wald-700 focus:border-[#82C91E] focus:ring-1 focus:ring-[#82C91E]/20`}
+              />
+            </div>
+          </div>
+
+          {/* ── Contact Name (full width) ─────────────────────────────── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="sm:col-span-2">
               <FieldLabel label={t("contact.form.contactName")} required />
               <input
                 type="text"
@@ -317,7 +335,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* ── Phone & Email ───────────────────────────────────────── */}
+          {/* ── Phone & Email ─────────────────────────────────────────── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
               <FieldLabel label={t("contact.form.phone")} required />

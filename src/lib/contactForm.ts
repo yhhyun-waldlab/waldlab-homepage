@@ -7,6 +7,7 @@
  * 필드 매핑:
  *   service      → solution
  *   orgName      → company
+ *   position     → position
  *   contactName  → name
  *   phone        → contact
  *   email        → email
@@ -19,6 +20,7 @@
 export interface ContactFormData {
   service: string;
   orgName: string;
+  position: string;
   contactName: string;
   phone: string;
   email: string;
@@ -71,6 +73,7 @@ export async function submitToGoogleForm(data: ContactFormData): Promise<void> {
       name:     data.contactName.trim(),
       contact:  data.phone.trim(),
       company:  data.orgName.trim(),
+      position: data.position.trim(),
       solution: data.service,
       email:    data.email.trim(),
       message:  data.inquiry.trim(),

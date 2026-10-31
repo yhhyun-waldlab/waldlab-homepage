@@ -1058,7 +1058,7 @@ export default function SafeWayPage() {
         </div>
       </section>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </main>
   );
 }

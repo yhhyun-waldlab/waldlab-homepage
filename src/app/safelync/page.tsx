@@ -756,7 +756,7 @@ export default function SafeLyncPage() {
         </div>
       </section>
 
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </main>
   );
 }

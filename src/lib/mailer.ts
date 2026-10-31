@@ -45,7 +45,8 @@ export function isMailConfigured(): boolean {
 export async function sendInquiryNotification(
   inquiryId: string,
   service: string,
-  createdAt: string
+  createdAt: string,
+  position?: string
 ): Promise<void> {
   if (!isMailConfigured()) {
     console.warn("[mailer] Email not configured, skipping notification");
@@ -77,6 +78,8 @@ export async function sendInquiryNotification(
   const safeId = escapeHtml(inquiryId);
   const safeService = escapeHtml(service);
   const safeDate = escapeHtml(formattedDate);
+  const positionLabel = (position ?? "").trim();
+  const safePosition = escapeHtml(positionLabel || "미입력");
 
   const subject = `[Wald Lab] 새로운 문의가 접수되었습니다`;
 
@@ -156,6 +159,14 @@ export async function sendInquiryNotification(
                   </td>
                   <td bgcolor="#ffffff" style="padding:12px 16px; background-color:#ffffff; border-bottom:1px solid #e0e0e0; font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:20px; color:#333333;">
                     ${safeService}
+                  </td>
+                </tr>
+                <tr>
+                  <td width="120" bgcolor="#f8f9fa" style="width:120px; padding:12px 16px; background-color:#f8f9fa; border-bottom:1px solid #e0e0e0; font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:20px; font-weight:bold; color:#555555;">
+                    직책
+                  </td>
+                  <td bgcolor="#f8f9fa" style="padding:12px 16px; background-color:#f8f9fa; border-bottom:1px solid #e0e0e0; font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:20px; color:#333333;">
+                    ${safePosition}
                   </td>
                 </tr>
                 <tr>
@@ -259,6 +270,7 @@ Wald Lab 홈페이지에 새로운 도입 문의가 접수되었습니다.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 문의 ID:    ${inquiryId}
 서비스:     ${service}
+직책:       ${positionLabel || "미입력"}
 접수 시각:  ${formattedDate}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

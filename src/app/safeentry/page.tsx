@@ -841,7 +841,7 @@ export default function SafeEntryPage() {
       </section>
 
       {/* 푸터 (문의하기와 동일) */}
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </main>
   );
 }

@@ -12,6 +12,7 @@ type Inquiry = {
   service: string;
   org_name: string;
   contact_name: string;
+  position?: string | null;
   phone: string;
   email: string;
   inquiry: string;
@@ -116,6 +117,32 @@ export default function AdminDashboardPage() {
   const handleNewPost = () => {
     setEditingPost(null);
     setShowEditor(true);
+  };
+
+  const handleDeleteInquiry = async (id: string) => {
+    if (
+      !confirm(
+        '해당 문의 내역을 삭제하시겠습니까? 삭제된 데이터는 복구할 수 없습니다.',
+      )
+    ) {
+      return;
+    }
+
+    try {
+      const res = await fetch(`/api/admin/inquiries/${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+      });
+
+      if (res.ok) {
+        setInquiries((prev) => prev.filter((i) => i.id !== id));
+        setSelectedInquiry(null);
+      } else {
+        alert('문의 삭제에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('Inquiry delete failed:', error);
+      alert('문의 삭제 중 오류가 발생했습니다.');
+    }
   };
 
   const handleUpdateInquiryStatus = async (id: string, status: string) => {
@@ -235,6 +262,7 @@ export default function AdminDashboardPage() {
             selectedInquiry={selectedInquiry}
             onSelect={setSelectedInquiry}
             onUpdateStatus={handleUpdateInquiryStatus}
+            onDelete={handleDeleteInquiry}
           />
         )}
       </main>
@@ -340,11 +368,13 @@ function InquiriesTab({
   selectedInquiry,
   onSelect,
   onUpdateStatus,
+  onDelete,
 }: {
   inquiries: Inquiry[];
   selectedInquiry: Inquiry | null;
   onSelect: (inquiry: Inquiry | null) => void;
   onUpdateStatus: (id: string, status: string) => void;
+  onDelete: (id: string) => void;
 }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -437,6 +467,12 @@ function InquiriesTab({
                   <p className="mt-1 text-gray-900">{selectedInquiry.contact_name}</p>
                 </div>
                 <div>
+                  <span className="text-sm font-medium text-gray-500">직책 / 부서</span>
+                  <p className="mt-1 text-gray-900">
+                    {selectedInquiry.position?.trim() ? selectedInquiry.position : "—"}
+                  </p>
+                </div>
+                <div>
                   <span className="text-sm font-medium text-gray-500">연락처</span>
                   <p className="mt-1 text-gray-900">
                     <a href={`tel:${selectedInquiry.phone}`} className="text-blue-600 hover:underline">
@@ -472,6 +508,16 @@ function InquiriesTab({
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="border-t border-gray-200 pt-6 mt-2 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => onDelete(selectedInquiry.id)}
+                  className="px-4 py-2 text-sm font-medium text-red-600 rounded-md border border-red-200 hover:bg-red-50 hover:text-red-700 transition-colors"
+                >
+                  문의 삭제
+                </button>
               </div>
             </div>
           </div>
@@ -543,208 +589,202 @@ function PostEditor({
     }
   };
 
+  const fieldClass =
+    'w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500';
+  const labelClass = 'block text-sm font-medium text-gray-700 mb-2';
+
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold mb-6">
+      <h2 className="text-xl font-semibold text-gray-900 mb-6">
         {post ? '게시글 수정' : '새 게시글 작성'}
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Category */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            카테고리
-          </label>
-          <select
-            value={formData.category}
-            onChange={(e) =>
-              handleCategoryChange(e.target.value as AnnouncementCategory)
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          >
-            <option value="update">업데이트</option>
-            <option value="tech-news">기술소식</option>
-            <option value="insight">인사이트</option>
-            <option value="notice">공지</option>
-            <option value="ip">지적재산권</option>
-          </select>
-        </div>
-
-        {/* Date */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            날짜
-          </label>
-          <input
-            type="date"
-            value={formData.date}
-            onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Title KO */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            제목 (한국어)
-          </label>
-          <input
-            type="text"
-            value={formData.title?.ko}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                title: { ...formData.title!, ko: e.target.value },
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Title EN */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            제목 (English)
-          </label>
-          <input
-            type="text"
-            value={formData.title?.en}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                title: { ...formData.title!, en: e.target.value },
-              })
-            }
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Excerpt KO */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            요약 (한국어)
-          </label>
-          <textarea
-            value={formData.excerpt?.ko}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                excerpt: { ...formData.excerpt!, ko: e.target.value },
-              })
-            }
-            rows={2}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Excerpt EN */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            요약 (English)
-          </label>
-          <textarea
-            value={formData.excerpt?.en}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                excerpt: { ...formData.excerpt!, en: e.target.value },
-              })
-            }
-            rows={2}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Body KO */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            본문 (한국어)
-          </label>
-          <textarea
-            value={formData.body?.ko}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                body: { ...formData.body!, ko: e.target.value },
-              })
-            }
-            rows={6}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Body EN */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            본문 (English)
-          </label>
-          <textarea
-            value={formData.body?.en}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                body: { ...formData.body!, en: e.target.value },
-              })
-            }
-            rows={6}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* ID (for edit only) */}
-        {post && (
+        {/* Meta: category, date, ID — one row on md+ */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              ID (수정 불가)
-            </label>
+            <label className={labelClass}>카테고리</label>
+            <select
+              value={formData.category}
+              onChange={(e) =>
+                handleCategoryChange(e.target.value as AnnouncementCategory)
+              }
+              className={fieldClass}
+              required
+            >
+              <option value="update">업데이트</option>
+              <option value="tech-news">기술소식</option>
+              <option value="insight">인사이트</option>
+              <option value="notice">공지</option>
+              <option value="ip">지적재산권</option>
+            </select>
+          </div>
+
+          <div>
+            <label className={labelClass}>날짜</label>
             <input
-              type="text"
-              value={formData.id}
-              disabled
-              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-500"
+              type="date"
+              value={formData.date}
+              onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+              className={fieldClass}
+              required
             />
           </div>
-        )}
 
-        {/* New ID (for new post only) */}
-        {!post && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              ID (선택사항, 비워두면 자동 생성)
-            </label>
-            <input
-              type="text"
-              value={formData.id}
-              onChange={(e) => setFormData({ ...formData, id: e.target.value })}
-              placeholder="예: new-service-2026"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-            />
+            {post ? (
+              <>
+                <label className={labelClass}>ID (수정 불가)</label>
+                <input
+                  type="text"
+                  value={formData.id}
+                  disabled
+                  className={`${fieldClass} bg-gray-50 text-gray-500 cursor-not-allowed`}
+                />
+              </>
+            ) : (
+              <>
+                <label className={labelClass}>ID (선택, 비우면 자동 생성)</label>
+                <input
+                  type="text"
+                  value={formData.id}
+                  onChange={(e) => setFormData({ ...formData, id: e.target.value })}
+                  placeholder="예: new-service-2026"
+                  className={fieldClass}
+                />
+              </>
+            )}
           </div>
-        )}
+        </div>
+
+        {/* Split pane: KO | EN */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+          {/* Korean column */}
+          <div className="flex flex-col gap-4 min-h-0 rounded-lg border border-gray-200 bg-gray-50/80 p-5">
+            <h3 className="text-sm font-semibold text-gray-900 border-b border-gray-200 pb-3">
+              🇰🇷 한국어
+            </h3>
+
+            <div>
+              <label className={labelClass}>제목</label>
+              <input
+                type="text"
+                value={formData.title?.ko}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    title: { ...formData.title!, ko: e.target.value },
+                  })
+                }
+                className={fieldClass}
+                required
+              />
+            </div>
+
+            <div>
+              <label className={labelClass}>요약</label>
+              <textarea
+                value={formData.excerpt?.ko}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    excerpt: { ...formData.excerpt!, ko: e.target.value },
+                  })
+                }
+                rows={3}
+                className={`${fieldClass} resize-y`}
+                required
+              />
+            </div>
+
+            <div className="flex flex-col flex-1 min-h-[280px]">
+              <label className={labelClass}>본문</label>
+              <textarea
+                value={formData.body?.ko}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    body: { ...formData.body!, ko: e.target.value },
+                  })
+                }
+                rows={12}
+                className={`${fieldClass} flex-1 min-h-[280px] resize-y`}
+                required
+              />
+            </div>
+          </div>
+
+          {/* English column */}
+          <div className="flex flex-col gap-4 min-h-0 rounded-lg border border-gray-200 bg-gray-50/80 p-5">
+            <h3 className="text-sm font-semibold text-gray-900 border-b border-gray-200 pb-3">
+              EN English
+            </h3>
+
+            <div>
+              <label className={labelClass}>Title</label>
+              <input
+                type="text"
+                value={formData.title?.en}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    title: { ...formData.title!, en: e.target.value },
+                  })
+                }
+                className={fieldClass}
+                required
+              />
+            </div>
+
+            <div>
+              <label className={labelClass}>Summary</label>
+              <textarea
+                value={formData.excerpt?.en}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    excerpt: { ...formData.excerpt!, en: e.target.value },
+                  })
+                }
+                rows={3}
+                className={`${fieldClass} resize-y`}
+                required
+              />
+            </div>
+
+            <div className="flex flex-col flex-1 min-h-[280px]">
+              <label className={labelClass}>Content</label>
+              <textarea
+                value={formData.body?.en}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    body: { ...formData.body!, en: e.target.value },
+                  })
+                }
+                rows={12}
+                className={`${fieldClass} flex-1 min-h-[280px] resize-y`}
+                required
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Actions */}
-        <div className="flex space-x-4 pt-4">
-          <button
-            type="submit"
-            disabled={saving}
-            className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium py-2 px-4 rounded-md"
-          >
-            {saving ? '저장 중...' : '저장'}
-          </button>
+        <div className="flex flex-wrap justify-end gap-3 pt-6 border-t border-gray-200">
           <button
             type="button"
             onClick={onCancel}
-            className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-md"
+            className="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-md transition-colors"
           >
             취소
+          </button>
+          <button
+            type="submit"
+            disabled={saving}
+            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium rounded-md transition-colors"
+          >
+            {saving ? '저장 중...' : '저장'}
           </button>
         </div>
       </form>

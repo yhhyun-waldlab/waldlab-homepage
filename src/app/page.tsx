@@ -72,7 +72,7 @@ export default function HomePage() {
       <SafewayFoundationSection t={t} />
       <CTASection t={t} />
       <NewsSection t={t} locale={locale} />
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </main>
   );
 }

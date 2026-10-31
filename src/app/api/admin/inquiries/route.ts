@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
-import { createClient } from "@supabase/supabase-js";
+import { createSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 
 const JWT_SECRET = process.env.JWT_SECRET || "fallback-secret-key";
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+
+const INQUIRY_COLUMNS =
+  "id, service, org_name, contact_name, position, phone, email, inquiry, status, created_at, updated_at";
 
 async function verifyAuth() {
   const cookieStore = await cookies();
@@ -25,16 +26,16 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  if (!supabaseUrl || !supabaseServiceKey) {
+  if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "Not configured" }, { status: 503 });
   }
 
-  const supabase = createClient(supabaseUrl, supabaseServiceKey);
+  const supabase = createSupabaseAdmin();
 
   try {
     const { data, error } = await supabase
       .from("contact_inquiries")
-      .select("*")
+      .select(INQUIRY_COLUMNS)
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -55,11 +56,11 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  if (!supabaseUrl || !supabaseServiceKey) {
+  if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "Not configured" }, { status: 503 });
   }
 
-  const supabase = createClient(supabaseUrl, supabaseServiceKey);
+  const supabase = createSupabaseAdmin();
 
   try {
     const { id, status } = await request.json();

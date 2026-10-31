@@ -215,6 +215,8 @@
       "servicePlaceholder": "문의하실 서비스를 선택해주세요",
       "orgName": "기관명 / 회사명",
       "orgNamePlaceholder": "기관명 또는 회사명을 입력해주세요",
+      "position": "직책 / 부서",
+      "positionPlaceholder": "직책을 입력해주세요 (예: 팀장, 책임연구원)",
       "contactName": "담당자 이름",
       "contactNamePlaceholder": "이름을 입력해주세요",
       "phone": "연락처",
@@ -1035,10 +1037,24 @@
     "viewAll": "전체 소식 보기",
     "sheetLoading": "공지를 불러오는 중…"
   },
+  "terms": {
+    "pageTitle": "법적 고지",
+    "docTitle": "주식회사 발트랩 웹사이트 이용약관",
+    "pageSubtitle": "공식 웹사이트(www.waldlab.kr) 이용 조건 및 절차 안내",
+    "supplementaryTitle": "부칙",
+    "supplementary": "본 약관은 2025년 10월 30일부터 시행됩니다."
+  },
+  "privacy": {
+    "pageTitle": "법적 고지",
+    "docTitle": "주식회사 발트랩 개인정보처리방침",
+    "pageSubtitle": "개인정보 보호 및 처리에 관한 안내",
+    "supplementaryTitle": "부칙",
+    "supplementary": "본 방침은 2025년 10월 30일부터 시행됩니다."
+  },
   "footer": {
     "company": "주식회사 발트랩",
     "tagline": "건강한 생태계를 만드는 기술",
-    "address": "경기도 안양시 | info@waldlab.kr, yhhyun@waldlab.kr",
+    "address": "경기도 안양시 | info@waldlab.kr",
     "location": "경기도 안양시, 대한민국",
     "copyright": "© 2026 Wald Lab Inc. All rights reserved.",
     "privacy": "개인정보처리방침",
@@ -1056,7 +1072,7 @@
     "bizRegNum": "222-88-03231",
     "bizPrivacyOfficer": "현영호",
     "bizAddress": "경기도 안양시 동안구 시민대로 230, 지니센터 D동 5654호 (관양동, 평촌아크로타워)",
-    "bizEmail": "info@waldlab.kr, yhhyun@waldlab.kr",
+    "bizEmail": "info@waldlab.kr",
     "links": {
       "platform": "SafeWay 플랫폼",
       "safelync": "SafeLync",

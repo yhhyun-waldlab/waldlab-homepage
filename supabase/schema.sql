@@ -50,6 +50,7 @@ create table public.contact_inquiries (
   service text not null,
   org_name text not null,
   contact_name text not null,
+  position text,
   phone text not null,
   email text not null,
   inquiry text not null,
@@ -59,6 +60,8 @@ create table public.contact_inquiries (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+
+comment on column public.contact_inquiries.position is 'Job title / department (optional, from contact form)';
 
 create index contact_inquiries_created_at_idx on public.contact_inquiries (created_at desc);
 create index contact_inquiries_status_idx on public.contact_inquiries (status);
