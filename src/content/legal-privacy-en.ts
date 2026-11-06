@@ -49,7 +49,7 @@ export const PRIVACY_SECTIONS_EN: LegalSection[] = [
     title: "Article 7 (Privacy Officer Contact)",
     paragraphs: [
       "For inquiries or concerns regarding personal information, please contact:",
-      "- Data Protection Officer: Wald Lab Inc.",
+      "- Privacy Officer: Wald Lab Inc.",
       "- Contact: info@waldlab.kr ",
     ],
   },
