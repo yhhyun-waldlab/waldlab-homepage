@@ -144,7 +144,7 @@ export default function Footer({ t, locale: localeProp }: FooterProps) {
               <li>
                 <Link
                   href={legalPageHref("/privacy", locale)}
-                  className="text-wald-400 text-sm hover:text-wald-200 transition-colors"
+                  className="text-wald-400 text-sm font-bold hover:text-wald-200 transition-colors"
                 >
                   {t("footer.privacy")}
                 </Link>
