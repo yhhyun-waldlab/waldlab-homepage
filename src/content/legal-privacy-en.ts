@@ -46,11 +46,10 @@ export const PRIVACY_SECTIONS_EN: LegalSection[] = [
     ],
   },
   {
-    title: "Article 7 (Privacy Officer Contact)",
+    title: "Article 7 (Chief Privacy Officer)",
     paragraphs: [
-      "For inquiries or concerns regarding personal information, please contact:",
-      "- Privacy Officer: Wald Lab Inc.",
-      "- Contact: info@waldlab.kr ",
+      "Chief Privacy Officer: Min Ye-hong",
+      "Contact: info@waldlab.kr",
     ],
   },
   {
