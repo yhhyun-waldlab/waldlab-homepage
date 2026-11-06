@@ -207,7 +207,7 @@
   },
   "contact": {
     "pageTitle": "도입 문의",
-    "pageSubtitle": "SafeWay 플랫폼과 서비스에 대해 궁금하신 점을 남겨주세요.\n빠른 시일 내에 담당자가 연락드리겠습니다.",
+    "pageSubtitle": "SafeWay 플랫폼과 서비스에 대해 궁금하신 점을 남겨주세요.\n빠른 시일 내에 담당자가 회신드리겠습니다.",
     "badge": "Contact Us",
     "backToHome": "홈으로",
     "form": {
@@ -253,7 +253,7 @@
     },
     "success": {
       "title": "문의가 성공적으로 접수되었습니다",
-      "message": "빠른 시일 내에 담당자가 연락드리겠습니다.\n감사합니다.",
+      "message": "빠른 시일 내에 담당자가 회신드리겠습니다.\n감사합니다.",
       "close": "확인",
       "backToHome": "홈으로 돌아가기"
     }
