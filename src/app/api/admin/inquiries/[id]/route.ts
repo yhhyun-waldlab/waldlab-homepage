@@ -1,20 +1,13 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { verify } from "jsonwebtoken";
+import { verifyToken } from "@/lib/auth";
 import { createSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
-
-const JWT_SECRET = process.env.JWT_SECRET || "fallback-secret-key";
 
 async function verifyAuth() {
   const cookieStore = await cookies();
   const token = cookieStore.get("admin_token");
   if (!token) return false;
-  try {
-    verify(token.value, JWT_SECRET);
-    return true;
-  } catch {
-    return false;
-  }
+  return verifyToken(token.value) !== null;
 }
 
 export async function DELETE(
