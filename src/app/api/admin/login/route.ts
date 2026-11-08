@@ -10,7 +10,9 @@ export async function POST(req: NextRequest) {
     // Initialize admin accounts if needed
     await initializeAdminAccounts();
 
-    const { email, password } = await req.json();
+    const body = (await req.json()) as { email?: string; password?: string };
+    const email = body.email?.trim().toLowerCase() ?? "";
+    const password = body.password ?? "";
 
     if (!email || !password) {
       return NextResponse.json(
