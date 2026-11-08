@@ -19,22 +19,35 @@ export default function AdminLoginPage() {
       const res = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        credentials: 'same-origin',
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          password,
+        }),
       });
 
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || '로그인에 실패했습니다.');
+        const msg =
+          data.error === 'Invalid credentials'
+            ? '이메일 또는 비밀번호가 올바르지 않습니다.'
+            : data.error === 'Internal server error'
+              ? '서버 오류입니다. Vercel·Supabase 환경 변수와 admin_accounts 테이블을 확인해 주세요.'
+              : data.error || '로그인에 실패했습니다.';
+        setError(msg);
         setLoading(false);
         return;
       }
 
-      // Redirect to admin dashboard
-      router.push('/admin/dashboard');
+      // Full navigation so HttpOnly cookie is sent on the next /api/admin/verify request
+      window.location.assign('/admin/dashboard');
+      return;
     } catch (err) {
       console.error('Login error:', err);
-      setError('로그인 중 오류가 발생했습니다.');
+      setError(
+        '네트워크 또는 서버 응답 지연입니다. 잠시 후 다시 시도해 주세요. (첫 요청은 10초 정도 걸릴 수 있습니다.)',
+      );
       setLoading(false);
     }
   };
