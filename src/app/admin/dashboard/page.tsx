@@ -43,7 +43,7 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch('/api/admin/verify');
+        const res = await fetch('/api/admin/verify', { credentials: 'same-origin' });
         if (res.ok) {
           setAuthenticated(true);
           loadPosts();
