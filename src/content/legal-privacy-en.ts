@@ -49,7 +49,7 @@ export const PRIVACY_SECTIONS_EN: LegalSection[] = [
     title: "Article 7 (Chief Privacy Officer)",
     paragraphs: [
       "The Company is responsible for all personal data processing and has appointed the Chief Privacy Officer below to address data subject inquiries and resolve complaints.",
-      "Chief Privacy Officer: Min Ye-hong",
+      "Chief Privacy Officer: Min Ye-hong, Director",
       "Contact: info@waldlab.kr",
     ],
   },
