@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import WaldblattLogo from "@/components/ui/WaldblattLogo";
 import type { Locale } from "@/lib/i18n";
+import { useNewsNavBadge } from "@/hooks/useNewsNavBadge";
 
 interface HeaderProps {
   t: (key: string) => string;
@@ -22,10 +23,34 @@ const navItems = [
   { key: "nav.news",     href: "#news",     isPage: false },
 ];
 
+function NavNewsLabel({
+  label,
+  showBadge,
+}: {
+  label: string;
+  showBadge: boolean;
+}) {
+  if (!showBadge) {
+    return <>{label}</>;
+  }
+  return (
+    <span className="relative inline-flex items-center">
+      {label}
+      <span
+        className="pointer-events-none absolute -top-2 -right-2.5 flex h-3.5 min-w-[14px] items-center justify-center rounded-full bg-red-500 px-0.5 text-[8px] font-bold leading-none text-white"
+        aria-label="New"
+      >
+        N
+      </span>
+    </span>
+  );
+}
+
 export default function Header({ t, locale, onLocaleChange, forceScrolled = false }: HeaderProps) {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { showNewsBadge, markNewsSeen } = useNewsNavBadge();
   const isHome = pathname === "/";
   const showScrolled = forceScrolled || isScrolled;
 
@@ -36,12 +61,24 @@ export default function Header({ t, locale, onLocaleChange, forceScrolled = fals
     return () => window.removeEventListener("scroll", handleScroll);
   }, [forceScrolled]);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, key: string) => {
+    if (key === "nav.news") markNewsSeen();
     setIsMobileMenuOpen(false);
     if (isHome) {
       const el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const navLabel = (key: string) =>
+    key === "nav.news" ? (
+      <NavNewsLabel label={t(key)} showBadge={showNewsBadge} />
+    ) : (
+      t(key)
+    );
+
+  const onNewsNavInteract = (key: string) => {
+    if (key === "nav.news") markNewsSeen();
   };
 
   return (
@@ -76,25 +113,26 @@ export default function Header({ t, locale, onLocaleChange, forceScrolled = fals
                 <Link
                   key={item.key}
                   href={item.isPage ? item.href : `/${item.href}`}
+                  onClick={() => onNewsNavInteract(item.key)}
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                     showScrolled
                       ? "text-wald-700 hover:text-wald-900 hover:bg-wald-50"
                       : "text-white/85 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  {t(item.key)}
+                  {navLabel(item.key)}
                 </Link>
               ) : (
                 <button
                   key={item.key}
-                  onClick={() => handleNavClick(item.href)}
+                  onClick={() => handleNavClick(item.href, item.key)}
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
                     showScrolled
                       ? "text-wald-700 hover:text-wald-900 hover:bg-wald-50"
                       : "text-white/85 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  {t(item.key)}
+                  {navLabel(item.key)}
                 </button>
               )
             )}
@@ -158,17 +196,20 @@ export default function Header({ t, locale, onLocaleChange, forceScrolled = fals
                   key={item.key}
                   href={item.isPage ? item.href : `/${item.href}`}
                   className="px-4 py-3 text-sm font-medium text-wald-700 rounded-lg hover:bg-wald-50 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    onNewsNavInteract(item.key);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
-                  {t(item.key)}
+                  {navLabel(item.key)}
                 </Link>
               ) : (
                 <button
                   key={item.key}
-                  onClick={() => handleNavClick(item.href)}
+                  onClick={() => handleNavClick(item.href, item.key)}
                   className="text-left px-4 py-3 text-sm font-medium text-wald-700 rounded-lg hover:bg-wald-50 transition-colors"
                 >
-                  {t(item.key)}
+                  {navLabel(item.key)}
                 </button>
               )
             )}
