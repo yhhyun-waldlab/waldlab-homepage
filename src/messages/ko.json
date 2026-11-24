@@ -1073,6 +1073,8 @@
     "bizPrivacyOfficer": "민예홍",
     "bizAddress": "경기도 안양시 동안구 시민대로 230, 지니센터 D동 5654호 (관양동, 평촌아크로타워)",
     "bizEmail": "info@waldlab.kr",
+    "emailCopyTitle": "클릭하여 이메일 복사",
+    "emailCopyToast": "이메일 주소가 복사되었습니다",
     "links": {
       "platform": "SafeWay 플랫폼",
       "safelync": "SafeLync",

@@ -941,6 +941,8 @@
     "bizPrivacyOfficer": "Min Ye-hong",
     "bizAddress": "D-5654, Genie center, 230 Simin-daero, Dongan-gu, Anyang-si, Gyeonggi-do, Korea",
     "bizEmail": "info@waldlab.kr",
+    "emailCopyTitle": "Click to copy email",
+    "emailCopyToast": "Email address copied",
     "links": {
       "platform": "SafeWay Platform",
       "safelync": "SafeLync",

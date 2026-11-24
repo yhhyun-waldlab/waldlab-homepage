@@ -6,6 +6,9 @@ import { Mail, MapPin } from "lucide-react";
 import WaldblattLogo from "@/components/ui/WaldblattLogo";
 import type { Locale } from "@/lib/i18n";
 import { legalPageHref } from "@/lib/legal-page-locale";
+import { copyTextToClipboard } from "@/lib/copyText";
+
+const CONTACT_EMAIL = "info@waldlab.kr";
 
 /* 사업자 정보 인라인 헬퍼 */
 function BizItem({ label, value }: { label: string; value: string }) {
@@ -40,6 +43,8 @@ const serviceLinks = [
 export default function Footer({ t, locale: localeProp }: FooterProps) {
   const [clickCount, setClickCount] = useState(0);
   const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const toastTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [toastVisible, setToastVisible] = useState(false);
   const [storedLocale, setStoredLocale] = useState<Locale>("ko");
 
   useEffect(() => {
@@ -52,6 +57,30 @@ export default function Footer({ t, locale: localeProp }: FooterProps) {
   }, []);
 
   const locale = localeProp ?? storedLocale;
+
+  const showCopyToast = () => {
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    setToastVisible(true);
+    toastTimerRef.current = setTimeout(() => {
+      setToastVisible(false);
+      toastTimerRef.current = null;
+    }, 2300);
+  };
+
+  const handleCopyEmail = async () => {
+    const ok = await copyTextToClipboard(CONTACT_EMAIL);
+    if (ok) showCopyToast();
+  };
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    };
+  }, []);
+
+  const emailCopyTitle = t("footer.emailCopyTitle");
+  const emailButtonClass =
+    "cursor-pointer bg-transparent border-0 p-0 font-inherit text-inherit hover:text-wald-200 transition-colors";
 
   const handleLogoClick = () => {
     // Clear existing timer
@@ -102,12 +131,14 @@ export default function Footer({ t, locale: localeProp }: FooterProps) {
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 text-wald-400 text-sm flex-wrap">
                 <Mail size={15} className="shrink-0" />
-                <a
-                  href="mailto:info@waldlab.kr"
-                  className="hover:text-wald-200 transition-colors"
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className={emailButtonClass}
+                  title={emailCopyTitle}
                 >
-                  info@waldlab.kr
-                </a>
+                  {CONTACT_EMAIL}
+                </button>
               </div>
               <div className="flex items-center gap-2 text-wald-400 text-sm">
                 <MapPin size={15} />
@@ -179,7 +210,15 @@ export default function Footer({ t, locale: localeProp }: FooterProps) {
           <p className="text-[11px] text-wald-600 leading-relaxed">
             <BizItem label={t("footer.bizLabelAddress")} value={t("footer.bizAddress")} />
             <Sep />
-            <BizItem label={t("footer.bizLabelEmail")} value={t("footer.bizEmail")} />
+            <span className="text-wald-700">{t("footer.bizLabelEmail")}</span>{" "}
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className={`${emailButtonClass} hover:text-wald-500`}
+              title={emailCopyTitle}
+            >
+              {t("footer.bizEmail")}
+            </button>
           </p>
         </div>
       </div>
@@ -195,6 +234,16 @@ export default function Footer({ t, locale: localeProp }: FooterProps) {
           </div>
         </div>
       </div>
+
+      {toastVisible ? (
+        <div
+          className="pointer-events-none fixed bottom-6 left-1/2 z-[100] -translate-x-1/2 rounded-lg border border-wald-700 bg-wald-800 px-4 py-2.5 text-sm text-white shadow-lg"
+          role="status"
+          aria-live="polite"
+        >
+          {t("footer.emailCopyToast")}
+        </div>
+      ) : null}
     </footer>
   );
 }
